@@ -99,7 +99,7 @@
         </AnchorPane>
         <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
           <content>
-            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="652.0" />
+            <AnchorPane fx:id = "edit_page" id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="652.0" />
           </content>
         </ScrollPane>
       </items>
