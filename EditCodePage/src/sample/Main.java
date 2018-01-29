@@ -18,7 +18,6 @@ public class Main extends Application {
     {
 	    FXMLLoader myEditPageLoader = new FXMLLoader (getClass ().getResource ("EditCodePage.fxml"));
 	    Parent root = myEditPageLoader.load();
-	    Controller EditPageController = myEditPageLoader.getController ();
 	    primaryStage.setTitle ("Patronus");
 	    try {
 		    URL iconURL = Main.class.getResource("resources/patronus.png");
