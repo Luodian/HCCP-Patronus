@@ -2,7 +2,6 @@
   <library name="jfoenix-8.0.1">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../jfoenix-8.0.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../jfoenix-9.0.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
