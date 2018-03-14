@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import com.jfoenix.controls.JFXDrawer?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.Controller.GailanController"
+            fx:id="gailan">
+
+    <children>
+        <AnchorPane fx:id="an_menu" prefHeight="900.0" prefWidth="170.0" style="-fx-background-color: #BA2E49;" AnchorPane.leftAnchor="10">
+            <JFXListView fx:id="selectedData" prefHeight="500.0" prefWidth="170.0" layoutX="18.0" layoutY="108.0" >
+
+            </JFXListView>
+            <!--<JFXButton fx:id="figure_mod_btn" onMouseClicked="#figureMod" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="18.0" layoutY="108.0" prefHeight="28.0" prefWidth="142.0" text="图形模式" textFill="#f5f5f5">-->
+                <!--<graphic>-->
+                    <!--<ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--<image>-->
+                            <!--<Image url="/sample/resources/tuxing.png" />-->
+                        <!--</image>-->
+                    <!--</ImageView>-->
+                <!--</graphic>-->
+            <!--</JFXButton>-->
+            <!--<JFXButton fx:id="list_mod_btn" onMouseClicked="#listMod" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="18.0" layoutY="146.0" prefHeight="28.0" prefWidth="142.0" text="列表模式" textFill="#f5f5f5">-->
+                <!--<graphic>-->
+                    <!--<ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--<image>-->
+                            <!--<Image url="/sample/resources/liebiao.png" />-->
+                        <!--</image>-->
+                    <!--</ImageView>-->
+                <!--</graphic>-->
+            <!--</JFXButton>-->
+            <!--<JFXButton fx:id="own_info_btn" onMouseClicked="#ownInfo" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="18.0" layoutY="184.0" prefHeight="28.0" prefWidth="142.0" text="本机信息" textFill="#f5f5f5">-->
+                <!--<graphic>-->
+                    <!--<ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--<image>-->
+                            <!--<Image url="/sample/resources/benji.png" />-->
+                        <!--</image>-->
+                    <!--</ImageView>-->
+                <!--</graphic>-->
+            <!--</JFXButton>-->
+            <ImageView fx:id="color_picker1" fitHeight="28.0" fitWidth="28.0" layoutX="137.0" layoutY="800.0" onMouseClicked="#colorPicker" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="/sample/resources/color_picker.png" />
+                </image>
+            </ImageView>
+            <JFXDrawer fx:id="drawer1" layoutY="400.0" prefHeight="200.0" prefWidth="130.0" />
+        </AnchorPane>
+        <Pane fx:id="network_pane" AnchorPane.rightAnchor="10"/>
+
+    </children>
+
+</AnchorPane>

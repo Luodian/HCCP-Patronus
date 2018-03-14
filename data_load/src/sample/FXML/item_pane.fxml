@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="89.0" prefWidth="200.0" style="-fx-background-color: #E34F43; -fx-background-radius: 2em;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ItemController">
+    <children>
+        <Label fx:id="name" layoutX="43.0" layoutY="10.0" text="name : forest" textFill="WHITE" />
+        <Label fx:id="type" layoutX="43.0" layoutY="28.0" text="type : .csv" textFill="WHITE" />
+        <Label fx:id="size" layoutX="43.0" layoutY="46.0" text="size : 200M" textFill="WHITE" />
+        <Label fx:id="date" layoutX="42.0" layoutY="64.0" text="date : 2018-1-28" textFill="WHITE" />
+    </children>
+    <effect>
+        <DropShadow color="#88124e" height="24.19" radius="10.91" width="21.45" />
+    </effect>
+</Pane>
