@@ -6,16 +6,13 @@ package sample.Entity;
 
 import javafx.scene.Group;
 import javafx.scene.control.Tooltip;
-import sample.Entity.Branch;
 import sample.Entity.Branch.Type;
-import sample.Entity.SmartNode;
-import sample.Entity.Tree;
 import sample.Utils.RandomUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import static sample.Main1.allNodes;
+import static sample.Main.allNodes;
 import static sample.Utils.Util.addChildToParent;
 
 

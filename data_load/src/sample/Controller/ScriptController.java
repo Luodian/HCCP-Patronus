@@ -7,8 +7,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Paint;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Controller1 implements Initializable
+public class ScriptController implements Initializable
 {
 	private String code;
 	private StringBuilder file_name;
@@ -33,9 +35,9 @@ public class Controller1 implements Initializable
 	@FXML
 	private AnchorPane cmd_page;
 	@FXML
-	private JFXListView<String> script_listView;
+	private JFXListView script_listView;
 	private static int current_size;
-	ObservableList<String> items = FXCollections.observableArrayList ();
+	ObservableList<Label> items = FXCollections.observableArrayList ();
 	
 	@FXML
 	private void run_script_button_action (ActionEvent event)
@@ -109,12 +111,23 @@ public class Controller1 implements Initializable
 	{
 		current_size = 0;
 		script_listView.setItems (items);
-		items.add ("luodian's script");
-		items.add ("jackson's script");
+
+        Label label1 = new Label("luodian's script");
+        label1.setTextFill(Paint.valueOf("#ffffff"));
+        Label label2 = new Label("jackson's script");
+        label2.setTextFill(Paint.valueOf("#ffffff"));
+		items.add (label1);
+		items.add (label2);
+
+
+
 		current_size += 2;
+		script_listView.setExpanded(true);
+		script_listView.setVerticalGap(Double.valueOf(15.0));
+		script_listView.depthProperty().set(5);
 		HighlightingCode highlighter = new HighlightingCode ();
 		script_listView.getSelectionModel ().selectedItemProperty ().addListener (
-				(ObservableValue<? extends String> observable, String oldValue, String newValue) ->
+				(ObservableValue observable, Object oldValue, Object newValue) ->
 				{
 					VirtualizedScrollPane vz = highlighter.HLCodeArea (edit_page.getPrefWidth (), edit_page.getHeight ());
 					edit_page.getChildren ().add (vz);

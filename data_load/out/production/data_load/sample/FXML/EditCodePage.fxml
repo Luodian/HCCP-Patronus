@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox prefHeight="702.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Controller1">
+<HBox prefHeight="767.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ScriptController">
    <children>
-  <AnchorPane minWidth="200.0" prefHeight="702.0" prefWidth="229.0" style="-fx-background-color: #BA2E49;">
+  <AnchorPane minWidth="200.0" prefHeight="767.0" prefWidth="229.0" style="-fx-background-color: #BA2E49;">
          <children>
             <AnchorPane layoutX="23.0" layoutY="22.0">
                <children>
@@ -27,15 +27,15 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <JFXListView fx:id="script_listView" layoutX="12.0" layoutY="189.0" prefHeight="503.0" prefWidth="203.0" />
+            <JFXListView fx:id="script_listView" layoutX="0.0" layoutY="189.0" prefHeight="503.0" prefWidth="200.0"  style="-fx-background-color: #C0324C;"  />
             <HBox layoutX="11.0" layoutY="147.0" prefHeight="39.0" prefWidth="197.0">
                <children>
-                  <JFXButton fx:id="new_button" onAction="#run_script_button_action" prefHeight="27.0" prefWidth="90.0" ripplerFill="RED" style="-fx-background-color: Orange;" text="Run" textAlignment="CENTER">
+                  <JFXButton fx:id="new_button" onAction="#run_script_button_action" prefHeight="27.0" prefWidth="90.0" ripplerFill="RED" style="-fx-background-color: Orange;" text="Run" textFill="#f5f5f5" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </JFXButton>
-                  <JFXButton fx:id="edit_button" onAction="#edit_button_action" prefWidth="90.0" ripplerFill="RED" style="-fx-background-color: Orange;" text="Edit" textAlignment="CENTER">
+                  <JFXButton fx:id="edit_button" onAction="#edit_button_action" prefWidth="90.0" ripplerFill="RED" style="-fx-background-color: Orange;" text="Edit" textAlignment="CENTER" textFill="#f5f5f5">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
@@ -47,16 +47,16 @@
             </HBox>
          </children>
   </AnchorPane>
-      <VBox prefHeight="702.0" prefWidth="724.0">
+      <VBox prefHeight="767.0" prefWidth="777.0">
          <children>
-            <ScrollPane prefHeight="467.0" prefWidth="585.0">
+            <ScrollPane prefHeight="467.0" prefWidth="777.0">
                <content>
-                  <AnchorPane fx:id="edit_page" prefHeight="462.0" prefWidth="721.0" style="-fx-background-color: #BA2E49;" />
+                  <AnchorPane fx:id="edit_page" prefHeight="462.0" prefWidth="777.0" style="-fx-background-color: #BA2E49;" />
                </content>
             </ScrollPane>
-            <ScrollPane prefHeight="241.0" prefWidth="705.0">
+            <ScrollPane prefHeight="300.0" prefWidth="777.0">
               <content>
-                <AnchorPane fx:id="cmd_page" minHeight="0.0" minWidth="0.0" prefHeight="236.0" prefWidth="721.0" style="-fx-background-color: #BA2E49 #BA2E49;" />
+                <AnchorPane fx:id="cmd_page" prefHeight="300.0" prefWidth="777.0" style="-fx-background-color: #BA2E49 #BA2E49;" />
               </content>
             </ScrollPane>
          </children>

@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.Pane?>
 
 <?import com.jfoenix.controls.JFXDrawer?>
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.DataLoadController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.DataLoadController">
     <children>
-        <AnchorPane fx:id="an_menu" prefHeight="700.0" prefWidth="170.0" style="-fx-background-color: #BA2E49;">
+        <AnchorPane fx:id="an_menu" prefHeight="740.0" prefWidth="170.0" style="-fx-background-color: #BA2E49;">
             <children>
                 <Pane fx:id="function" layoutY="-1.0" prefHeight="40.0" prefWidth="187.0" style="-fx-background-color: #E34F43;">
                     <children>
@@ -73,7 +73,7 @@
                 <JFXDrawer fx:id="drawer1" layoutY="500.0" prefHeight="200.0" prefWidth="130.0" />
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="an_context" layoutX="401.0" prefHeight="700.0" prefWidth="401.0">
+        <AnchorPane fx:id="an_context" layoutX="401.0" prefHeight="740.0" prefWidth="401.0">
             <children>
                 <Pane layoutX="-7.0" prefHeight="40.0" prefWidth="613.0" style="-fx-background-color: #88124E;">
                     <children>
@@ -97,7 +97,7 @@
                 </JFXButton>
             </children>
         </AnchorPane>
-        <JFXListView fx:id="listView" layoutX="180.0" layoutY="55.0" prefHeight="646.0" prefWidth="219.0" style="-fx-background-color: #C0324C;" />
+        <JFXListView fx:id="listView" layoutX="180.0" layoutY="55.0" prefHeight="707.0" prefWidth="219.0" style="-fx-background-color: #C0324C;" />
         <Pane fx:id="data_header" layoutX="180.0" prefHeight="40.0" prefWidth="219.0" style="-fx-background-color: #BA2E49;">
             <children>
                 <Label layoutX="24.0" layoutY="13.0" text="DATA HEADERS" textFill="WHITE" />

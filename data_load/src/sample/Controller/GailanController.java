@@ -27,7 +27,7 @@ import sample.Entity.SmartNode;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static sample.Main1.allNodes;
+import static sample.Main.allNodes;
 
 public class GailanController implements Initializable{
 
