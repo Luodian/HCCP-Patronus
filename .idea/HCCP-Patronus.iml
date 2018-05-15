@@ -75,5 +75,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jfoenix-8.0.4" level="project" />
   </component>
 </module>
