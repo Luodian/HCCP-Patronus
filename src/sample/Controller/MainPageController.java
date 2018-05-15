@@ -147,7 +147,7 @@ public class MainPageController implements Initializable {
     void showDatas(MouseEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../FXML/data_load.fxml"));
-            root.getStylesheets().add(getClass().getResource("../FXML/list_view.css").toExternalForm());
+        root.getStylesheets().add(getClass().getResource("../FXML/list_view.css").toExternalForm());
         stage.setScene(new Scene(root));
         StartProcess.hashMap.put("data_load", stage);
         StartProcess.hashMap.get("main_page").hide();

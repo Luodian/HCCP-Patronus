@@ -122,6 +122,9 @@ public class GroupController implements Initializable {
                 StartProcess.hashMap.put("group_information", group_information);
                 group_information.show();
             }
+            else {
+                HintFrame.showFailFrame("Please choose one group!");
+            }
         } catch (IOException e) {
             e.printStackTrace();
             HintFrame.showFailFrame("Open Failed!");
@@ -160,17 +163,23 @@ public class GroupController implements Initializable {
     @FXML
     void registerData(MouseEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../../FXML/data_load.fxml"));
-            root.getStylesheets().add(getClass().getResource("../../FXML/base.css").toExternalForm());
-            root.getStylesheets().add(getClass().getResource("../../FXML/list_view.css").toExternalForm());
-            Stage dataStage = new Stage();
-            Scene scene = new Scene(root, 1006, 740);
-            dataStage.setScene(scene);
-            dataStage.setResizable(false);
-            dataStage.initStyle(StageStyle.UNDECORATED);
-            StartProcess.hashMap.put("data_load", dataStage);
-            StartProcess.hashMap.get("groups").hide();
-            dataStage.show();
+            int index = my_Groups.getSelectionModel().getSelectedIndex();
+            if (index >= 0) {
+                Parent root = FXMLLoader.load(getClass().getResource("../../FXML/data_load.fxml"));
+                root.getStylesheets().add(getClass().getResource("../../FXML/list_view.css").toExternalForm());
+                Stage dataStage = new Stage();
+                Scene scene = new Scene(root, 1006, 740);
+                dataStage.setScene(scene);
+                dataStage.setResizable(false);
+                dataStage.initStyle(StageStyle.UNDECORATED);
+                StartProcess.hashMap.put("data_load", dataStage);
+                StartProcess.hashMap.get("groups").hide();
+                dataStage.show();
+            }
+            else {
+                HintFrame.showFailFrame("Please choose one group!");
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
