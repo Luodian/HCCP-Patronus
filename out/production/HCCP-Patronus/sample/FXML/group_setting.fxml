@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Group.GroupSettingController">
+   <children>
+      <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="4.0" />
+      <Pane layoutY="-2.0" prefHeight="408.0" prefWidth="148.0" style="-fx-background-color: #3678;">
+         <children>
+            <Label layoutX="21.0" layoutY="30.0" text="New Group" textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="21.0" />
+               </font>
+            </Label>
+            <Separator layoutY="75.0" prefHeight="0.0" prefWidth="39.0" style="-fx-background-color: #ffffff;" />
+            <AnchorPane layoutY="76.0" prefHeight="104.0" prefWidth="148.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="118.0" text="  Please complete" textFill="WHITE">
+                     <font>
+                        <Font name="Chalkboard" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="44.0" text="  the information" textFill="WHITE">
+                     <font>
+                        <Font name="Chalkboard" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="68.0" text="  of the groupNode" textFill="WHITE">
+                     <font>
+                        <Font name="Chalkboard" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="import_data" layoutX="36.0" layoutY="204.0" onMouseClicked="#importData" prefHeight="27.0" prefWidth="76.0" text="import" textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="submit" layoutX="33.0" layoutY="359.0" onMouseClicked="#submit" text="completed..." textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="reset_data" layoutX="35.0" layoutY="231.0" onMouseClicked="#resetData" prefHeight="27.0" prefWidth="76.0" text="reset" textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="13.0" />
+               </font>
+            </JFXButton>
+            <Separator layoutX="19.0" layoutY="346.0" prefHeight="3.0" prefWidth="108.0" />
+            <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="8.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/sample/resources/MDicon/correct.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="147.0" prefHeight="123.0" prefWidth="453.0">
+         <children>
+            <JFXButton fx:id="back_to_preview" layoutX="301.0" layoutY="28.0" onMouseClicked="#backToPrevious" prefHeight="28.0" prefWidth="162.0" style="-fx-background-color: #3678; -fx-background-radius: 2em;" text="Back to previous..." textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/sample/resources/MDicon/qweas.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXTextField fx:id="data_name" layoutX="31.0" layoutY="13.0" prefHeight="48.0" prefWidth="228.0" promptText="Group Name" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font name="Chalkboard" size="29.0" />
+               </font>
+            </JFXTextField>
+            <Separator layoutY="123.0" prefHeight="3.0" prefWidth="453.0" />
+         </children>
+      </Pane>
+      <Label layoutX="218.0" layoutY="158.0" text="type:">
+         <font>
+            <Font name="Chalkboard" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="187.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/sample/resources/MDicon/type_black.png" />
+         </image>
+      </ImageView>
+      <ChoiceBox fx:id="type_choice" layoutX="269.0" layoutY="153.0" prefHeight="27.0" prefWidth="63.0" />
+      <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="168.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXTextField fx:id="user_name_field" layoutX="218.0" layoutY="209.0" prefHeight="31.0" prefWidth="139.0" promptText="user name">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password_field" layoutX="417.0" layoutY="209.0" prefWidth="139.0" promptText="password">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </JFXPasswordField>
+      <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="186.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/sample/resources/MDicon/ic_launcher 2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="381.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/sample/resources/MDicon/ic_launcher 6.png" />
+         </image>
+      </ImageView>
+      <JFXTextArea fx:id="description_area" layoutX="217.0" layoutY="272.0" prefHeight="74.0" prefWidth="314.0" promptText="Please write some description">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </JFXTextArea>
+      <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="187.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/sample/resources/MDicon/type.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
