@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Data.DataSettingController">
+   <children>
+      <Separator layoutX="144.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="4.0" />
+      <Pane layoutY="-2.0" prefHeight="408.0" prefWidth="148.0" style="-fx-background-color: #3678;">
+         <children>
+            <Label layoutX="8.0" layoutY="30.0" text="Data Settings" textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="21.0" />
+               </font>
+            </Label>
+            <Separator layoutY="75.0" prefHeight="0.0" prefWidth="39.0" style="-fx-background-color: #ffffff;" />
+            <AnchorPane layoutY="76.0" prefHeight="104.0" prefWidth="148.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="118.0" text="  Please complete" textFill="WHITE">
+                     <font>
+                        <Font name="Chalkboard" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="44.0" text="  the information" textFill="WHITE">
+                     <font>
+                        <Font name="Chalkboard" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="68.0" text="  of your data set" textFill="WHITE">
+                     <font>
+                        <Font name="Chalkboard" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="import_data" layoutX="36.0" layoutY="204.0" onMouseClicked="#importData" prefHeight="27.0" prefWidth="76.0" text="import" textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="submit" layoutX="-8.0" layoutY="359.0" onMouseClicked="#submit" text="I have completed..." textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="reset_data" layoutX="35.0" layoutY="231.0" onMouseClicked="#resetData" prefHeight="27.0" prefWidth="76.0" text="reset" textFill="WHITE">
+               <font>
+                  <Font name="Chalkboard" size="13.0" />
+               </font>
+            </JFXButton>
+            <Separator layoutX="19.0" layoutY="346.0" prefHeight="3.0" prefWidth="108.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="147.0" prefHeight="123.0" prefWidth="453.0">
+         <children>
+            <JFXButton fx:id="backe_to_preview" layoutX="291.0" layoutY="28.0" prefHeight="28.0" prefWidth="162.0" text="Back to previous..." onMouseClicked="#back">
+               <font>
+                  <Font name="Chalkboard" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/sample/resources/MDicon/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXTextField fx:id="data_name" layoutX="31.0" layoutY="13.0" prefHeight="48.0" prefWidth="228.0" promptText="Data Name" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font name="Chalkboard" size="29.0" />
+               </font>
+            </JFXTextField>
+            <Separator layoutY="123.0" prefHeight="3.0" prefWidth="453.0" />
+         </children>
+      </Pane>
+      <Label layoutX="218.0" layoutY="158.0" text="type:">
+         <font>
+            <Font name="Chalkboard" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="28.0" fitWidth="31.0" layoutX="177.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/sample/resources/MDicon/type.png" />
+         </image>
+      </ImageView>
+      <ChoiceBox fx:id="type_choice" layoutX="269.0" layoutY="153.0" prefHeight="27.0" prefWidth="63.0" />
+      <JFXTreeTableView fx:id="attr_view" layoutX="161.0" layoutY="192.0" prefHeight="100.0" prefWidth="425.0" />
+      <Label layoutX="217.0" layoutY="301.0" text="Attr nums:">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="422.0" layoutY="301.0" text="Tuple nums:">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="attr_num" layoutX="297.0" layoutY="301.0" text="0">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="tuple_num" layoutX="509.0" layoutY="301.0" text="0">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="422.0" layoutY="342.0" text="date:">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="date" layoutX="467.0" layoutY="342.0" text="2018-3-14">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="217.0" layoutY="342.0" text="owner:">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="269.0" layoutY="342.0" text="elrond">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

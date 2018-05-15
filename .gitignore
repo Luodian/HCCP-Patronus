@@ -4,14 +4,14 @@
 # Log file
 *.log
 
-# MacOS
-.DS_Store
-
 # BlueJ files
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+# Mac OS X
+.DS_Store
 
 # Package Files #
 *.jar

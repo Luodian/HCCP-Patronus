@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="421.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Login.ConfirmController">
+   <children>
+      <ImageView fitHeight="244.0" fitWidth="362.0" layoutX="-10.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/sample/resources/confirmed.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="79.0" layoutY="79.0" prefHeight="54.0" prefWidth="220.0" text="Thank you for" textFill="#fcf9f9">
+         <font>
+            <Font name="Chalkboard SE Light" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="click_return" layoutX="318.0" layoutY="148.0" onMouseClicked="#returnToLogin" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: #8B2323;" text="return" textFill="WHITE">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="63.0" layoutY="121.0" prefHeight="54.0" prefWidth="220.0" text="your registration" textFill="#fcf9f9">
+         <font>
+            <Font name="Chalkboard SE Light" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="318.0" layoutY="79.0" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: #8B2323;" text="learn more" textFill="WHITE">
+         <font>
+            <Font name="Chalkboard SE Light" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
