@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="140.0" style="-fx-background-color: #7213a0; -fx-background-radius: 2em;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXProgressBar fx:id="progress" layoutX="12.0" layoutY="123.0" prefHeight="7.0" prefWidth="118.0" />
+      <Label fx:id="initiator" layoutX="49.0" layoutY="36.0" text="Initiator" textFill="WHITE">
+         <font>
+            <Font name="Chalkboard SE Light" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="20.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/sample/resources/MDicon/person.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="data_name" layoutX="50.0" layoutY="71.0" text="data name" textFill="WHITE">
+         <font>
+            <Font name="Chalkboard SE Light" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="20.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/sample/resources/MDicon/bookmark.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</Pane>
