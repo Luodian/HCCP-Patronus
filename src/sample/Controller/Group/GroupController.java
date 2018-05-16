@@ -78,33 +78,32 @@ public class GroupController implements Initializable {
         myGroupNodes = SQLHandler.queryGroupsByUserID(LoginController.current_user_id);
         myGroupsCopy = myGroupNodes;
         my_Groups_copy = my_Groups;
-
+        my_Groups.setExpanded(true);
+        my_Groups.setVerticalGap(Double.valueOf(15.0));
+        my_Groups.depthProperty().set(5);
+        my_Groups.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                int index = my_Groups.getSelectionModel().getSelectedIndex();
+                if (index < 0) return;
+                else {
+                    /**选中列表中某个群组后，在右侧现实群组信息**/
+                    GroupNode temp = myGroupNodes.get(index);
+                    group_name.setText(temp.getGroup_name());
+                    type.setText(temp.getType());
+                    create_date.setText(temp.getCreat_date().toString());
+                    description.setText(temp.getDescription());
+                    members_num.setText(String.valueOf(temp.getMember_num()));
+                    creator.setText(temp.getOwner().getUser_name());
+                }
+            }
+        });
         if (myGroupNodes != null && myGroupNodes.size() != 0){
             for (int i = 0; i < myGroupNodes.size(); i++) {
                 Label group = new Label(myGroupNodes.get(i).getGroup_name());
                 group.setTextFill(Paint.valueOf("#ffffff"));
                 my_Groups.getItems().add(group);
             }
-            my_Groups.setExpanded(true);
-            my_Groups.setVerticalGap(Double.valueOf(15.0));
-            my_Groups.depthProperty().set(5);
-            my_Groups.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-                @Override
-                public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-                    int index = my_Groups.getSelectionModel().getSelectedIndex();
-                    if (index < 0) return;
-                    else {
-                        /**选中列表中某个群组后，在右侧现实群组信息**/
-                        GroupNode temp = myGroupNodes.get(index);
-                        group_name.setText(temp.getGroup_name());
-                        type.setText(temp.getType());
-                        create_date.setText(temp.getCreat_date().toString());
-                        description.setText(temp.getDescription());
-                        members_num.setText(String.valueOf(temp.getMember_num()));
-                        creator.setText(temp.getOwner().getUser_name());
-                    }
-                }
-            });
         }
     }
 
