@@ -169,6 +169,11 @@ public class DataLoadController implements Initializable{
     }
 
     @FXML
+    private void showDataMetaInfo(MouseEvent event){
+
+    }
+
+    @FXML
     private void choose(MouseEvent event) {
         /**选中该数据，将其交给群组注册**/
         int index_datasets = listView_pane.getSelectionModel().getSelectedIndex();
@@ -235,21 +240,12 @@ public class DataLoadController implements Initializable{
     }
 
     @FXML
-<<<<<<< HEAD
-    void colorPicker(MouseEvent event) {
-//        if (drawer1.isShown()) {
-//            drawer1.close();
-//        } else {
-//            drawer1.open();
-//        }
-=======
     void themeChange(MouseEvent event) {
         if (drawer1.isShown()) {
             drawer1.close();
         } else {
             drawer1.open();
         }
->>>>>>> 764257978acd2a00f50b0bbd6b7a07de7af2324b
     }
 
     @FXML

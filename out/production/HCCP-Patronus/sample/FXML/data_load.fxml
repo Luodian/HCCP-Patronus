@@ -102,7 +102,7 @@
                         <DropShadow />
                     </effect>
                 </JFXTreeTableView>
-                <JFXButton buttonType="RAISED" layoutX="216.0" onMouseClicked="#showDataMetaInfo" layoutY="658.0" prefHeight="23.0" prefWidth="166.0" style="-fx-background-color: #104E8B; -fx-background-radius: 2em;" text="basic information" textFill="WHITE">
+                <JFXButton buttonType="RAISED" layoutX="216.0" onMouseClicked="#choose" layoutY="658.0" prefHeight="23.0" prefWidth="166.0" style="-fx-background-color: #104E8B; -fx-background-radius: 2em;" text="choose" textFill="WHITE">
                     <effect>
                         <DropShadow color="#411d1d" spread="0.21" />
                     </effect>

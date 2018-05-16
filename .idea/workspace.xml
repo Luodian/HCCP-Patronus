@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" afterPath="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" />
-=======
     <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="May 15,2018 2nd">
       <change beforePath="$PROJECT_DIR$/out/production/data_load/MDicon/arrow.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/data_load/MDicon/back.png" beforeDir="false" />
