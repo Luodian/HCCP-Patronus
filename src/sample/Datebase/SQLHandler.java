@@ -1,6 +1,7 @@
 package sample.Datebase;
 
 import javafx.fxml.Initializable;
+import sample.Entity.ComputeTask;
 import sample.Entity.DataNode;
 import sample.Entity.GroupNode;
 import sample.Entity.UserNode;
@@ -18,6 +19,7 @@ public class SQLHandler {
     public static String GroupInsert = "INSERT INTO GROUPS(group_name, data_type, group_id, member_nums, creator_id, create_date, description) values(?,?,?,?,?,?,?)";
     public static String GroupUserRelationInsert = "INSERT INTO belongs_to (user_id, group_id) values (?,?)";
     public static String GroupDataRegisterRelationInsert = "INSERT INTO contain (group_id, user_id, dataset_name) values (?,?,?)";
+    public static String ComputeTaskInsert = "INSERT INTO COMPUTETASK(task_id, data_type, cost, initiator_id, security_score, start_time, end_time, state, task_name) values(?,?,?,?,?,?,?,?,?)";
     public static Statement query;
     public static Connection con;
 
@@ -253,6 +255,66 @@ public class SQLHandler {
                         resultSet.getString("s3.user_name"));
 
                 result.add(dataNode);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return result;
+    }
+
+    /**新添计算任务元组
+     * state = 0 表示未启动
+     * state = 1 表示正在工作
+     * state = 2 表示工作结束**/
+    public static boolean insertComputeTask(ComputeTask computeTask){
+        try {
+            PreparedStatement insert = con.prepareStatement(ComputeTaskInsert);
+            insert.setString(1, computeTask.getTask_id());
+            insert.setString(2, computeTask.getData_type());
+            insert.setDouble(3, computeTask.getCost());
+            insert.setString(4, computeTask.getInitiator_id());
+            insert.setDouble(5, computeTask.getSecurity_score());
+            insert.setString(6, computeTask.getStart_time());
+            insert.setString(7, computeTask.getEnd_time());
+            insert.setInt(8, computeTask.getState());
+            insert.setString(9, computeTask.getTask_name());
+            insert.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    /**修改计算任务的属性**/
+    public static boolean alterComputeTask(){return true;}
+
+    /**通过状态和发起者id查询任务
+     * state = 0 表示未启动
+     * state = 1 表示正在工作
+     * state = 2 表示工作结束
+     * state = -1 表示获得所有状态的计算任务**/
+    public static ArrayList<ComputeTask> queryComputeTaskByInitiatorIDAndState(String initiator_id, int state){
+        String sql;
+        if (state != -1)
+            sql = "SELECT * FROM COMPUTETASK WHERE initiator_id = " + initiator_id + " And state = " + state;
+        else sql = "SELECT * FROM COMPUTETASK WHERE initiator_id = " + initiator_id;
+        ArrayList<ComputeTask> result = new ArrayList<ComputeTask>();
+        try {
+            ResultSet resultSet = query.executeQuery(sql);
+            while (resultSet.next()){
+                ComputeTask computeTask = new ComputeTask();
+                computeTask.setTask_id(resultSet.getString("task_id"));
+                computeTask.setInitiator_id(resultSet.getString("initiator_id"));
+                computeTask.setData_type(resultSet.getString("data_type"));
+                computeTask.setCost(resultSet.getDouble("cost"));
+                computeTask.setSecurity_score(resultSet.getDouble("security_score"));
+                computeTask.setStart_time(resultSet.getString("start_time"));
+                computeTask.setEnd_time(resultSet.getString("end_time"));
+                computeTask.setState(resultSet.getInt("state"));
+                computeTask.setTask_name(resultSet.getString("task_name"));
+                result.add(computeTask);
             }
         } catch (SQLException e) {
             e.printStackTrace();

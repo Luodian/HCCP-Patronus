@@ -119,12 +119,13 @@ public class DataSettingController{
         DataNode dataNode = new DataNode(LoginController.current_user_id, data_name.getText(),
                 "unknown", tuples, columns, opened_file.getPath());
         if (SQLHandler.insertDataNode(dataNode)){
-
+            /**需要更新data_load页面中list的信息**/
             DataLoadController.data_sets.add(dataNode);
-
             Label filelable = new Label(opened_file.getName());
             filelable.setTextFill(Paint.valueOf("#ffffff"));
             DataLoadController.listView_pane.getItems().add(filelable);
+
+
             Stage stage = StartProcess.hashMap.remove("data_setting");
             stage.close();
             StartProcess.hashMap.get("data_load").show();
