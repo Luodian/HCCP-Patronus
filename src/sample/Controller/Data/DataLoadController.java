@@ -236,11 +236,11 @@ public class DataLoadController implements Initializable{
 
     @FXML
     void colorPicker(MouseEvent event) {
-        if (drawer1.isShown()) {
-            drawer1.close();
-        } else {
-            drawer1.open();
-        }
+//        if (drawer1.isShown()) {
+//            drawer1.close();
+//        } else {
+//            drawer1.open();
+//        }
     }
 
     @FXML
