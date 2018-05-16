@@ -5,7 +5,9 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -83,6 +85,11 @@ public class TaskSettingController {
             if (SQLHandler.insertComputeTask(computeTask)){
                 HintFrame.showSuccessFrame("ComputeTask insert successfully!");
                 /**需要更新tasks页面中list的信息**/
+                Label newTask = new Label(name);
+                newTask.setTextFill(Paint.valueOf("#ffffff"));
+                TaskController.my_task_list_copy.getItems().add(newTask);
+                TaskController.myTasks.add(computeTask);
+                /**返回之前的页面**/
                 Stage stage = StartProcess.hashMap.remove("task_setting");
                 stage.close();
                 StartProcess.hashMap.get("tasks").show();

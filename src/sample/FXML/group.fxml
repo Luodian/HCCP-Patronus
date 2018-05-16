@@ -14,9 +14,9 @@
 
 <AnchorPane fx:controller="sample.Controller.Group.GroupController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="740.0" prefWidth="170.0" style="-fx-background-color: #BA2E49;">
+      <AnchorPane prefHeight="740.0" prefWidth="170.0" style="-fx-background-color: #6CA6CD;">
          <children>
-            <Pane layoutX="-7.0" layoutY="-1.0" prefHeight="40.0" prefWidth="187.0" style="-fx-background-color: #E34F43;">
+            <Pane layoutX="-7.0" layoutY="-1.0" prefHeight="40.0" prefWidth="187.0" style="-fx-background-color: #00BFFF;">
                <children>
                   <Label layoutX="37.0" layoutY="13.0" text="FUNCTION" textFill="WHITE" />
                </children>
@@ -48,31 +48,33 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="back_to_main" layoutX="5.0" layoutY="265.0" onMouseClicked="#backToMain" prefHeight="28.0" prefWidth="142.0" text="back" textFill="WHITE">
+            <JFXButton layoutX="5.0" layoutY="265.0" onMouseClicked="#themeChange" prefHeight="28.0" prefWidth="142.0" text="theme" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/sample/resources/MDicon/theme.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" layoutX="5.0" layoutY="698.0" onMouseClicked="#backToMain" prefHeight="28.0" prefWidth="170.0" text="back to main" textFill="#f5f5f5">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="/sample/resources/MDicon/qweas.png" />
                      </image>
                   </ImageView>
                </graphic>
-            </JFXButton>
-            <Label fx:id="theme_change" layoutX="47.0" layoutY="698.0" onMouseClicked="#themeChange" text="theme changes" textFill="WHITE">
                <font>
                   <Font name="Chalkboard SE Light" size="17.0" />
                </font>
-            </Label>
+            </JFXButton>
             <Separator layoutY="680.0" prefHeight="1.0" prefWidth="78.0" />
-            <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="9.0" layoutY="695.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="/sample/resources/MDicon/theme.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="398.0" prefHeight="740.0" prefWidth="608.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Pane layoutX="-2.0" prefHeight="40.0" prefWidth="613.0" style="-fx-background-color: #88124E;">
+            <Pane layoutX="-2.0" prefHeight="40.0" prefWidth="613.0" style="-fx-background-color: #104E8B;">
                <children>
                   <Label layoutX="38.0" layoutY="13.0" text="DESCRIPTIONS" textFill="WHITE" />
                   <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="565.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
@@ -82,7 +84,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane fx:id="group_info_pane" layoutX="110.0" layoutY="129.0" prefHeight="461.0" prefWidth="406.0" style="-fx-background-color: #E34F43; -fx-background-radius: 2em;">
+            <Pane fx:id="group_info_pane" layoutX="110.0" layoutY="129.0" prefHeight="461.0" prefWidth="406.0" style="-fx-background-color: #104E8B; -fx-background-radius: 2em;">
                <effect>
                   <DropShadow height="45.14" radius="18.2975" width="30.05" />
                </effect>
@@ -179,12 +181,12 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton fx:id="learn_more" layoutX="436.0" layoutY="648.0" onMouseClicked="#learnMore" style="-fx-background-color: #CD5555; -fx-background-radius: 1em;" text="learn more...." textFill="WHITE" />
-            <JFXButton fx:id="data_register" layoutX="95.0" layoutY="648.0" onMouseClicked="#registerData" style="-fx-background-color: #CD5555; -fx-background-radius: 1em;" text="register data" textFill="WHITE" />
+            <JFXButton fx:id="learn_more" layoutX="436.0" layoutY="648.0" onMouseClicked="#learnMore" style="-fx-background-color: #104E8B; -fx-background-radius: 1em;" text="learn more...." textFill="WHITE" />
+            <JFXButton fx:id="data_register" layoutX="95.0" layoutY="648.0" onMouseClicked="#registerData" style="-fx-background-color: #104E8B; -fx-background-radius: 1em;" text="register data" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <JFXListView fx:id="my_Groups" layoutX="179.0" layoutY="39.0" prefHeight="702.0" prefWidth="222.0" style="-fx-background-color: #C0324C;" />
-      <Pane layoutX="179.0" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #BA2E49;">
+      <JFXListView fx:id="my_Groups" layoutX="179.0" layoutY="39.0" prefHeight="702.0" prefWidth="222.0" style="-fx-background-color: #7EC0EE;" />
+      <Pane layoutX="179.0" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #00B2EE;">
          <children>
             <Label layoutX="24.0" layoutY="13.0" text="MY_GROUPS" textFill="WHITE" />
             <ImageView fitHeight="28.0" fitWidth="37.0" layoutX="183.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">

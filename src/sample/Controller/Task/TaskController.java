@@ -84,9 +84,14 @@ public class TaskController implements Initializable {
 
     public static ArrayList<ComputeTask> workingTasks;
 
+    public static JFXListView my_task_list_copy;
+    public static JFXListView worked_task_list_copy;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         taskPane = task_pane;
+        my_task_list_copy = my_task_list;
+        worked_task_list_copy = worked_task_list;
 
         /**设置my_task_list及worked_task_list属性**/
         my_task_list.setExpanded(true);
@@ -195,7 +200,7 @@ public class TaskController implements Initializable {
 
     public Pane newWorkingTask(String initiator_name, String data_name_1){
         Pane pane = new Pane();
-        pane.setStyle("-fx-background-color: #66cdaa; -fx-background-radius: 2em;");
+        pane.setStyle("-fx-background-color: #63B8FF; -fx-background-radius: 2em;");
         pane.setPrefSize(130, 140);
         pane.effectProperty().setValue(new DropShadow());
 
