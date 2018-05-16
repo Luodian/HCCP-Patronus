@@ -76,5 +76,10 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="jfoenix-8.0.4" level="project" />
+    <orderEntry type="library" name="controlsfx-8.0.1-samples" level="project" />
+    <orderEntry type="library" name="flowless-0.6" level="project" />
+    <orderEntry type="library" name="controlsfx-8.40.14" level="project" />
+    <orderEntry type="library" name="reactfx-2.0-M5" level="project" />
+    <orderEntry type="library" name="richtextfx-demos-fat-0.7-M5" level="project" />
   </component>
 </module>

@@ -1,6 +1,5 @@
 package sample.Utils;
 
-import com.jfoenix.controls.JFXScrollPane;
 import javafx.concurrent.Task;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
