@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-
-<?import com.jfoenix.controls.JFXDrawer?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Data.DataLoadController">
     <children>
@@ -85,7 +79,7 @@
                 <Separator layoutY="680.0" prefHeight="1.0" prefWidth="78.0" />
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="an_context" layoutX="401.0" prefHeight="740.0" prefWidth="401.0">
+        <AnchorPane fx:id="an_context" layoutX="401.0" prefHeight="740.0" prefWidth="613.0">
             <children>
                 <Pane layoutX="-7.0" prefHeight="40.0" prefWidth="613.0" style="-fx-background-color: #104E8B;">
                     <children>
@@ -102,11 +96,6 @@
                         <DropShadow />
                     </effect>
                 </JFXTreeTableView>
-                <JFXButton buttonType="RAISED" layoutX="216.0" onMouseClicked="#choose" layoutY="658.0" prefHeight="23.0" prefWidth="166.0" style="-fx-background-color: #104E8B; -fx-background-radius: 2em;" text="choose" textFill="WHITE">
-                    <effect>
-                        <DropShadow color="#411d1d" spread="0.21" />
-                    </effect>
-                </JFXButton>
             </children>
         </AnchorPane>
         <JFXListView fx:id="listView" layoutX="180.0" layoutY="38.0" prefHeight="725.0" prefWidth="219.0" style="-fx-background-color: #7EC0EE;" />

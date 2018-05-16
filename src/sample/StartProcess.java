@@ -7,12 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.Datebase.SQLHandler;
-import sample.Entity.UserNode;
 
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.HashMap;
 
 public class StartProcess extends Application {
@@ -29,7 +26,8 @@ public class StartProcess extends Application {
      * group_information
      * coding
      * tasks
-     * confirm**/
+     * confirm
+     * data_choose_board**/
     public static HashMap<String, Stage> hashMap = new HashMap<String, Stage>();
     public static final int SCENE_WIDTH =1006;
     public static final int SCENE_HEIGHT = 770;

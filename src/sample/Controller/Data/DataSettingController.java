@@ -1,4 +1,5 @@
 package sample.Controller.Data;
+
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.beans.value.ObservableValue;
@@ -15,13 +16,13 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.util.Callback;
-import sample.Controller.Data.DataLoadController;
 import sample.Controller.Login.LoginController;
 import sample.Datebase.SQLHandler;
+import sample.Entity.DataItem;
 import sample.Entity.DataNode;
 import sample.Entity.DataRead;
-import sample.Entity.DataItem;
 import sample.StartProcess;
+import sample.Utils.HintFrame;
 
 import java.io.File;
 
@@ -116,12 +117,17 @@ public class DataSettingController{
     @FXML
     void submit(MouseEvent event) {
 
-        DataNode dataNode = new DataNode(LoginController.current_user_id, data_name.getText(),
+        String str = data_name.getText();
+        if (str == null || str.equals("")) {
+            HintFrame.showFailFrame("DATANODE INSERT FAILED");
+            return;
+        }
+        DataNode dataNode = new DataNode(LoginController.current_user_id, str,
                 "unknown", tuples, columns, opened_file.getPath());
         if (SQLHandler.insertDataNode(dataNode)){
             /**需要更新data_load页面中list的信息**/
             DataLoadController.data_sets.add(dataNode);
-            Label filelable = new Label(opened_file.getName());
+            Label filelable = new Label(str);
             filelable.setTextFill(Paint.valueOf("#ffffff"));
             DataLoadController.listView_pane.getItems().add(filelable);
 
@@ -132,7 +138,7 @@ public class DataSettingController{
         }
         else {
             try {
-                throw new Throwable("DATANODE INSERT FAILED");
+                HintFrame.showFailFrame("DATANODE INSERT FAILED");
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
             }

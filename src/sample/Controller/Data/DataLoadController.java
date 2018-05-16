@@ -9,26 +9,30 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import sample.Controller.Group.GroupController;
 import sample.Controller.Login.LoginController;
 import sample.Datebase.SQLHandler;
+import sample.Entity.DataItem;
 import sample.Entity.DataNode;
 import sample.Entity.DataRead;
-import sample.Entity.DataItem;
 import sample.Entity.GroupNode;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
@@ -68,6 +72,9 @@ public class DataLoadController implements Initializable{
     private AnchorPane an_menu;
 
     @FXML
+    private AnchorPane an_context;
+
+    @FXML
     private AnchorPane root;
 
     @FXML
@@ -90,6 +97,11 @@ public class DataLoadController implements Initializable{
 
     public static  ArrayList<DataNode> data_sets;
 
+    private Label type;
+
+    private Label row_num;
+
+    private Label attr_num;
 
 
     @Override
@@ -105,6 +117,8 @@ public class DataLoadController implements Initializable{
         func = function;
         dataHeader = data_header;
         root_pane = root;
+
+        showMetaInfo();
 
         try {
             VBox vBox = FXMLLoader.load(getClass().getResource("/sample/FXML/drawer.fxml"));
@@ -163,10 +177,15 @@ public class DataLoadController implements Initializable{
                 final TreeItem<DataItem> root = new RecursiveTreeItem<DataItem>(dataItems, RecursiveTreeObject::getChildren);
                 tree_table.setRoot(root);
                 tree_table.setShowRoot(false);
+
+                type.setText("type: " + data_sets.get(index).getData_type());
+                attr_num.setText("attr_num: " + data_sets.get(index).getAttr_nums());
+                row_num.setText("attr_num: " + data_sets.get(index).getRow_nums());
                 HintFrame.showSuccessFrame("Load Successfully!");
             }
         });
     }
+
 
     @FXML
     private void choose(MouseEvent event) {
@@ -249,5 +268,44 @@ public class DataLoadController implements Initializable{
         stage.close();
         Stage main_stage = StartProcess.hashMap.get("main_page");
         main_stage.show();
+    }
+
+    private void showMetaInfo() {
+
+        type = new Label("type: unknown");
+        type.setFont(new Font("System", 13));
+        type.setStyle("-fx-background-color: #104E8B;-fx-background-radius: 1.5em");
+        type.setEffect(new DropShadow(10, 1, 1, Color.BLACK));
+        type.setPrefSize(135, 24);
+        type.setAlignment(Pos.CENTER);
+        type.setTextFill(Paint.valueOf("#ffffff"));
+        type.setLayoutX(40);
+        type.setLayoutY(670);
+
+        row_num = new Label("row_num: unknown");
+        row_num.setFont(new Font("System", 13));
+        row_num.setStyle("-fx-background-color: #104E8B;-fx-background-radius: 1.5em");
+        row_num.setEffect(new DropShadow(10, 1, 1, Color.BLACK));
+        row_num.setPrefSize(135, 24);
+        row_num.setAlignment(Pos.CENTER);
+        row_num.setTextFill(Paint.valueOf("#ffffff"));
+        row_num.setLayoutX(230);
+        row_num.setLayoutY(670);
+
+        attr_num = new Label("attr_num: unknown");
+        attr_num.setFont(new Font("System", 13));
+        attr_num.setStyle("-fx-background-color: #104E8B;-fx-background-radius: 1.5em");
+        attr_num.setEffect(new DropShadow(10, 1, 1, Color.BLACK));
+        attr_num.setPrefSize(135, 24);
+        attr_num.setAlignment(Pos.CENTER);
+        attr_num.setTextFill(Paint.valueOf("#ffffff"));
+        attr_num.setLayoutX(420);
+        attr_num.setLayoutY(670);
+
+
+        an_context.getChildren().add(type);
+        an_context.getChildren().add(row_num);
+        an_context.getChildren().add(attr_num);
+
     }
 }

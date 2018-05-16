@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXMasonryPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Data.DataChooseBoardController"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+            prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4">
+    <children>
+        <Separator layoutX="170.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0"/>
+        <Separator layoutY="90.0" prefWidth="100.0"/>
+        <AnchorPane layoutY="90.0" prefHeight="510.0" prefWidth="170.0" style="-fx-background-color: #4F94CD;">
+            <children>
+                <Separator layoutY="440.0" prefWidth="100.0"/>
+                <JFXButton fx:id="choose" layoutY="450.0" onMouseClicked="#chooseData" prefHeight="50.0"
+                           prefWidth="160.0" text="choose data!" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="16.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/sample/resources/MDicon/correct.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <Label layoutX="50.0" layoutY="58.0" text="Here is the " textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="31.0" layoutY="97.0" text="optional board of" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="39.0" layoutY="135.0" text="local data sets" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Pane prefHeight="90.0" prefWidth="170.0" style="-fx-background-color: #63B8FF;">
+            <children>
+                <ImageView fitHeight="49.0" fitWidth="61.0" layoutX="6.0" layoutY="20.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/MDicon/cloud.png"/>
+                    </image>
+                </ImageView>
+                <Label layoutX="58.0" layoutY="27.0" text="Partonus" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="23.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <AnchorPane layoutX="170.0" prefHeight="600.0" prefWidth="630.0" style="-fx-background-color: #3678;">
+            <children>
+                <JFXMasonryPane fx:id="masonry_pane" layoutX="77.5" layoutY="105.0" prefHeight="441.0"
+                                prefWidth="555.0"/>
+                <JFXButton fx:id="back" layoutX="468.0" layoutY="39.0" onMouseClicked="#backToPreview" prefHeight="35.0"
+                           prefWidth="182.0" style="-fx-background-color: #4F94CD; -fx-background-radius: 2em;"
+                           text="back to preview" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/sample/resources/MDicon/qweas.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

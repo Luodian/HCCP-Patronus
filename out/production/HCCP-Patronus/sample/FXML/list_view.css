@@ -1,20 +1,20 @@
 .jfx-list-cell:selected {
-      -fx-background-color:  #a5089b;
+      -fx-background-color:  #1E90FF;
 }
 
 .jfx-list-cell {
        -fx-background-insets: 0.0;
-       -fx-background-color:   #bc4242;
+       -fx-background-color:   #1C86EE;
        -fx-pref-height: 60;
-       -fx-background-radius:1.1em;
+       -fx-background-radius:2em;
 }
 
 .jfx-list-cell  .jfx-rippler{
-    -fx-rippler-fill:BLUE;
+    -fx-rippler-fill:#1874CD;
 }
 
 .jfx-list-cell:hover{
-    -fx-background-color : #BA2E49;
+    -fx-background-color : #104E8B;
 }
 
 .jfx-list-view{

@@ -164,14 +164,13 @@ public class GroupController implements Initializable {
         try {
             int index = my_Groups.getSelectionModel().getSelectedIndex();
             if (index >= 0) {
-                Parent root = FXMLLoader.load(getClass().getResource("../../FXML/data_load.fxml"));
-                root.getStylesheets().add(getClass().getResource("../../FXML/list_view.css").toExternalForm());
+                Parent root = FXMLLoader.load(getClass().getResource("../../FXML/data_choose_board.fxml"));
                 Stage dataStage = new Stage();
-                Scene scene = new Scene(root, 1006, 740);
+                Scene scene = new Scene(root, 800, 600);
                 dataStage.setScene(scene);
                 dataStage.setResizable(false);
                 dataStage.initStyle(StageStyle.UNDECORATED);
-                StartProcess.hashMap.put("data_load", dataStage);
+                StartProcess.hashMap.put("data_choose_board", dataStage);
                 StartProcess.hashMap.get("groups").hide();
                 dataStage.show();
             }
