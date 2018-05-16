@@ -108,7 +108,7 @@ public class MainPageController implements Initializable {
     void showTasks(MouseEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../FXML/task_page.fxml"));
-        root.getStylesheets().add(getClass().getResource("../FXML/list_view.css").toExternalForm());
+        root.getStylesheets().add(getClass().getResource("../FXML/task_list_style.css").toExternalForm());
         stage.setScene(new Scene(root));
         StartProcess.hashMap.put("tasks", stage);
         StartProcess.hashMap.get("main_page").hide();
