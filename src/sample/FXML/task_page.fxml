@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
-<?import com.jfoenix.controls.JFXMasonryPane?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <AnchorPane fx:id="task_pane" fx:controller="sample.Controller.Task.TaskController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Separator layoutX="92.0" layoutY="-8.0" orientation="VERTICAL" prefHeight="749.0" prefWidth="4.0" />
@@ -35,10 +29,21 @@
                         <Image url="/sample/resources/MDicon/new_task.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="new_task" onMouseClicked="#newTask" prefHeight="62.0" prefWidth="68.0" text=" " />
+                   <JFXButton fx:id="new_task" onMouseClicked="#newTask" prefHeight="62.0" prefWidth="68.0" text=" "/>
                </children>
             </Pane>
-            <Pane layoutX="18.0" layoutY="170.0" prefHeight="62.0" prefWidth="68.0">
+             <Pane layoutX="18.0" layoutY="170.0" prefHeight="62.0" prefWidth="68.0">
+                 <children>
+                     <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                         <image>
+                             <Image url="/sample/resources/MDicon/bind.png"/>
+                         </image>
+                     </ImageView>
+                     <JFXButton fx:id="bind_group" onMouseClicked="#bindGroup" prefHeight="62.0" prefWidth="68.0"
+                                text=" "/>
+                 </children>
+             </Pane>
+             <Pane layoutX="18.0" layoutY="260.0" prefHeight="62.0" prefWidth="68.0">
                <children>
                   <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -61,42 +66,77 @@
          </children>
       </AnchorPane>
       <Separator layoutX="852.0" orientation="VERTICAL" prefHeight="739.0" prefWidth="4.0" />
-      <AnchorPane layoutX="854.0" layoutY="250.0" prefHeight="490.0" prefWidth="156.0">
+       <AnchorPane layoutX="93.0" layoutY="247.0" prefHeight="495.0" prefWidth="761.0"
+                   style="-fx-background-color: #ffffff;">
          <children>
-            <Pane layoutY="-2.0" prefHeight="50.0" prefWidth="155.0" style="-fx-background-color: #3678;">
-               <children>
-                  <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="/sample/resources/MDicon/icon_1.png" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
-            <JFXListView fx:id="worked_task_list" layoutY="48.0" prefHeight="444.0" prefWidth="153.0" style="-fx-background-color: #33475b;" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="93.0" layoutY="247.0" prefHeight="495.0" prefWidth="761.0" style="-fx-background-color: ffffff;">
-         <children>
-            <Pane layoutX="-1.0" layoutY="1.0" prefHeight="50.0" prefWidth="765.0" style="-fx-background-color: #33475b;" />
+             <Pane layoutX="-1.0" layoutY="1.0" prefHeight="50.0" prefWidth="765.0"
+                   style="-fx-background-color: #33475b;">
+                 <children>
+                     <Label text="my slaves" layoutX="36" layoutY="5" textFill="#ffffff">
+                         <font>
+                             <Font name="Chalkboard SE Light" size="23.0"/>
+                         </font>
+                     </Label>
+                 </children>
+             </Pane>
             <AnchorPane layoutY="51.0" prefHeight="444.0" prefWidth="764.0" style="-fx-background-color: #3678;">
                <children>
-                  <JFXMasonryPane fx:id="masonry_pane" layoutY="32.0" layoutX="44" prefHeight="380.0" prefWidth="676.0" />
+                   <JFXMasonryPane layoutX="30" layoutY="20" fx:id="masonry_pane_1" prefHeight="180.0"
+                                   prefWidth="734.0"/>
+                   <Pane layoutY="200.0" prefHeight="44" prefWidth="764" style="-fx-background-color: #33475b">
+                       <children>
+                           <Label text="my masters" layoutX="36" layoutY="5" textFill="#ffffff">
+                               <font>
+                                   <Font name="Chalkboard SE Light" size="23.0"/>
+                               </font>
+                           </Label>
+                       </children>
+                   </Pane>
+                   <JFXMasonryPane layoutX="30" fx:id="masonry_pane_2" layoutY="264" prefHeight="180.0"
+                                   prefWidth="734.0"/>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="854.0" prefHeight="248.0" prefWidth="153.0">
+       <AnchorPane layoutX="854.0" prefHeight="740.0" prefWidth="153.0" style="-fx-background-color: #ffffff1;">
          <children>
             <Pane prefHeight="78.0" prefWidth="153.0" style="-fx-background-color: #3678;">
                <children>
-                  <ImageView fitHeight="66.0" fitWidth="107.0" layoutX="40.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                   <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="50.0" layoutY="2.0" pickOnBounds="true"
+                              preserveRatio="true">
                      <image>
                         <Image url="/sample/resources/MDicon/date.png" />
                      </image>
                   </ImageView>
-               </children></Pane>
-            <JFXListView fx:id="my_task_list" layoutY="78.0" prefHeight="171.0" prefWidth="153.0" style="-fx-background-color: #33475b;" />
+                   <Label text="my tasks list" layoutX="35.5" layoutY="47.5" textFill="#ffffff">
+                       <font>
+                           <Font name="Chalkboard SE Light" size="15.0"/>
+                       </font>
+                   </Label>
+               </children>
+            </Pane>
+             <JFXListView fx:id="my_task_list" layoutY="78.0" prefHeight="420.0" prefWidth="153.0"
+                          style="-fx-background-color: #33475b;"/>
+             <Pane layoutY="498" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: #3678;">
+                 <children>
+                     <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="8.0" pickOnBounds="true"
+                                preserveRatio="true">
+                         <image>
+                             <Image url="/sample/resources/MDicon/date.png"/>
+                         </image>
+                     </ImageView>
+                     <Label text="master tasks list" layoutX="39.5" layoutY="11.5" textFill="#ffffff">
+                         <font>
+                             <Font name="Chalkboard SE Light" size="13.0"/>
+                         </font>
+                     </Label>
+                 </children>
+             </Pane>
+             <JFXListView fx:id="my_master_list" layoutY="542.0" prefHeight="198.0" prefWidth="153.0"
+                          style="-fx-background-color: #33475b;"/>
          </children>
-      </AnchorPane>
+
+       </AnchorPane>
       <AnchorPane layoutX="93.0" prefHeight="79.0" prefWidth="762.0" style="-fx-background-color: #33475b;">
          <children>
             <Label layoutX="36.0" layoutY="10.0" prefHeight="64.0" prefWidth="307.0" text="Task dashboard" textFill="WHITE">

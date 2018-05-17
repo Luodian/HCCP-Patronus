@@ -1,61 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="May 15,2018 2nd">
-      <change afterPath="$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/resources/MDicon/attr.png" afterDir="false" />
+    <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/resources/MDicon/bind.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/data_load.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/data_load.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/group.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/group.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/list_view.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/list_view.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/task_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/task_page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/bookmark.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/bookmark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/cloud.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/coding.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/coding.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/coding_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/coding_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/correct.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/correct.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/correct_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/correct_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/cost.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/cost.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/creator.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/creator.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/data_set_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/data_set_blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/date.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/date.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/description.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/description.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/group_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/group_blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/group_name.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/group_name.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/groups.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/groups.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 3.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 4.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 5.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 6.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/ic_launcher 6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/icon_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/icon_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/insert_data.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/insert_data.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/liebiao.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/liebiao.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/members.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/members.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/new_task.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/new_task.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/person.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/person.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/score.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/score.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/state.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/state.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/task_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/task_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/tasks_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/tasks_blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/theme.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/theme.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/time_end.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/time_end.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/time_start.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/time_start.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/type.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/type.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/type_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/type_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/types.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/types.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/user_info.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/MDicon/user_info.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/benji.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/benji.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/correct.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/correct.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/error.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/error.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/tuxing.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/resources/tuxing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/FXML/data_load.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXML/data_load.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/StartProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StartProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FXML/task_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXML/task_page.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,42 +25,8 @@
       <file leaf-file-name="StartProcess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="172" column="73" lean-forward="true" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataSettingController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="126" column="23" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
-              <folding>
-                <element signature="e#3032#3042#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataChooseBoardController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="161" column="40" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2481#2487#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="125">
+              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -112,40 +34,91 @@
       <file leaf-file-name="main.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/FXML/main.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="90" column="29" lean-forward="true" selection-start-line="83" selection-start-column="16" selection-end-line="90" selection-end-column="29" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file leaf-file-name="data_choose_board.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="75" column="49" lean-forward="true" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="49" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file leaf-file-name="data_setting.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_setting.fxml">
-          <provider selected="true" editor-type-id="text-editor" />
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file leaf-file-name="data_load.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_load.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="89" column="109" selection-start-line="89" selection-start-column="103" selection-end-line="89" selection-end-column="109" />
+            <state relative-caret-position="-25">
               <folding>
                 <element signature="n#AnchorPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Pane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Pane#1;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Pane#2;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Pane#3;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Pane#4;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Pane#5;n#children#0;n#AnchorPane#0;n#!!top" />
               </folding>
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="task_page.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_page.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="32" column="102" lean-forward="true" selection-start-line="32" selection-start-column="102" selection-end-line="32" selection-end-column="102" />
+              <folding>
+                <element signature="n#Pane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Pane#0;n#children#0;n#AnchorPane#2;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#AnchorPane#4;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#AnchorPane#5;n#children#0;n#AnchorPane#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="group_choose_board.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="GroupChooseBoardController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task_item.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_item.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="17" selection-end-column="16" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="GroupController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2220">
+              <caret line="172" column="73" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataSettingController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-243">
+              <caret line="155" column="13" lean-forward="true" selection-start-line="147" selection-start-column="8" selection-end-line="155" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -163,14 +136,22 @@
       <find>choose</find>
       <find>datal</find>
       <find>JFXM</find>
+      <find>masonry_pane</find>
+      <find>jfxma</find>
+      <find>new</find>
+      <find>Font</find>
+      <find>JFXListV</find>
+      <find>JFXButton</find>
     </findStrings>
     <replaceStrings>
       <replace>/sample/resources/MDicon/</replace>
+      <replace>masonry_pane_1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="elrond wang &lt;309426989@qq.com&gt;" />
         <option value="Luodian &lt;drluodian@gmail.com&gt;" />
         <option value="BIGKnight" />
       </list>
@@ -194,6 +175,9 @@
         <option value="$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" />
+        <option value="$PROJECT_DIR$/src/sample/FXML/task_page.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml" />
       </list>
     </option>
   </component>
@@ -206,9 +190,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="819" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -218,8 +204,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,6 +253,14 @@
               <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="Task" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sample" type="462c0819:PsiDirectoryNode" />
               <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -286,7 +281,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -399,7 +393,9 @@
       <workItem from="1526436261186" duration="515000" />
       <workItem from="1526468940927" duration="27000" />
       <workItem from="1526469098152" duration="2621000" />
-      <workItem from="1526474774423" duration="6368000" />
+      <workItem from="1526474774423" duration="6463000" />
+      <workItem from="1526537792992" duration="2583000" />
+      <workItem from="1526553033687" duration="2174000" />
     </task>
     <task id="LOCAL-00001" summary="May 15,2018 2nd">
       <created>1526428568518</created>
@@ -408,14 +404,21 @@
       <option name="project" value="LOCAL" />
       <updated>1526428568518</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="May 15,2018 3rd">
+      <created>1526482148168</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1526482148168</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11489000" />
+    <option name="totallyTimeSpent" value="16341000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="1" y="23" width="1440" height="819" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -427,19 +430,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25561097" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290938" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2546495" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26895565" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1695279" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990025" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990025" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -482,7 +485,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="May 15,2018 2nd" />
-    <option name="LAST_COMMIT_MESSAGE" value="May 15,2018 2nd" />
+    <MESSAGE value="May 15,2018 3rd" />
+    <option name="LAST_COMMIT_MESSAGE" value="May 15,2018 3rd" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -493,6 +497,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2055">
@@ -525,9 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="124" column="42" selection-start-line="124" selection-start-column="42" selection-end-line="124" selection-end-column="42" />
-          <folding>
-            <element signature="e#3032#3042#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -556,9 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -566,9 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -576,13 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2754#2755#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
-            <element signature="e#4526#4527#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -611,9 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,9 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -631,13 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2754#2755#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
-            <element signature="e#4526#4527#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,9 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -669,9 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,13 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2754#2755#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
-            <element signature="e#4526#4527#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,9 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -748,9 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,13 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2730#2731#0" expanded="true" />
-            <element signature="e#2754#2755#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
-            <element signature="e#4526#4527#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -772,9 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="method#ComputeTask#0;class#ComputeTask#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -806,84 +759,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        <state relative-caret-position="2220">
+          <caret line="172" column="73" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="172" column="73" lean-forward="true" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
+        <state relative-caret-position="125">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="163" column="40" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/main.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <folding>
+            <element signature="n#AnchorPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#1;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#2;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#3;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#4;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#5;n#children#0;n#AnchorPane#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_item.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/resources/MDicon/icon_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243">
+          <caret line="155" column="13" lean-forward="true" selection-start-line="147" selection-start-column="8" selection-end-line="155" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_page.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-990" />
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_load.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="89" column="109" selection-start-line="89" selection-start-column="103" selection-end-line="89" selection-end-column="109" />
+        <state relative-caret-position="64">
+          <caret line="32" column="102" lean-forward="true" selection-start-line="32" selection-start-column="102" selection-end-line="32" selection-end-column="102" />
           <folding>
-            <element signature="n#AnchorPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#0;n#children#0;n#AnchorPane#2;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#AnchorPane#4;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#AnchorPane#5;n#children#0;n#AnchorPane#0;n#!!top" />
           </folding>
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/main.fxml">
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="90" column="29" lean-forward="true" selection-start-line="83" selection-start-column="16" selection-end-line="90" selection-end-column="29" />
+        <state relative-caret-position="436">
+          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_setting.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="75" column="49" lean-forward="true" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="49" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/resources/MDicon/type.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/resources/MDicon/types.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/resources/MDicon/user_info.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="161" column="40" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2481#2487#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="126" column="23" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
-          <folding>
-            <element signature="e#3032#3042#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
         </state>
       </provider>
     </entry>

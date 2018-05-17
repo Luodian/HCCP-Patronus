@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXMasonryPane;
 import com.jfoenix.controls.JFXProgressBar;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,7 +15,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Effect;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -26,7 +26,6 @@ import javafx.stage.StageStyle;
 import sample.Controller.Login.LoginController;
 import sample.Datebase.SQLHandler;
 import sample.Entity.ComputeTask;
-import sample.Entity.GroupNode;
 import sample.Entity.UserNode;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
@@ -34,7 +33,6 @@ import sample.Utils.HintFrame;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.ResourceBundle;
 
 public class TaskController implements Initializable {
@@ -51,8 +49,9 @@ public class TaskController implements Initializable {
     @FXML
     private JFXListView worked_task_list;
 
+    public static int MAX_SHOW_CARD = 4;
     @FXML
-    private JFXMasonryPane masonry_pane;
+    private JFXMasonryPane masonry_pane_1;//此为我发动的活动在其他主机上的任务
 
     @FXML
     private JFXListView my_task_list;
@@ -85,7 +84,10 @@ public class TaskController implements Initializable {
     public static ArrayList<ComputeTask> workingTasks;
 
     public static JFXListView my_task_list_copy;
+
     public static JFXListView worked_task_list_copy;
+    @FXML
+    private JFXMasonryPane masonry_pane_2;//此为活动在我这台主机上的任务
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -138,15 +140,15 @@ public class TaskController implements Initializable {
             }
         });
 
-        worked_task_list.setExpanded(true);
-        worked_task_list.setVerticalGap(Double.valueOf(15.0));
-        worked_task_list.depthProperty().set(5);
-        worked_task_list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-            @Override
-            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-
-            }
-        });
+//        worked_task_list.setExpanded(true);
+//        worked_task_list.setVerticalGap(Double.valueOf(15.0));
+//        worked_task_list.depthProperty().set(5);
+//        worked_task_list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+//            @Override
+//            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+//
+//            }
+//        });
 
 
         /**先获得当前用户的所有状态的任务**/
@@ -160,11 +162,36 @@ public class TaskController implements Initializable {
             }
         }
 
-
-        for (int i = 0; i < 8; i++) {
-             Pane pane = newWorkingTask("initiator", "data name");
-             masonry_pane.getChildren().add(pane);
+        /**工作的节点进度卡片信息最多在这个页面显示3个
+         * 更多的信息可以进入"see all cards..."界面看**/
+        for (int i = 0; i < MAX_SHOW_CARD; i++) {
+            Pane pane = newWorkingTask("initiator", "data name");
+            masonry_pane_1.getChildren().add(pane);
         }
+        Label label1 = new Label("more...");
+        label1.setPrefSize(50, 150);
+        label1.setAlignment(Pos.CENTER);
+        label1.setFont(new Font("Chalkboard SE Light", 15.0));
+        label1.setTextFill(Paint.valueOf("#ffffff"));
+        masonry_pane_1.getChildren().add(label1);
+
+
+        for (int i = 0; i < MAX_SHOW_CARD; i++) {
+            Pane pane = newWorkingTask("initiator", "data name");
+            masonry_pane_2.getChildren().add(pane);
+        }
+        Label label2 = new Label("more...");
+        label2.setPrefSize(50, 150);
+        label2.setAlignment(Pos.CENTER);
+        label2.setFont(new Font("Chalkboard SE Light", 15.0));
+        label2.setTextFill(Paint.valueOf("#ffffff"));
+        masonry_pane_2.getChildren().add(label2);
+
+    }
+
+    @FXML
+    void bindGroup(MouseEvent event) {
+
     }
 
     @FXML
@@ -247,4 +274,19 @@ public class TaskController implements Initializable {
         return pane;
     }
 
+    public Pane createSeeAllCard(EventHandler eventHandler) {
+        Pane pane = new Pane();
+        pane.setStyle("-fx-background-color: #63B8FF; -fx-background-radius: 2em;");
+        pane.setPrefSize(130, 140);
+        pane.effectProperty().setValue(new DropShadow());
+
+        Label initiator = new Label("see all cards...");
+        initiator.setLayoutX(25);
+        initiator.setLayoutY(75);
+        initiator.setFont(new Font("Chalkboard SE Light", 12.0));
+        initiator.setTextFill(Paint.valueOf("#ffffff"));
+
+        pane.getChildren().add(initiator);
+        return pane;
+    }
 }

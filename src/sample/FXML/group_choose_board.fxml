@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXMasonryPane?>
 <?import javafx.scene.control.*?>
@@ -8,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Data.DataChooseBoardController"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Group.GroupChooseBoardController"
             maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
             prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4">
     <children>
@@ -17,8 +16,8 @@
         <AnchorPane layoutY="90.0" prefHeight="510.0" prefWidth="170.0" style="-fx-background-color: #4F94CD;">
             <children>
                 <Separator layoutY="440.0" prefWidth="100.0"/>
-                <JFXButton fx:id="choose" layoutY="450.0" onMouseClicked="#chooseData" prefHeight="50.0"
-                           prefWidth="160.0" text="choose data!" textFill="WHITE">
+                <JFXButton fx:id="choose" layoutY="450.0" onMouseClicked="#chooseGroup" prefHeight="50.0"
+                           prefWidth="160.0" text="choose group!" textFill="WHITE">
                     <font>
                         <Font name="Chalkboard SE Light" size="16.0"/>
                     </font>
@@ -40,7 +39,17 @@
                         <Font name="Chalkboard SE Light" size="13.0"/>
                     </font>
                 </Label>
-                <Label layoutX="39.0" layoutY="135.0" text="local data sets" textFill="WHITE">
+                <Label layoutX="28.0" layoutY="135.0" text="your joined groups." textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="31.0" layoutY="244.0" text="Please choose one" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="59.0" layoutY="283.0" text="to bind!" textFill="WHITE">
                     <font>
                         <Font name="Chalkboard SE Light" size="13.0"/>
                     </font>
@@ -64,8 +73,7 @@
         </Pane>
         <AnchorPane layoutX="170.0" prefHeight="600.0" prefWidth="630.0" style="-fx-background-color: #3678;">
             <children>
-                <JFXMasonryPane fx:id="masonry_pane_1" layoutX="77.5" layoutY="105.0" prefHeight="441.0"
-                                prefWidth="555.0"/>
+                <JFXMasonryPane layoutY="109.0" prefHeight="441.0" prefWidth="630.0"/>
                 <JFXButton fx:id="back" layoutX="468.0" layoutY="39.0" onMouseClicked="#backToPreview" prefHeight="35.0"
                            prefWidth="182.0" style="-fx-background-color: #4F94CD; -fx-background-radius: 2em;"
                            text="back to preview" textFill="WHITE">

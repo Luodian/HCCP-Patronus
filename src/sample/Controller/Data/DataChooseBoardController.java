@@ -32,7 +32,7 @@ public class DataChooseBoardController implements Initializable {
     private JFXButton back;
 
     @FXML
-    private JFXMasonryPane masonry_pane;
+    private JFXMasonryPane masonry_pane_1;
 
     private ArrayList<DataNode> datasets;
 
@@ -44,7 +44,7 @@ public class DataChooseBoardController implements Initializable {
         if (datasets != null) {
             for (int i = 0; i < datasets.size(); i++) {
                 Pane temp = createNewDataInfoPane(datasets.get(i));
-                masonry_pane.getChildren().add(temp);
+                masonry_pane_1.getChildren().add(temp);
             }
         }
     }
