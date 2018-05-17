@@ -14,10 +14,13 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import sample.Controller.Group.GroupController;
 import sample.Controller.Login.LoginController;
 import sample.Datebase.SQLHandler;
 import sample.Entity.DataNode;
+import sample.Entity.GroupNode;
 import sample.StartProcess;
+import sample.Utils.HintFrame;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -38,6 +41,8 @@ public class DataChooseBoardController implements Initializable {
 
     private Pane current_pane;
 
+    private DataNode current_datanode;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         datasets = SQLHandler.queryDataNodesByID(LoginController.current_user_id);
@@ -47,6 +52,9 @@ public class DataChooseBoardController implements Initializable {
                 masonry_pane_1.getChildren().add(temp);
             }
         }
+
+        /**还差一个问题，需要将已经注册的数据改一个颜色，且不可点击，
+         * 否则会出现同一个数据集在同一个群组上注册多次的问题**/
     }
 
     @FXML
@@ -59,7 +67,26 @@ public class DataChooseBoardController implements Initializable {
 
     @FXML
     void chooseData(MouseEvent event) {
-
+        if (current_datanode == null) HintFrame.showFailFrame("Please choose one data set!");
+        else {
+            /**向数据库注册**/
+            int index = GroupController.my_Groups_copy.getSelectionModel().getSelectedIndex();
+            if (index >= 0){
+                GroupNode temp_group =  GroupController.myGroupsCopy.get(index);
+                if (SQLHandler.insertGroupDataRegisterRelation(temp_group, current_datanode)){
+                    /**插入成功**/
+                    Stage groups = StartProcess.hashMap.get("groups");
+                    Stage data_choose_board = StartProcess.hashMap.remove("data_choose_board");
+                    groups.show();
+                    data_choose_board.close();
+                }
+                else {
+                    /**若插入失败,弹出失败提示框**/
+                    HintFrame.showFailFrame("Wrong type match or register duplicately!");
+                }
+            }
+            else HintFrame.showFailFrame("Unknown Error!");
+        }
     }
 
     private Pane createNewDataInfoPane(DataNode temp) {
@@ -88,6 +115,8 @@ public class DataChooseBoardController implements Initializable {
                     current_pane.setStyle("-fx-background-color: #104E8B;-fx-background-radius: 1em;");
                 current_pane = (Pane) temp_button.getParent();
                 current_pane.setStyle("-fx-background-color: #0ea5d6;-fx-background-radius: 1em");
+
+                current_datanode = temp;
             }
         });
 

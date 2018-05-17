@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/resources/MDicon/bind.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/data_load.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/data_load.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/task_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HCCP-Patronus/sample/FXML/task_page.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/FXML/task_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXML/task_page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/StartProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StartProcess.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,83 +21,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StartProcess.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
+      <file leaf-file-name="group_choose_board.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/main.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <folding>
-                <element signature="n#AnchorPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-                <element signature="n#Pane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-                <element signature="n#Pane#1;n#children#0;n#AnchorPane#0;n#!!top" />
-                <element signature="n#Pane#2;n#children#0;n#AnchorPane#0;n#!!top" />
-                <element signature="n#Pane#3;n#children#0;n#AnchorPane#0;n#!!top" />
-                <element signature="n#Pane#4;n#children#0;n#AnchorPane#0;n#!!top" />
-                <element signature="n#Pane#5;n#children#0;n#AnchorPane#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="75" column="63" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="GroupChooseBoardController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="task_page.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_page.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="32" column="102" lean-forward="true" selection-start-line="32" selection-start-column="102" selection-end-line="32" selection-end-column="102" />
+            <state relative-caret-position="105">
+              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
               <folding>
                 <element signature="n#Pane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-                <element signature="n#Pane#0;n#children#0;n#AnchorPane#2;n#children#0;n#AnchorPane#0;n#!!top" />
+                <element signature="n#Pane#0;n#children#0;n#AnchorPane#1;n#children#0;n#AnchorPane#0;n#!!top" />
                 <element signature="n#AnchorPane#4;n#children#0;n#AnchorPane#0;n#!!top" />
-                <element signature="n#AnchorPane#5;n#children#0;n#AnchorPane#0;n#!!top" />
               </folding>
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file leaf-file-name="group_choose_board.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml">
+      <file leaf-file-name="data_choose_board.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+            <state relative-caret-position="283">
+              <caret line="66" column="65" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file leaf-file-name="GroupChooseBoardController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="task_item.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_item.fxml">
+      <file leaf-file-name="SQLHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Datebase/SQLHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="17" selection-end-column="16" />
+              <caret line="169" column="13" lean-forward="true" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file leaf-file-name="GroupController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
+      <file leaf-file-name="DataChooseBoardController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="172" column="73" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
+            <state relative-caret-position="324">
+              <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HintFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Utils/HintFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataLoadController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="187" selection-start-line="187" selection-end-line="187" />
             </state>
           </provider>
         </entry>
@@ -115,8 +119,8 @@
       <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-243">
-              <caret line="155" column="13" lean-forward="true" selection-start-line="147" selection-start-column="8" selection-end-line="155" selection-end-column="13" />
+            <state relative-caret-position="239">
+              <caret line="88" column="48" lean-forward="true" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -142,6 +146,9 @@
       <find>Font</find>
       <find>JFXListV</find>
       <find>JFXButton</find>
+      <find>my</find>
+      <find>bind</find>
+      <find>ffffff1</find>
     </findStrings>
     <replaceStrings>
       <replace>/sample/resources/MDicon/</replace>
@@ -168,16 +175,17 @@
         <option value="$PROJECT_DIR$/src/sample/Utils/JavaKeywordsAsyncDemo.java" />
         <option value="$PROJECT_DIR$/src/sample/Utils/HighlightingCode.java" />
         <option value="$PROJECT_DIR$/src/sample/FXML/data_load.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" />
         <option value="$PROJECT_DIR$/src/sample/FXML/choose_board.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java" />
-        <option value="$PROJECT_DIR$/src/sample/StartProcess.java" />
-        <option value="$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java" />
+        <option value="$PROJECT_DIR$/src/sample/StartProcess.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" />
-        <option value="$PROJECT_DIR$/src/sample/FXML/task_page.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java" />
         <option value="$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/FXML/task_page.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java" />
       </list>
     </option>
   </component>
@@ -261,6 +269,13 @@
               <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="Datebase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sample" type="462c0819:PsiDirectoryNode" />
               <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -295,8 +310,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/sample/resources/MDicon" />
       <recent name="$PROJECT_DIR$/src/sample/FXML" />
+      <recent name="$PROJECT_DIR$/src/sample/resources/MDicon" />
       <recent name="$PROJECT_DIR$/dependencies" />
     </key>
   </component>
@@ -395,7 +410,7 @@
       <workItem from="1526469098152" duration="2621000" />
       <workItem from="1526474774423" duration="6463000" />
       <workItem from="1526537792992" duration="2583000" />
-      <workItem from="1526553033687" duration="2174000" />
+      <workItem from="1526553033687" duration="4790000" />
     </task>
     <task id="LOCAL-00001" summary="May 15,2018 2nd">
       <created>1526428568518</created>
@@ -411,14 +426,21 @@
       <option name="project" value="LOCAL" />
       <updated>1526482148168</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="May 17,2018 3rd">
+      <created>1526555354455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526555354455</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16341000" />
+    <option name="totallyTimeSpent" value="18957000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1440" height="819" extended-state="0" />
+    <frame x="-1" y="23" width="1440" height="819" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -430,25 +452,25 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290938" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2546495" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32904148" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2546495" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1695279" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1695279" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990025" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.397711" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,38 +508,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="May 15,2018 2nd" />
     <MESSAGE value="May 15,2018 3rd" />
-    <option name="LAST_COMMIT_MESSAGE" value="May 15,2018 3rd" />
+    <MESSAGE value="May 17,2018 3rd" />
+    <option name="LAST_COMMIT_MESSAGE" value="May 17,2018 3rd" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2055">
-          <caret line="161" column="9" selection-start-line="161" selection-start-column="9" selection-end-line="161" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Datebase/SQLHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2895">
@@ -696,13 +698,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Utils/f.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Utils/JavaKeywordsAsyncDemo.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/MainPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/AppException/OPENFAILEXCEPTION.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -731,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Datebase/SQLHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2895">
-          <caret line="201" column="39" selection-start-line="201" selection-start-column="39" selection-end-line="201" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Entity/DataNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -745,38 +733,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="180" selection-start-line="180" selection-end-line="180" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupInformationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="172" column="73" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="163" column="40" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -796,6 +756,23 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/resources/MDicon/icon_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/MainPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="129" column="21" lean-forward="true" selection-start-line="121" selection-start-column="7" selection-end-line="129" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_item.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -804,6 +781,13 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1111">
+          <caret line="172" column="73" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataSettingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -811,42 +795,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/resources/MDicon/icon_1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Entity/GroupNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="155" column="13" lean-forward="true" selection-start-line="147" selection-start-column="8" selection-end-line="155" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="75" column="63" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_choose_board.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="66" column="65" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_page.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="32" column="102" lean-forward="true" selection-start-line="32" selection-start-column="102" selection-end-line="32" selection-end-column="102" />
+        <state relative-caret-position="105">
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding>
             <element signature="n#Pane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Pane#0;n#children#0;n#AnchorPane#2;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#Pane#0;n#children#0;n#AnchorPane#1;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#AnchorPane#4;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#AnchorPane#5;n#children#0;n#AnchorPane#0;n#!!top" />
           </folding>
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/group_choose_board.fxml">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+        <state relative-caret-position="239">
+          <caret line="88" column="48" lean-forward="true" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Datebase/SQLHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        <state relative-caret-position="225">
+          <caret line="169" column="13" lean-forward="true" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Utils/HintFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Data/DataChooseBoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -188,31 +188,6 @@ public class DataLoadController implements Initializable{
 
 
     @FXML
-    private void choose(MouseEvent event) {
-        /**选中该数据，将其交给群组注册**/
-        int index_datasets = listView_pane.getSelectionModel().getSelectedIndex();
-        int index_group = GroupController.my_Groups_copy.getSelectionModel().getSelectedIndex();
-        if (index_datasets < 0 || index_group < 0) return;
-        else {
-            DataNode choosed_data = data_sets.get(index_datasets);
-            GroupNode choosed_group = GroupController.myGroupsCopy.get(index_group);
-            if (!SQLHandler.insertGroupDataRegisterRelation(choosed_group, choosed_data)){
-                /**若插入失败,弹出失败提示框**/
-                HintFrame.showFailFrame("Wrong type match or register duplicately!");
-            }
-            else {
-                /**插入成功**/
-                HintFrame.showSuccessFrame("Data has been registered successfully!");
-
-                Stage primary = StartProcess.hashMap.get("primary");
-                Stage data_load = StartProcess.hashMap.remove("data_load");
-                primary.show();
-                data_load.close();
-            }
-        }
-    }
-
-    @FXML
     private void importItem(MouseEvent event) throws IOException{
         Parent p = FXMLLoader.load(getClass().getResource("../../FXML/data_setting.fxml"));
         Stage settingStage = new Stage();

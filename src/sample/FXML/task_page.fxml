@@ -98,7 +98,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-       <AnchorPane layoutX="854.0" prefHeight="740.0" prefWidth="153.0" style="-fx-background-color: #ffffff1;">
+       <AnchorPane layoutX="854.0" prefHeight="740.0" prefWidth="153.0">
          <children>
             <Pane prefHeight="78.0" prefWidth="153.0" style="-fx-background-color: #3678;">
                <children>

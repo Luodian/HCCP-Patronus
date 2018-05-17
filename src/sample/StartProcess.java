@@ -27,7 +27,9 @@ public class StartProcess extends Application {
      * coding
      * tasks
      * confirm
-     * data_choose_board**/
+     * data_choose_board
+     * group_choose_board
+     * **/
     public static HashMap<String, Stage> hashMap = new HashMap<String, Stage>();
     public static final int SCENE_WIDTH =1006;
     public static final int SCENE_HEIGHT = 770;

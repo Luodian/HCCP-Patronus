@@ -47,7 +47,10 @@ public class TaskController implements Initializable {
     private JFXButton back_to_main;
 
     @FXML
-    private JFXListView worked_task_list;
+    private JFXListView my_master_list;
+
+    @FXML
+    private JFXButton bind_group;
 
     public static int MAX_SHOW_CARD = 4;
     @FXML
@@ -85,7 +88,6 @@ public class TaskController implements Initializable {
 
     public static JFXListView my_task_list_copy;
 
-    public static JFXListView worked_task_list_copy;
     @FXML
     private JFXMasonryPane masonry_pane_2;//此为活动在我这台主机上的任务
 
@@ -93,7 +95,6 @@ public class TaskController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         taskPane = task_pane;
         my_task_list_copy = my_task_list;
-        worked_task_list_copy = worked_task_list;
 
         /**设置my_task_list及worked_task_list属性**/
         my_task_list.setExpanded(true);
@@ -150,7 +151,6 @@ public class TaskController implements Initializable {
 //            }
 //        });
 
-
         /**先获得当前用户的所有状态的任务**/
         myTasks = SQLHandler.queryComputeTaskByInitiatorIDAndState(LoginController.current_user_id,-1);
 
@@ -190,8 +190,15 @@ public class TaskController implements Initializable {
     }
 
     @FXML
-    void bindGroup(MouseEvent event) {
-
+    void bindGroup(MouseEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../../FXML/group_choose_board.fxml"));
+        stage.setScene(new Scene(root));
+        StartProcess.hashMap.put("group_choose_board", stage);
+        StartProcess.hashMap.get("tasks").hide();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML
