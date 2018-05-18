@@ -293,33 +293,33 @@ public class SQLHandler
      * state = 1 表示正在工作
      * state = 2 表示工作结束
      * state = -1 表示获得所有状态的计算任务**/
-    public static ArrayList<ComputeTask> queryComputeTaskByInitiatorIDAndState(String initiator_id, int state){
-        String sql;
-        if (state != -1)
-            sql = "SELECT * FROM COMPUTETASK WHERE initiator_id = " + initiator_id + " And state = " + state;
-        else sql = "SELECT * FROM COMPUTETASK WHERE initiator_id = " + initiator_id;
-        ArrayList<ComputeTask> result = new ArrayList<ComputeTask>();
-        try {
-            ResultSet resultSet = query.executeQuery(sql);
-            while (resultSet.next()){
-                ComputeTask computeTask = new ComputeTask();
-                computeTask.setTask_id(resultSet.getString("task_id"));
-                computeTask.setInitiator_id(resultSet.getString("initiator_id"));
-                computeTask.setData_type(resultSet.getString("data_type"));
-                computeTask.setCost(resultSet.getDouble("cost"));
-                computeTask.setSecurity_score(resultSet.getDouble("security_score"));
-                computeTask.setStart_time(resultSet.getString("start_time"));
-                computeTask.setEnd_time(resultSet.getString("end_time"));
-                computeTask.setState(resultSet.getInt("state"));
-                computeTask.setTask_name(resultSet.getString("task_name"));
-                result.add(computeTask);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return result;
-    }
+//    public static ArrayList<ComputeTask> queryComputeTaskByInitiatorIDAndState(String initiator_id, int state){
+//        String sql;
+//        if (state != -1)
+//            sql = "SELECT * FROM COMPUTETASK WHERE initiator_id = " + initiator_id + " And state = " + state;
+//        else sql = "SELECT * FROM COMPUTETASK WHERE initiator_id = " + initiator_id;
+//        ArrayList<ComputeTask> result = new ArrayList<ComputeTask>();
+//        try {
+//            ResultSet resultSet = query.executeQuery(sql);
+//            while (resultSet.next()){
+//                ComputeTask computeTask = new ComputeTask();
+//                computeTask.setTask_id(resultSet.getString("task_id"));
+//                computeTask.setInitiator_id(resultSet.getString("initiator_id"));
+//                computeTask.setData_type(resultSet.getString("data_type"));
+//                computeTask.setCost(resultSet.getDouble("cost"));
+//                computeTask.setSecurity_score(resultSet.getDouble("security_score"));
+//                computeTask.setStart_time(resultSet.getString("start_time"));
+//                computeTask.setEnd_time(resultSet.getString("end_time"));
+//                computeTask.setState(resultSet.getInt("state"));
+//                computeTask.setTask_name(resultSet.getString("task_name"));
+//                result.add(computeTask);
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//        return result;
+//    }
 
     /**
      * 通过user_id和group_id返回数据集名字
