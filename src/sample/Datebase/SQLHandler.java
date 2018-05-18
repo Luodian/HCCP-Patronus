@@ -1,6 +1,5 @@
 package sample.Datebase;
 
-import javafx.fxml.Initializable;
 import sample.Entity.ComputeTask;
 import sample.Entity.DataNode;
 import sample.Entity.GroupNode;
@@ -315,6 +314,25 @@ public class SQLHandler {
                 computeTask.setState(resultSet.getInt("state"));
                 computeTask.setTask_name(resultSet.getString("task_name"));
                 result.add(computeTask);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return result;
+    }
+
+    /**
+     * 通过user_id和group_id返回数据集名字
+     **/
+    public static ArrayList<String> queryDataSetNameByUserIdAndGroupID(String user_id, String group_id) {
+        String sql = "SELECT dataset_name FROM contain WHERE group_id = " + group_id + " and user_id = " + user_id;
+        ArrayList<String> result = new ArrayList<String>();
+        try {
+            ResultSet resultSet = query.executeQuery(sql);
+            while (resultSet.next()) {
+                String temp = resultSet.getString("dataset_name");
+                result.add(temp);
             }
         } catch (SQLException e) {
             e.printStackTrace();

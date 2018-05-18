@@ -22,7 +22,17 @@
       </Pane>
       <AnchorPane layoutX="-3.0" layoutY="78.0" prefHeight="663.0" prefWidth="96.0" style="-fx-background-color: #33475b;">
          <children>
-            <Pane layoutX="18.0" layoutY="80.0" prefHeight="62.0" prefWidth="68.0">
+             <Pane layoutX="18.0" layoutY="50.0" prefHeight="62.0" prefWidth="68.0">
+                 <children>
+                     <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                         <image>
+                             <Image url="/sample/resources/MDicon/play.png" />
+                         </image>
+                     </ImageView>
+                     <JFXButton fx:id="play" onMouseClicked="#runTask" prefHeight="62.0" prefWidth="68.0" text=" "/>
+                 </children>
+             </Pane>
+            <Pane layoutX="18.0" layoutY="140.0" prefHeight="62.0" prefWidth="68.0">
                <children>
                   <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -32,7 +42,7 @@
                    <JFXButton fx:id="new_task" onMouseClicked="#newTask" prefHeight="62.0" prefWidth="68.0" text=" "/>
                </children>
             </Pane>
-             <Pane layoutX="18.0" layoutY="170.0" prefHeight="62.0" prefWidth="68.0">
+             <Pane layoutX="18.0" layoutY="230.0" prefHeight="62.0" prefWidth="68.0">
                  <children>
                      <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                          <image>
@@ -43,7 +53,17 @@
                                 text=" "/>
                  </children>
              </Pane>
-             <Pane layoutX="18.0" layoutY="260.0" prefHeight="62.0" prefWidth="68.0">
+             <Pane layoutX="18.0" layoutY="320.0" prefHeight="62.0" prefWidth="68.0">
+                 <children>
+                     <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                         <image>
+                             <Image url="/sample/resources/MDicon/coding_white.png" />
+                         </image>
+                     </ImageView>
+                     <JFXButton fx:id="show_code" onMouseClicked="#showCode" prefHeight="62.0" prefWidth="68.0" text=" " />
+                 </children>
+             </Pane>
+             <Pane layoutX="18.0" layoutY="410.0" prefHeight="62.0" prefWidth="68.0">
                <children>
                   <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -53,7 +73,7 @@
                   <JFXButton fx:id="deleteTask" onMouseClicked="#deleteTask" prefHeight="62.0" prefWidth="68.0" text=" " />
                </children>
             </Pane>
-            <Pane layoutX="18.0" layoutY="578.0" prefHeight="62.0" prefWidth="68.0">
+            <Pane layoutX="18.0" layoutY="580.0" prefHeight="62.0" prefWidth="68.0">
                <children>
                   <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -63,6 +83,7 @@
                   <JFXButton fx:id="back_to_main" onMouseClicked="#backToMain" prefHeight="62.0" prefWidth="68.0" text=" " />
                </children>
             </Pane>
+
          </children>
       </AnchorPane>
       <Separator layoutX="852.0" orientation="VERTICAL" prefHeight="739.0" prefWidth="4.0" />

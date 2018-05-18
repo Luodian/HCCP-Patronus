@@ -43,9 +43,33 @@ public class DataChooseBoardController implements Initializable {
 
     private DataNode current_datanode;
 
+    private ArrayList<String> registedData;//已经注册了的数据集
+
+    private int group_index;//group选择的下标
+
+    private GroupNode aimed_group;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        group_index = GroupController.my_Groups_copy.getSelectionModel().getSelectedIndex();
+        aimed_group = GroupController.myGroupsCopy.get(group_index);
+        /**获取所有的本地数据集
+         * 同时获得所有的已注册的数据集
+         * 将已注册的数据集从dataset中去除**/
         datasets = SQLHandler.queryDataNodesByID(LoginController.current_user_id);
+        registedData = SQLHandler.queryDataSetNameByUserIdAndGroupID(LoginController.current_user_id,
+                aimed_group.getGroup_id());
+
+        /**将已注册的数据集从dataset中去除**/
+        for (int i = datasets.size() - 1; i >= 0; i--) {
+            DataNode temp = datasets.get(i);
+            for (int j = 0; j < registedData.size(); j++) {
+                if (temp.getData_name().equals(registedData.get(j))) {
+                    datasets.remove(i);
+                    break;
+                }
+            }
+        }
         if (datasets != null) {
             for (int i = 0; i < datasets.size(); i++) {
                 Pane temp = createNewDataInfoPane(datasets.get(i));
@@ -70,10 +94,8 @@ public class DataChooseBoardController implements Initializable {
         if (current_datanode == null) HintFrame.showFailFrame("Please choose one data set!");
         else {
             /**向数据库注册**/
-            int index = GroupController.my_Groups_copy.getSelectionModel().getSelectedIndex();
-            if (index >= 0){
-                GroupNode temp_group =  GroupController.myGroupsCopy.get(index);
-                if (SQLHandler.insertGroupDataRegisterRelation(temp_group, current_datanode)){
+            if (group_index >= 0) {
+                if (SQLHandler.insertGroupDataRegisterRelation(aimed_group, current_datanode)) {
                     /**插入成功**/
                     Stage groups = StartProcess.hashMap.get("groups");
                     Stage data_choose_board = StartProcess.hashMap.remove("data_choose_board");

@@ -66,6 +66,12 @@ public class TaskController implements Initializable {
     private Label initiator;
 
     @FXML
+    private JFXButton play;
+
+    @FXML
+    private JFXButton show_code;
+
+    @FXML
     private Label cost;
 
     @FXML
@@ -90,6 +96,16 @@ public class TaskController implements Initializable {
 
     @FXML
     private JFXMasonryPane masonry_pane_2;//此为活动在我这台主机上的任务
+
+    @FXML
+    void runTask(MouseEvent event) {
+        int index = my_task_list.getSelectionModel().getSelectedIndex();
+        if (index < 0) {
+            HintFrame.showFailFrame("Please choose one of your tasks!");
+        } else {
+
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -141,16 +157,6 @@ public class TaskController implements Initializable {
             }
         });
 
-//        worked_task_list.setExpanded(true);
-//        worked_task_list.setVerticalGap(Double.valueOf(15.0));
-//        worked_task_list.depthProperty().set(5);
-//        worked_task_list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-//            @Override
-//            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-//
-//            }
-//        });
-
         /**先获得当前用户的所有状态的任务**/
         myTasks = SQLHandler.queryComputeTaskByInitiatorIDAndState(LoginController.current_user_id,-1);
 
@@ -164,10 +170,12 @@ public class TaskController implements Initializable {
 
         /**工作的节点进度卡片信息最多在这个页面显示3个
          * 更多的信息可以进入"see all cards..."界面看**/
+
         for (int i = 0; i < MAX_SHOW_CARD; i++) {
             Pane pane = newWorkingTask("initiator", "data name");
             masonry_pane_1.getChildren().add(pane);
         }
+
         Label label1 = new Label("more...");
         label1.setPrefSize(50, 150);
         label1.setAlignment(Pos.CENTER);
@@ -180,6 +188,7 @@ public class TaskController implements Initializable {
             Pane pane = newWorkingTask("initiator", "data name");
             masonry_pane_2.getChildren().add(pane);
         }
+
         Label label2 = new Label("more...");
         label2.setPrefSize(50, 150);
         label2.setAlignment(Pos.CENTER);
@@ -191,14 +200,19 @@ public class TaskController implements Initializable {
 
     @FXML
     void bindGroup(MouseEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../../FXML/group_choose_board.fxml"));
-        stage.setScene(new Scene(root));
-        StartProcess.hashMap.put("group_choose_board", stage);
-        StartProcess.hashMap.get("tasks").hide();
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.setResizable(false);
-        stage.show();
+        int index = my_task_list.getSelectionModel().getSelectedIndex();
+        if (index < 0) {
+            HintFrame.showFailFrame("Please choose one of your tasks!");
+        } else {
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("../../FXML/group_choose_board.fxml"));
+            stage.setScene(new Scene(root));
+            StartProcess.hashMap.put("group_choose_board", stage);
+            StartProcess.hashMap.get("tasks").hide();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setResizable(false);
+            stage.show();
+        }
     }
 
     @FXML
@@ -211,7 +225,12 @@ public class TaskController implements Initializable {
 
     @FXML
     void deleteTask(MouseEvent event) {
+        int index = my_task_list.getSelectionModel().getSelectedIndex();
+        if (index < 0) {
+            HintFrame.showFailFrame("Please choose one of your tasks!");
+        } else {
 
+        }
     }
 
     @FXML
@@ -295,5 +314,15 @@ public class TaskController implements Initializable {
 
         pane.getChildren().add(initiator);
         return pane;
+    }
+
+    @FXML
+    void showCode(MouseEvent event) {
+        int index = my_task_list.getSelectionModel().getSelectedIndex();
+        if (index < 0) {
+            HintFrame.showFailFrame("Please choose one of your tasks!");
+        } else {
+
+        }
     }
 }
