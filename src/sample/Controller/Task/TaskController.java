@@ -23,10 +23,12 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.json.JSONException;
 import sample.Controller.Login.LoginController;
 import sample.Datebase.SQLHandler;
 import sample.Entity.ComputeTask;
 import sample.Entity.UserNode;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
@@ -126,8 +128,18 @@ public class TaskController implements Initializable {
                 if (index >= 0){
                     ComputeTask temp = myTasks.get(index);
                     /**获取发起者信息**/
-                    UserNode initiatoNode = SQLHandler.queryUserByID(temp.getInitiator_id());
-                    if (initiatoNode != null) temp.setInitiator(initiatoNode);
+                    UserNode initiatoNode = null;
+                    try
+                    {
+                        initiatoNode = SocketHandler.queryUserByID (temp.getInitiator_id ());
+                    } catch (JSONException e)
+                    {
+                        e.printStackTrace ();
+                    } catch (IOException e)
+                    {
+                        e.printStackTrace ();
+                    }
+                    if (initiatoNode != null) temp.setInitiator (initiatoNode);
                     else HintFrame.showFailFrame("Can't find the initiator!");
                     initiator.setText(temp.getInitiator().getUser_name());
                     data_type.setText(temp.getData_type());

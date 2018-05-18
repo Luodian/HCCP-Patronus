@@ -9,10 +9,11 @@ import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class SQLHandler {
+public class SQLHandler
+{
     public static String url = "jdbc:mysql://localhost:3306/Patronus" ;
     public static String username = "root" ;
-    public static String password = "wyz123348377" ;
+    public static String password = "wyz123348377";
     public static String UserNodeInsert = "INSERT INTO CLIENTNODES(user_name, user_id, email, password) values (?,?,?,?) ";
     public static String DataNodeInsert = "INSERT INTO DATANODES(user_id, data_name, data_type, row_nums, attr_nums, file_path) values(?,?,?,?,?,?)";
     public static String GroupInsert = "INSERT INTO GROUPS(group_name, data_type, group_id, member_nums, creator_id, create_date, description) values(?,?,?,?,?,?,?)";
@@ -21,9 +22,9 @@ public class SQLHandler {
     public static String ComputeTaskInsert = "INSERT INTO COMPUTETASK(task_id, data_type, cost, initiator_id, security_score, start_time, end_time, state, task_name) values(?,?,?,?,?,?,?,?,?)";
     public static Statement query;
     public static Connection con;
-
-
-    public static void insertUser(UserNode userNode) throws SQLException {
+    
+    public static void insertUser (UserNode userNode) throws SQLException
+    {
         PreparedStatement insert_user = con.prepareStatement(UserNodeInsert);
         insert_user.setString(1, userNode.getUser_name());
         insert_user.setString(2, userNode.getUser_id());
@@ -100,7 +101,6 @@ public class SQLHandler {
 
         return true;
     }
-
     /**查询当前用户拥有的数据集**/
     public static ArrayList<File> queryLoaclDataFile(String user_id){
         ArrayList<File> arrayList = new ArrayList<File>();
@@ -186,7 +186,8 @@ public class SQLHandler {
     /**根据user_id查找其注册的数据集
      * 如果查询失败，返回null，并抛出异常
      * 否则至少返回0**/
-    public static ArrayList<DataNode> queryDataNodesByID(String user_id){
+    public static ArrayList<DataNode> queryDataNodesByID (String user_id)
+    {
         String sql = "SELECT * FROM DATANODES WHERE user_id = "+ user_id;
         ArrayList<DataNode> result = new ArrayList<DataNode>();
         try {
@@ -207,7 +208,6 @@ public class SQLHandler {
         }
         return result;
     }
-
     /**
      * 新添群组数据注册元组(group_id, user_id, dataset_name)
      * 需要检查type是否一致，若不一致，返回false，并抛出异常
@@ -233,7 +233,6 @@ public class SQLHandler {
         return true;
 
     }
-
     /**根据group_id,获取所有的在群组中注册了的数据
      * 若查询失败，则返回null
      * 否则至少返回一个长度为0的数组**/

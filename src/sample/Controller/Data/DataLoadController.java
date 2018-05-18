@@ -227,14 +227,14 @@ public class DataLoadController implements Initializable{
         HintFrame.showSuccessFrame("Delete successfully!");
     }
 
-    @FXML
-    void themeChange(MouseEvent event) {
-        if (drawer1.isShown()) {
-            drawer1.close();
-        } else {
-            drawer1.open();
-        }
-    }
+//    @FXML
+//    void themeChange(MouseEvent event) {
+//        if (drawer1.isShown()) {
+//            drawer1.close();
+//        } else {
+//            drawer1.open();
+//        }
+//    }
 
     @FXML
     void backToMain(){
