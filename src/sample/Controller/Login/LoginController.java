@@ -9,8 +9,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.json.JSONException;
 import sample.Datebase.SQLHandler;
 import sample.Entity.UserNode;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 
 import java.io.IOException;
@@ -51,12 +53,14 @@ public class LoginController {
             confirmStage.show();
     }
     @FXML
-    public void SignIn() throws IOException, SQLException {
+    public void SignIn () throws IOException, SQLException, JSONException
+    {
         String email = user_email.getText();
         String password = user_password.getText();
         Parent root = null;
-
-        if (!(current_user_id = SQLHandler.isUserExistedByUserNode(new UserNode(password, email))).equals("NOTFIND")){
+	
+	    if (!(current_user_id = SocketHandler.sign_in (email, password)).equals ("NOTFIND"))
+	    {
             Stage stage = new Stage();
             root = FXMLLoader.load(getClass().getResource("../../FXML/main.fxml"));
             root.getStylesheets().add(getClass().getResource("../../FXML/floating_button.css").toExternalForm());

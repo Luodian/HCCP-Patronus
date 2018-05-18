@@ -27,13 +27,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import sample.Controller.Group.GroupController;
 import sample.Controller.Login.LoginController;
 import sample.Datebase.SQLHandler;
 import sample.Entity.DataItem;
 import sample.Entity.DataNode;
 import sample.Entity.DataRead;
-import sample.Entity.GroupNode;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
@@ -228,14 +226,14 @@ public class DataLoadController implements Initializable{
         HintFrame.showSuccessFrame("Delete successfully!");
     }
 
-    @FXML
-    void themeChange(MouseEvent event) {
-        if (drawer1.isShown()) {
-            drawer1.close();
-        } else {
-            drawer1.open();
-        }
-    }
+//    @FXML
+//    void themeChange(MouseEvent event) {
+//        if (drawer1.isShown()) {
+//            drawer1.close();
+//        } else {
+//            drawer1.open();
+//        }
+//    }
 
     @FXML
     void backToMain(){
