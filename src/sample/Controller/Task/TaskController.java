@@ -94,6 +94,10 @@ public class TaskController implements Initializable {
 
     public static JFXListView my_task_list_copy;
 
+    private ArrayList<Pane> slaves = new ArrayList<Pane>();
+
+    private ArrayList<Pane> masters = new ArrayList<Pane>();
+
     @FXML
     private JFXMasonryPane masonry_pane_2;//此为活动在我这台主机上的任务
 
@@ -103,7 +107,6 @@ public class TaskController implements Initializable {
         if (index < 0) {
             HintFrame.showFailFrame("Please choose one of your tasks!");
         } else {
-
         }
     }
 
@@ -173,6 +176,7 @@ public class TaskController implements Initializable {
 
         for (int i = 0; i < MAX_SHOW_CARD; i++) {
             Pane pane = newWorkingTask("initiator", "data name");
+            slaves.add(pane);
             masonry_pane_1.getChildren().add(pane);
         }
 
@@ -195,7 +199,6 @@ public class TaskController implements Initializable {
         label2.setFont(new Font("Chalkboard SE Light", 15.0));
         label2.setTextFill(Paint.valueOf("#ffffff"));
         masonry_pane_2.getChildren().add(label2);
-
     }
 
     @FXML
@@ -325,4 +328,48 @@ public class TaskController implements Initializable {
 
         }
     }
+
+//    Thread rand_drop = new Thread(new Runnable() {
+//        @Override
+//        public void run() {
+//            Platform.runLater(new Runnable() {
+//                @Override
+//                public void run() {
+//                    boolean[] isfinish = new boolean[4];
+//                    for (int i = 0; i < isfinish.length; i++) isfinish[i] = false;
+//                    int running_task_num = 4;
+//                    while (running_task_num > 0){
+//                        masonry_pane_1.getChildren().clear();
+//                        for (int i = 0; i < 4; i++) {
+//                            Pane temp = slaves.get(i);
+//                            if (isfinish[i]) {//若已经完成，则直接跳过
+//                                masonry_pane_1.getChildren().add(temp);
+//                                continue;
+//                            }
+//
+//                            double rand = Math.random();
+//                            if (rand < 0.0005){
+//                                temp.getChildren().remove(4);//第四个是ProgressBar
+//                                HintFrame.showSuccessFrame("slave: " + i + " complete!");
+//
+//                                ImageView initiator_image = new ImageView("/sample/resources/MDicon/check.png");
+//                                initiator_image.setFitWidth(50);
+//                                initiator_image.setFitHeight(50);
+//                                initiator_image.setLayoutX(50);
+//                                initiator_image.setLayoutY(98);
+//                                initiator_image.setPreserveRatio(true);
+//                                initiator_image.setPickOnBounds(true);
+//                                temp.getChildren().add(initiator_image);
+//                                isfinish[i] = true;
+//                                running_task_num--;
+//                            }
+//                            masonry_pane_1.getChildren().add(temp);
+//                        }
+//                    }
+//                    HintFrame.showSuccessFrame("Task finish!");
+//                }
+//            });
+//        }
+//    });
+//            rand_drop.start();
 }

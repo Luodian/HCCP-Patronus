@@ -100,8 +100,15 @@ public class MainPageController implements Initializable {
     }
 
     @FXML
-    void showUserInfo(MouseEvent event){
-
+    void showUserInfo(MouseEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/user_info_page.fxml"));
+        stage.setScene(new Scene(root));
+        StartProcess.hashMap.put("user_info", stage);
+        StartProcess.hashMap.get("main_page").hide();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML
@@ -133,7 +140,7 @@ public class MainPageController implements Initializable {
     @FXML
     void showCodingPage(MouseEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/EditCodePage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/coding.fxml"));
         root.getStylesheets().add(getClass().getResource("../FXML/list_view.css").toExternalForm());
         stage.setScene(new Scene(root));
         StartProcess.hashMap.put("coding", stage);

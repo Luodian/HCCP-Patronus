@@ -60,7 +60,6 @@ public class LoginController {
             Stage stage = new Stage();
             root = FXMLLoader.load(getClass().getResource("../../FXML/main.fxml"));
             root.getStylesheets().add(getClass().getResource("../../FXML/floating_button.css").toExternalForm());
-//            root.getStylesheets().add(getClass().getResource("../FXML/list_view.css").toExternalForm());
             stage.setScene(new Scene(root));
             StartProcess.hashMap.put("main_page", stage);
             StartProcess.hashMap.get("login").hide();

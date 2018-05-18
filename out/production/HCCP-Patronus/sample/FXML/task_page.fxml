@@ -26,13 +26,13 @@
                  <children>
                      <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                          <image>
-                             <Image url="/sample/resources/MDicon/play.png" />
+                             <Image url="/sample/resources/MDicon/play.png"/>
                          </image>
                      </ImageView>
                      <JFXButton fx:id="play" onMouseClicked="#runTask" prefHeight="62.0" prefWidth="68.0" text=" "/>
                  </children>
              </Pane>
-            <Pane layoutX="18.0" layoutY="140.0" prefHeight="62.0" prefWidth="68.0">
+             <Pane layoutX="18.0" layoutY="140.0" prefHeight="62.0" prefWidth="68.0">
                <children>
                   <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,10 +57,11 @@
                  <children>
                      <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                          <image>
-                             <Image url="/sample/resources/MDicon/coding_white.png" />
+                             <Image url="/sample/resources/MDicon/coding_white.png"/>
                          </image>
                      </ImageView>
-                     <JFXButton fx:id="show_code" onMouseClicked="#showCode" prefHeight="62.0" prefWidth="68.0" text=" " />
+                     <JFXButton fx:id="show_code" onMouseClicked="#showCode" prefHeight="62.0" prefWidth="68.0"
+                                text=" "/>
                  </children>
              </Pane>
              <Pane layoutX="18.0" layoutY="410.0" prefHeight="62.0" prefWidth="68.0">
@@ -73,7 +74,7 @@
                   <JFXButton fx:id="deleteTask" onMouseClicked="#deleteTask" prefHeight="62.0" prefWidth="68.0" text=" " />
                </children>
             </Pane>
-            <Pane layoutX="18.0" layoutY="580.0" prefHeight="62.0" prefWidth="68.0">
+             <Pane layoutX="18.0" layoutY="580.0" prefHeight="62.0" prefWidth="68.0">
                <children>
                   <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>

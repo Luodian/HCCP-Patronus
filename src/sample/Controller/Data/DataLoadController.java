@@ -27,13 +27,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import sample.Controller.Group.GroupController;
 import sample.Controller.Login.LoginController;
 import sample.Datebase.SQLHandler;
 import sample.Entity.DataItem;
 import sample.Entity.DataNode;
 import sample.Entity.DataRead;
-import sample.Entity.GroupNode;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
@@ -134,6 +132,7 @@ public class DataLoadController implements Initializable{
             file.setTextFill(Paint.valueOf("#ffffff"));
             listView.getItems().add(file);
         }
+
         listView.setExpanded(true);
         listView.setVerticalGap(Double.valueOf(15.0));
         listView.depthProperty().set(5);
