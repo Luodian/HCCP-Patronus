@@ -120,9 +120,7 @@ public class DataChooseBoardController implements Initializable {
         JFXButton temp_button = new JFXButton("");
         temp_button.setPrefSize(150, 150);
         temp_button.setStyle("-fx-background-radius: 1em;");
-        /**
-         * 这个ripper效果满分
-         **/
+        /**这个ripper效果满分**/
         List<Stop> stop_list = new ArrayList<Stop>();
         stop_list.add(new Stop(1.0, Color.valueOf("#0ea5d6")));
         stop_list.add(new Stop(0, Color.BLACK));

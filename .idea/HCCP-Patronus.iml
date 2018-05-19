@@ -81,5 +81,23 @@
     <orderEntry type="library" name="controlsfx-8.40.14" level="project" />
     <orderEntry type="library" name="reactfx-2.0-M5" level="project" />
     <orderEntry type="library" name="richtextfx-demos-fat-0.7-M5" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../lib/json-lib-2.4-jdk15.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../lib/org.json-20120521.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

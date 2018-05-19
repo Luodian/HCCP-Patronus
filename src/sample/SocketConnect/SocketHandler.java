@@ -15,33 +15,22 @@ import java.util.ArrayList;
 
 public class SocketHandler extends Thread
 {
-	private static DataOutputStream dataOutputStream;
-	private static DataInputStream dataInputStream;
-	private int serverPort;
-	private String serverIP = null;
-	private Socket socket;
-	
-	public SocketHandler (String IP, int port)
-	{
-		this.serverIP = IP;
-		this.serverPort = port;
-		initSocket ();
-	}
-	
-	/*
-		检验完成
-	 */
-	public static String sign_in (String email, String password) throws JSONException, IOException
-	{
+	public static DataOutputStream dataOutputStream;
+	public static DataInputStream dataInputStream;
+	public static int serverPort;
+	public static String serverIP = null;
+	public static Socket socket;
+
+	public static String sign_in(String email, String password) throws JSONException, IOException {
 		String ret_user_id = "";
-		// 发送请求
 		JSONObject sendObject = new JSONObject ();
 		sendObject.put ("purpose", 1);
 		sendObject.put ("email", email);
 		sendObject.put ("password", password);
+
 		System.out.println (sendObject);
+
 		dataOutputStream.write (sendObject.toString ().getBytes ());
-//                    dataOutputStream.write(getJsonByte(Integer.parseInt(info)));
 		dataOutputStream.flush ();
 		
 		// 监听请求
@@ -74,7 +63,7 @@ public class SocketHandler extends Thread
 		}
 		return "NOTFIND";
 	}
-	
+
 	public static ArrayList<ComputeTask> queryComputeTaskByInitiatorIDAndState (String initiator_id, int state) throws JSONException, IOException
 	{
 		ArrayList<ComputeTask> result = new ArrayList<ComputeTask> ();
@@ -86,7 +75,7 @@ public class SocketHandler extends Thread
 		dataOutputStream.write (sendObject.toString ().getBytes ());
 //                    dataOutputStream.write(getJsonByte(Integer.parseInt(info)));
 		dataOutputStream.flush ();
-		
+
 		// 监听请求
 		try
 		{
@@ -126,20 +115,16 @@ public class SocketHandler extends Thread
 		}
 		return null;
 	}
-	
-	
+
 	/**
 	 * 根据用户id查询用户，若找到返回UserNode，否则返回null
 	 **/
-	public static UserNode queryUserByID (String user_id) throws JSONException, IOException
-	{
-		
+	public static UserNode queryUserByID(String user_id) throws JSONException, IOException {
+
 		JSONObject sendObject = new JSONObject ();
 		sendObject.put ("purpose", 2);
 		sendObject.put ("user_id", user_id);
-		System.out.println (sendObject);
 		dataOutputStream.write (sendObject.toString ().getBytes ());
-//                    dataOutputStream.write(getJsonByte(Integer.parseInt(info)));
 		dataOutputStream.flush ();
 		
 		// 监听请求
@@ -188,9 +173,8 @@ public class SocketHandler extends Thread
 		sendObject.put ("group_id", group_id);
 		System.out.println (sendObject);
 		dataOutputStream.write (sendObject.toString ().getBytes ());
-//                    dataOutputStream.write(getJsonByte(Integer.parseInt(info)));
 		dataOutputStream.flush ();
-		
+
 		try
 		{
 			ByteArrayOutputStream baos = null;
@@ -226,7 +210,7 @@ public class SocketHandler extends Thread
 		}
 		return null;
 	}
-	
+
 	/**
 	 * 新添计算任务元组
 	 * state = 0 表示未启动
@@ -243,7 +227,6 @@ public class SocketHandler extends Thread
 		sendObject.put ("code", computeTask.getCode ());
 		System.out.println (sendObject);
 		dataOutputStream.write (sendObject.toString ().getBytes ());
-//                    dataOutputStream.write(getJsonByte(Integer.parseInt(info)));
 		dataOutputStream.flush ();
 		return true;
 	}
@@ -256,7 +239,6 @@ public class SocketHandler extends Thread
 		sendObject.put ("task_id", task_id);
 		System.out.println (sendObject);
 		dataOutputStream.write (sendObject.toString ().getBytes ());
-//                    dataOutputStream.write(getJsonByte(Integer.parseInt(info)));
 		dataOutputStream.flush ();
 		try
 		{
@@ -294,16 +276,49 @@ public class SocketHandler extends Thread
 		}
 		return null;
 	}
-	
-	void initSocket ()
-	{
-		try
-		{
+
+	/****/
+	public static boolean insertGroupUserRelation(String user_id, String group_id) throws JSONException, IOException {
+		JSONObject sendObject = new JSONObject();
+		sendObject.put("purpose", 4);
+		sendObject.put("user_id", user_id);
+		sendObject.put("group_id", group_id);
+		dataOutputStream.write(sendObject.toString().getBytes());
+		dataOutputStream.flush();
+		try {
+			ByteArrayOutputStream baos = null;
+			byte[] by = new byte[2048];
+			int n;
+			while ((n = dataInputStream.read(by)) != -1) {
+				baos = new ByteArrayOutputStream();
+				baos.write(by, 0, n);
+				String rcvJsonStr = new String(baos.toByteArray());
+				try {
+					JSONObject json = new JSONObject(rcvJsonStr);
+					if (json.get("reply").equals(4)) {
+						return true;
+					} else continue;
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	/**
+	 * 初始化socket
+	 **/
+	public static void initSocket(String IP, int port) {
+		try {
+			serverIP = IP;
+			serverPort = port;
 			socket = new Socket (serverIP, serverPort);
-			dataOutputStream = new DataOutputStream (socket.getOutputStream ());
-			dataInputStream = new DataInputStream (socket.getInputStream ());
-		} catch (IOException e)
-		{
+			dataOutputStream = new DataOutputStream(socket.getOutputStream());
+			dataInputStream = new DataInputStream(socket.getInputStream());
+		} catch (IOException e) {
 			e.printStackTrace ();
 		}
 	}

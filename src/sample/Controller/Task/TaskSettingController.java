@@ -10,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import sample.Controller.Login.LoginController;
 import sample.Datebase.SQLHandler;
 import sample.Entity.ComputeTask;
@@ -18,7 +17,6 @@ import sample.StartProcess;
 import sample.Utils.HintFrame;
 
 import java.io.File;
-import java.util.Date;
 
 public class TaskSettingController {
 
@@ -64,7 +62,7 @@ public class TaskSettingController {
     }
 
     @FXML
-    void submit(MouseEvent event) {
+    void task(MouseEvent event) {
         String name = task_name.getText();
         /**这个地方有个问题
          * 就是具体代码在数据库里怎么存**/
