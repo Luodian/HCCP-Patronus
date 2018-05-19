@@ -10,7 +10,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -90,7 +89,7 @@ public class TaskController implements Initializable {
 
     public static ArrayList<ComputeTask> myTasks;
 
-    public static ArrayList<ComputeTask> workingTasks;
+    public static ArrayList<ComputeTask> workingTasks = new ArrayList<ComputeTask>();
 
     public static JFXListView my_task_list_copy;
 
@@ -107,6 +106,8 @@ public class TaskController implements Initializable {
         if (index < 0) {
             HintFrame.showFailFrame("Please choose one of your tasks!");
         } else {
+            ComputeTask computeTask = myTasks.get(index);
+            SocketHandler.runTask(computeTask.getTask_id());
         }
     }
 
@@ -172,34 +173,41 @@ public class TaskController implements Initializable {
             }
         }
 
-        /**工作的节点进度卡片信息最多在这个页面显示3个
-         * 更多的信息可以进入"see all cards..."界面看**/
-
-        for (int i = 0; i < MAX_SHOW_CARD; i++) {
-            Pane pane = newWorkingTask("initiator", "data name");
-            slaves.add(pane);
-            masonry_pane_1.getChildren().add(pane);
-        }
-
-        Label label1 = new Label("more...");
-        label1.setPrefSize(50, 150);
-        label1.setAlignment(Pos.CENTER);
-        label1.setFont(new Font("Chalkboard SE Light", 15.0));
-        label1.setTextFill(Paint.valueOf("#ffffff"));
-        masonry_pane_1.getChildren().add(label1);
-
-
-        for (int i = 0; i < MAX_SHOW_CARD; i++) {
-            Pane pane = newWorkingTask("initiator", "data name");
+        for (int i = 0; i < workingTasks.size(); i++) {
+            ComputeTask tmp = workingTasks.get(i);
+            Pane pane = newWorkingTask(tmp.getInitiator_id(), tmp.getData_type());
+            masters.add(pane);
             masonry_pane_2.getChildren().add(pane);
         }
 
-        Label label2 = new Label("more...");
-        label2.setPrefSize(50, 150);
-        label2.setAlignment(Pos.CENTER);
-        label2.setFont(new Font("Chalkboard SE Light", 15.0));
-        label2.setTextFill(Paint.valueOf("#ffffff"));
-        masonry_pane_2.getChildren().add(label2);
+        /**工作的节点进度卡片信息最多在这个页面显示3个
+         * 更多的信息可以进入"see all cards..."界面看**/
+//
+//        for (int i = 0; i < MAX_SHOW_CARD; i++) {
+//            Pane pane = newWorkingTask("initiator", "data name");
+//            slaves.add(pane);
+//            masonry_pane_1.getChildren().add(pane);
+//        }
+//
+//        Label label1 = new Label("more...");
+//        label1.setPrefSize(50, 150);
+//        label1.setAlignment(Pos.CENTER);
+//        label1.setFont(new Font("Chalkboard SE Light", 15.0));
+//        label1.setTextFill(Paint.valueOf("#ffffff"));
+//        masonry_pane_1.getChildren().add(label1);
+//
+//
+//        for (int i = 0; i < MAX_SHOW_CARD; i++) {
+//            Pane pane = newWorkingTask("initiator", "data name");
+//            masonry_pane_2.getChildren().add(pane);
+//        }
+//
+//        Label label2 = new Label("more...");
+//        label2.setPrefSize(50, 150);
+//        label2.setAlignment(Pos.CENTER);
+//        label2.setFont(new Font("Chalkboard SE Light", 15.0));
+//        label2.setTextFill(Paint.valueOf("#ffffff"));
+//        masonry_pane_2.getChildren().add(label2);
     }
 
     @FXML

@@ -3,6 +3,7 @@ package sample.SocketConnect;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import sample.Controller.Task.TaskController;
 import sample.Entity.ComputeTask;
 import sample.Entity.DataNode;
 import sample.Entity.GroupNode;
@@ -12,8 +13,9 @@ import java.io.*;
 import java.net.Socket;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class SocketHandler extends Thread
+public class SocketHandler
 {
 	private static DataOutputStream dataOutputStream;
 	private static DataInputStream dataInputStream;
@@ -24,7 +26,14 @@ public class SocketHandler extends Thread
     private static int serverPort;
     private static String serverIP = null;
     private static Socket socket;
-	
+    public static Thread backgroundListner;
+    public static Thread readReply;
+
+    /**
+     * 每种reply对应一个bucket
+     **/
+    public static HashMap<Integer, JSONObject> responseBuffer;
+
 	/**
 	 * Type-0:注册-检验完成
 	 */
@@ -34,8 +43,6 @@ public class SocketHandler extends Thread
 		sendobj.put ("email", userNode.getEmail ());
 		sendobj.put ("password", userNode.getPassword ());
 		sendobj.put ("user_name", userNode.getUser_name ());
-		
-		System.out.println (sendobj);
 		dataOutputStream.write (sendobj.toString ().getBytes ());
 		dataOutputStream.flush ();
 	}
@@ -51,16 +58,16 @@ public class SocketHandler extends Thread
             sendObject.put("password", password);
             bufferedWriter.write(sendObject.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(1)) continue;
+                json = responseBuffer.remove(1);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 1) {
                     if (result == 1) return json.getString("user_id");
                     else if (result == 0) return "NOTFIND";
                 } else return "UNKNOWN";
-
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -69,7 +76,6 @@ public class SocketHandler extends Thread
             e.printStackTrace();
             return "EXCEPTION";
         }
-        return "EXCEPTION";
 	}
 	
 	/**
@@ -84,8 +90,10 @@ public class SocketHandler extends Thread
             bufferedWriter.write(sendObject.toString() + "\r\n");
             bufferedWriter.flush();
             String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(2)) continue;
+                json = responseBuffer.remove(2);
                 int reply = json.getInt("reply");
                 int result = json.getInt("result");
                 if (reply == 2) {
@@ -98,7 +106,6 @@ public class SocketHandler extends Thread
                         return userNode;
                     } else if (result == 0) return null;
                 }
-
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -107,7 +114,6 @@ public class SocketHandler extends Thread
             e.printStackTrace();
             return null;
         }
-        return null;
 	}
 	
 	/**
@@ -124,9 +130,10 @@ public class SocketHandler extends Thread
             sendobj.put("member_num", groupNode.getMember_num());
             bufferedWriter.write(sendobj.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(3)) continue;
+                json = responseBuffer.remove(3);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 3) {
@@ -134,7 +141,6 @@ public class SocketHandler extends Thread
                         return json.getString("group_id");
                 }
             }
-            return "NOTFIND";
         } catch (JSONException e) {
             e.printStackTrace();
             return "EXCEPTION";
@@ -155,9 +161,10 @@ public class SocketHandler extends Thread
             sendobj.put("group_id", group_id);
             bufferedWriter.write(sendobj.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(4)) continue;
+                json = responseBuffer.remove(4);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 4) return result == 1;
@@ -169,7 +176,6 @@ public class SocketHandler extends Thread
             e.printStackTrace();
             return false;
         }
-        return false;
 	}
 	
 	/**
@@ -185,9 +191,10 @@ public class SocketHandler extends Thread
             sendobj.put("user_id", user_id);
             bufferedWriter.write(sendobj.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(5)) continue;
+                json = responseBuffer.remove(5);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 5) {
@@ -213,7 +220,6 @@ public class SocketHandler extends Thread
                     } else if (result == 0) return null;//查询失败
                 }
             }
-            return results;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -234,9 +240,10 @@ public class SocketHandler extends Thread
             sendobj.put("user_id", user_id);
             bufferedWriter.write(sendobj.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(6)) continue;
+                json = responseBuffer.remove(6);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 6) {
@@ -258,7 +265,6 @@ public class SocketHandler extends Thread
                     } else if (result == 0) return null;//查询失败
                 }
             }
-            return results;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -285,16 +291,16 @@ public class SocketHandler extends Thread
             sendobj.put("data_name", dataNode.getData_name());
             bufferedWriter.write(sendobj.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(7)) continue;
+                json = responseBuffer.remove(7);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 7) {
                     return result == 1;
                 }
             }
-            return false;
         } catch (JSONException e) {
             e.printStackTrace();
             return false;
@@ -318,9 +324,10 @@ public class SocketHandler extends Thread
             sendObject.put("group_id", group_id);
             bufferedWriter.write(sendObject.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(8)) continue;
+                json = responseBuffer.remove(8);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 8) {
@@ -340,7 +347,6 @@ public class SocketHandler extends Thread
                     } else return null;
                 }
             }
-            return results;
         } catch (JSONException e) {
             e.printStackTrace();
             return null;
@@ -371,14 +377,14 @@ public class SocketHandler extends Thread
             sendObject.put("cost", computeTask.getCost());
             bufferedWriter.write(sendObject.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(9)) continue;
+                json = responseBuffer.remove(9);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 9) return result == 1;
             }
-            return false;
         } catch (JSONException e) {
             e.printStackTrace();
             return false;
@@ -389,51 +395,44 @@ public class SocketHandler extends Thread
     }
 	
 	/**
-	 * Type-10
-	 */
-    public static ArrayList<String> send_task(String task_id) throws JSONException, IOException {
-        ArrayList<String> result = new ArrayList<>();
-		JSONObject sendObject = new JSONObject ();
-		sendObject.put ("purpose", 10);
-		sendObject.put ("task_id", task_id);
-		System.out.println (sendObject);
-		dataOutputStream.write (sendObject.toString ().getBytes ());
-		dataOutputStream.flush ();
-		try
-		{
-			ByteArrayOutputStream baos = null;
-			byte[] by = new byte[2048];
-			int n;
-			while ((n = dataInputStream.read (by)) != -1)
-			{
-				baos = new ByteArrayOutputStream ();
-				baos.write (by, 0, n);
-				String rcvJsonStr = new String (baos.toByteArray ());
-				try
-				{
-					JSONObject json = new JSONObject (rcvJsonStr);
-					if (json.get ("result").equals (1) && (json.getInt ("reply") == 10))
-					{
-						JSONArray jsarray = json.getJSONArray ("");
-						int len = jsarray.length ();
-						for (int i = 0; i < len; ++i)
-						{
-							JSONObject jsobj = jsarray.getJSONObject (i);
-							String str = jsobj.getString ("slaver_id");
-							result.add (str);
-						}
-						return result;
-					}
-				} catch (JSONException e)
-				{
-					e.printStackTrace ();
-				}
-			}
-		} catch (IOException e)
-		{
-			e.printStackTrace ();
-		}
-		return null;
+     * Type-10
+     * 发起一次任务，暂且就先返回所有slaver_id吧。
+     */
+    public static ArrayList<String> runTask(String task_id) {
+        try {
+            ArrayList<String> results = new ArrayList<>();
+            JSONObject sendObject = new JSONObject();
+            sendObject.put("purpose", 10);
+            sendObject.put("task_id", task_id);
+            sendObject.put("action", "run");
+            bufferedWriter.write(sendObject.toString() + "\r\n");
+            bufferedWriter.flush();
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(10)) continue;
+                json = responseBuffer.remove(10);
+                int result = json.getInt("result");
+                int reply = json.getInt("reply");
+                if (reply == 10) {
+                    if (result == 1) {
+                        JSONArray jsarray = json.getJSONArray("slaves");
+                        int len = jsarray.length();
+                        for (int i = 0; i < len; ++i) {
+                            JSONObject jsobj = jsarray.getJSONObject(i);
+                            String str = jsobj.getString("slave_id");
+                            results.add(str);
+                        }
+                        return results;
+                    }
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
 	}
 	
 	/**
@@ -483,9 +482,10 @@ public class SocketHandler extends Thread
             sendObject.put("state", state);
             bufferedWriter.write(sendObject.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(13)) continue;
+                json = responseBuffer.remove(13);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 13) {
@@ -502,7 +502,8 @@ public class SocketHandler extends Thread
                             computeTask.setSecurity_score(jsonObject.getDouble("security_score"));
                             computeTask.setState(jsonObject.getInt("state"));
                             computeTask.setTask_name(jsonObject.getString("task_name"));
-//                            computeTask.setGroup_id(jsonObject.getString("group_id"));
+                            String group_id = jsonObject.getString("group_id");
+                            if (!group_id.equals("null")) computeTask.setGroup_id(group_id);
 //                            computeTask.setCode(jsonObject.getString("code"));
                             /**这里就不要开始和结束时间了，反正没用**/
                             results.add(computeTask);
@@ -511,7 +512,6 @@ public class SocketHandler extends Thread
                     }
                 }
             }
-            return null;
         } catch (JSONException e) {
             e.printStackTrace();
             return null;
@@ -534,9 +534,10 @@ public class SocketHandler extends Thread
             sendObject.put("group_id", group_id);
             bufferedWriter.write(sendObject.toString() + "\r\n");
             bufferedWriter.flush();
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(14)) continue;
+                json = responseBuffer.remove(14);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 14) {
@@ -551,7 +552,6 @@ public class SocketHandler extends Thread
                     }
                 }
             }
-            return null;
         } catch (JSONException e) {
             e.printStackTrace();
             return null;
@@ -561,6 +561,9 @@ public class SocketHandler extends Thread
         }
     }
 
+    /**
+     * 插入新的数据集
+     **/
     public static boolean insertDataNode(DataNode dataNode) {
         try {
             JSONObject jsonObject = new JSONObject();
@@ -573,15 +576,14 @@ public class SocketHandler extends Thread
             jsonObject.put("file_path", dataNode.getFile_path());
             bufferedWriter.write(jsonObject.toString() + "\r\n");
             bufferedWriter.flush();
-
-            String rcvJsonStr = null;
-            while ((rcvJsonStr = bufferedReader.readLine()) != null) {
-                JSONObject json = new JSONObject(rcvJsonStr);
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(15)) continue;
+                json = responseBuffer.remove(15);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
                 if (reply == 15) return result == 1;
             }
-            return false;
         } catch (JSONException e) {
             e.printStackTrace();
             return false;
@@ -591,15 +593,120 @@ public class SocketHandler extends Thread
         }
     }
 
+    /**
+     * 修改task绑定的群组
+     **/
+    public static boolean alterTaskBindGroup(String task_id, String group_id) {
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("purpose", 16);
+            jsonObject.put("task_id", task_id);
+            jsonObject.put("group_id", group_id);
+            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            bufferedWriter.flush();
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(16)) continue;
+                json = responseBuffer.remove(16);
+                int result = json.getInt("result");
+                int reply = json.getInt("reply");
+                if (reply == 16) return result == 1;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 新开进程后台监听任务
+     **/
+    public static void startBackgroundListner() {
+        backgroundListner = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        if (!responseBuffer.containsKey(100)) continue;
+                        JSONObject json = responseBuffer.remove(100);
+                        int result = json.getInt("result");
+                        int reply = json.getInt("reply");
+                        if (reply == 100) {
+                            if (result == 1) {
+                                String task_id = json.getString("task_id");
+                                String data_type = json.getString("data_type");
+                                double cost = json.getDouble("cost");
+                                String initiator_id = json.getString("initiator_id");
+                                double security_score = json.getDouble("security_score");
+                                int state = json.getInt("state");
+                                String task_name = json.getString("task_name");
+                                String group_id = json.getString("group_id");
+                                /**先不要代码了**/
+                                ComputeTask computeTask = new ComputeTask();
+                                computeTask.setGroup_id(group_id);
+                                computeTask.setInitiator_id(initiator_id);
+                                computeTask.setTask_name(task_name);
+                                computeTask.setState(state);
+                                computeTask.setSecurity_score(security_score);
+                                computeTask.setCost(cost);
+                                computeTask.setData_type(data_type);
+                                computeTask.setTask_id(task_id);
+                                TaskController.workingTasks.add(computeTask);
+                                /**
+                                 *
+                                 * 执行
+                                 *
+                                 * **/
+                            }
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        backgroundListner.start();
+    }
+
+    private static void startReadResponse() {
+        readReply = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        String rcvJSonStr = bufferedReader.readLine();
+                        System.out.println(rcvJSonStr);
+                        if (rcvJSonStr != null) {
+                            JSONObject json = new JSONObject(rcvJSonStr);
+                            int reply = json.getInt("reply");
+                            responseBuffer.put(reply, json);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        readReply.start();
+    }
+
     public static void initSocket(String ip, int port) throws IOException {
         serverIP = ip;
         serverPort = port;
         socket = new Socket(serverIP, serverPort);
+        responseBuffer = new HashMap<Integer, JSONObject>();
         dataOutputStream = new DataOutputStream(socket.getOutputStream());
         dataInputStream = new DataInputStream(socket.getInputStream());
         outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
         inputStreamReader = new InputStreamReader(socket.getInputStream());
         bufferedReader = new BufferedReader(inputStreamReader);
         bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+        startReadResponse();
 	}
 }

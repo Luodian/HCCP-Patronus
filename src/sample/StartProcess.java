@@ -40,7 +40,6 @@ public class StartProcess extends Application {
 	
 	    /**连接socket**/
         SocketHandler.initSocket("172.20.11.219", 8888);
-
 //        /**加载数据库**/
 //        try {
 //            //加载MySql的驱动类

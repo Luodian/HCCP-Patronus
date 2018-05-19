@@ -126,12 +126,14 @@ public class DataLoadController implements Initializable{
         }
 
         data_sets = SocketHandler.queryDataNodesByID(LoginController.current_user_id);
-
-        for (int i = 0; i < data_sets.size(); i++) {
-            Label file = new Label(data_sets.get(i).getData_name());
-            file.setTextFill(Paint.valueOf("#ffffff"));
-            listView.getItems().add(file);
+        if (data_sets != null) {
+            for (int i = 0; i < data_sets.size(); i++) {
+                Label file = new Label(data_sets.get(i).getData_name());
+                file.setTextFill(Paint.valueOf("#ffffff"));
+                listView.getItems().add(file);
+            }
         }
+
 
         listView.setExpanded(true);
         listView.setVerticalGap(Double.valueOf(15.0));
