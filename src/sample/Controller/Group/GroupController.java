@@ -1,4 +1,5 @@
 package sample.Controller.Group;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.beans.value.ChangeListener;
@@ -15,8 +16,8 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.GroupNode;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
@@ -75,7 +76,7 @@ public class GroupController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        myGroupNodes = SQLHandler.queryGroupsByUserID(LoginController.current_user_id);
+        myGroupNodes = SocketHandler.queryGroupsByUserID(LoginController.current_user_id);
         myGroupsCopy = myGroupNodes;
         my_Groups_copy = my_Groups;
         my_Groups.setExpanded(true);

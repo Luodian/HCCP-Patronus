@@ -186,8 +186,7 @@ public class SQLHandler
     /**根据user_id查找其注册的数据集
      * 如果查询失败，返回null，并抛出异常
      * 否则至少返回0**/
-    public static ArrayList<DataNode> queryDataNodesByID (String user_id)
-    {
+    public static ArrayList<DataNode> queryDataNodesByID(String user_id) {
         String sql = "SELECT * FROM DATANODES WHERE user_id = "+ user_id;
         ArrayList<DataNode> result = new ArrayList<DataNode>();
         try {
@@ -338,5 +337,34 @@ public class SQLHandler
             return null;
         }
         return result;
+    }
+
+    //查询一个ID是否已经存在,-1表示出错，0表示不存在，1表示存在
+    public static int isExistID(String type, String id) {
+
+        String sql;
+        switch (type) {
+            case "user":
+                sql = "SELECT * from clientnodes where user_id = '" + id + "';";
+                break;
+            case "group":
+                sql = "SELECT * from groups where group_id = '" + id + "';";
+                break;
+            case "task":
+                sql = "SELECT  * from computetask where task_id = '" + id + "';";
+                break;
+            default:
+                return -1;
+        }
+        try {
+            ResultSet rs = query.executeQuery(sql);
+            if (rs.next()) {
+                return 1;
+            } else
+                return 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 }

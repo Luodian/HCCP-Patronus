@@ -17,10 +17,10 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.util.Callback;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.DataItem;
 import sample.Entity.DataNode;
 import sample.Entity.DataRead;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
@@ -124,7 +124,7 @@ public class DataSettingController{
         }
         DataNode dataNode = new DataNode(LoginController.current_user_id, str,
                 "unknown", tuples, columns, opened_file.getPath());
-        if (SQLHandler.insertDataNode(dataNode)){
+        if (SocketHandler.insertDataNode(dataNode)) {
             /**需要更新data_load页面中list的信息**/
             DataLoadController.data_sets.add(dataNode);
             Label filelable = new Label(str);

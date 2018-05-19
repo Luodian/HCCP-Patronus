@@ -1,4 +1,5 @@
 package sample.Controller.Group;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -16,9 +17,8 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import sample.Controller.Group.GroupController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.DataNode;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 
 import java.net.URL;
@@ -48,7 +48,7 @@ public class GroupInformationController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         int index = GroupController.my_Groups_copy.getSelectionModel().getSelectedIndex();
         String selected_group_id = GroupController.myGroupsCopy.get(index).getGroup_id();
-        groups_datas = SQLHandler.queryRegisterdDataNodesByID(selected_group_id);
+        groups_datas = SocketHandler.queryRegisterdDataNodesByID(selected_group_id);
         if (groups_datas != null){
             /**查询成功
              * 首先，需要构建表，共4项属性，每个长度为75**/

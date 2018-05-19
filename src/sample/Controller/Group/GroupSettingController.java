@@ -11,10 +11,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import sample.AppException.UserIdNotFindException;
-import sample.Controller.Group.GroupController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.GroupNode;
 import sample.Entity.UserNode;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 
 import java.sql.Date;
@@ -81,7 +80,7 @@ public class GroupSettingController {
         userNode.setEmail(user_name);
         userNode.setPassword(password);
 
-        String user_id = SQLHandler.isUserExistedByUserNode(userNode);
+        String user_id = SocketHandler.isUserExistedByUserNode(userNode.getEmail(), userNode.getPassword());
         if (!(user_id).equals("NOTFIND")){
             /**
              *  若得到ID，正常建立
@@ -90,7 +89,6 @@ public class GroupSettingController {
             userNode.setUser_id(user_id);
 
             GroupNode group = new GroupNode();
-            group.setGroup_id(String.valueOf((int)(Math.random()* 1000000000)));
             group.setGroup_name(group_name);//设置群组的名字
             group.setOwner_id(user_id);//登录时维护一个UserNode
             group.setDescription(description);//设置群组描述
@@ -101,19 +99,20 @@ public class GroupSettingController {
 
 
             /**向数据库提交，需要向GROUPS和BELONGS_TO两张表添加元组**/
-            if (SQLHandler.insertGroup(group)){
+            group.setGroup_id(SocketHandler.insertGroup(group));
+            if (!group.getGroup_id().equals("EXCEPTION") && !group.getGroup_id().equals("NOTFIND")) {
                 Stage stage = StartProcess.hashMap.remove("group_setting");
                 stage.close();
                 StartProcess.hashMap.get("groups").show();
 
                 /**添加owner和该group之间的联系,
                  * 其实我觉得如果这里插入失败，需要将上面的添加操作回滚，但是算了懒得弄了**/
-                if (!SQLHandler.insertGroupUserRelation(user_id, group.getGroup_id()))
+                if (!SocketHandler.insertGroupUserRelation(user_id, group.getGroup_id()))
                     throw new Throwable("GROUP_USER_RELATION INSERT FAILED");
 
                 /**向myGroup列表添加元素
                  * 别忘了获取owner**/
-                UserNode owner = SQLHandler.queryUserByID(user_id);
+                UserNode owner = SocketHandler.queryUserByID(user_id);
                 group.setOwner(owner);
                 GroupController.myGroupsCopy.add(group);
                 Label append_group = new Label(group.getGroup_name());
@@ -125,9 +124,6 @@ public class GroupSettingController {
         else{
             throw new UserIdNotFindException();
         }
-
-
-
     }
 
 }

@@ -28,10 +28,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.DataItem;
 import sample.Entity.DataNode;
 import sample.Entity.DataRead;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
@@ -125,7 +125,7 @@ public class DataLoadController implements Initializable{
             e.printStackTrace();
         }
 
-        data_sets = SQLHandler.queryDataNodesByID(LoginController.current_user_id);
+        data_sets = SocketHandler.queryDataNodesByID(LoginController.current_user_id);
 
         for (int i = 0; i < data_sets.size(); i++) {
             Label file = new Label(data_sets.get(i).getData_name());

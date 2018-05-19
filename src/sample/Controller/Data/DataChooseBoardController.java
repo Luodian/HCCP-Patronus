@@ -16,9 +16,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import sample.Controller.Group.GroupController;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.DataNode;
 import sample.Entity.GroupNode;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
@@ -56,8 +56,8 @@ public class DataChooseBoardController implements Initializable {
         /**获取所有的本地数据集
          * 同时获得所有的已注册的数据集
          * 将已注册的数据集从dataset中去除**/
-        datasets = SQLHandler.queryDataNodesByID(LoginController.current_user_id);
-        registedData = SQLHandler.queryDataSetNameByUserIdAndGroupID(LoginController.current_user_id,
+        datasets = SocketHandler.queryDataNodesByID(LoginController.current_user_id);
+        registedData = SocketHandler.queryDataSetNameByUserIdAndGroupID(LoginController.current_user_id,
                 aimed_group.getGroup_id());
 
         /**将已注册的数据集从dataset中去除**/
@@ -95,7 +95,7 @@ public class DataChooseBoardController implements Initializable {
         else {
             /**向数据库注册**/
             if (group_index >= 0) {
-                if (SQLHandler.insertGroupDataRegisterRelation(aimed_group, current_datanode)) {
+                if (SocketHandler.insertGroupDataRegisterRelation(current_datanode, aimed_group.getGroup_id())) {
                     /**插入成功**/
                     Stage groups = StartProcess.hashMap.get("groups");
                     Stage data_choose_board = StartProcess.hashMap.remove("data_choose_board");

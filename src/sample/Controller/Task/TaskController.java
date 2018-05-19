@@ -23,9 +23,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.json.JSONException;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.ComputeTask;
 import sample.Entity.UserNode;
 import sample.SocketConnect.SocketHandler;
@@ -129,16 +127,8 @@ public class TaskController implements Initializable {
                     ComputeTask temp = myTasks.get(index);
                     /**获取发起者信息**/
                     UserNode initiatoNode = null;
-                    try
-                    {
-                        initiatoNode = SocketHandler.queryUserByID (temp.getInitiator_id ());
-                    } catch (JSONException e)
-                    {
-                        e.printStackTrace ();
-                    } catch (IOException e)
-                    {
-                        e.printStackTrace ();
-                    }
+
+                    initiatoNode = SocketHandler.queryUserByID(temp.getInitiator_id());
                     if (initiatoNode != null) temp.setInitiator (initiatoNode);
                     else HintFrame.showFailFrame("Can't find the initiator!");
                     initiator.setText(temp.getInitiator().getUser_name());
@@ -173,9 +163,7 @@ public class TaskController implements Initializable {
         });
 
         /**先获得当前用户的所有状态的任务**/
-//		    myTasks = SocketHandler.queryComputeTaskByInitiatorIDAndState (LoginController.current_user_id, -1);
-        myTasks = SQLHandler.queryComputeTaskByInitiatorIDAndState(LoginController.current_user_id, -1);
-    
+        myTasks = SocketHandler.queryComputeTaskByInitiatorIDAndState(LoginController.current_user_id, -1);
         if (myTasks != null && myTasks.size() != 0){
             for (int i = 0; i < myTasks.size(); i++) {
                 Label task = new Label(myTasks.get(i).getTask_name());

@@ -2,7 +2,6 @@ package sample.Controller.Group;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXMasonryPane;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -15,9 +14,8 @@ import javafx.scene.paint.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
-import sample.Entity.DataNode;
 import sample.Entity.GroupNode;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 
 import java.net.URL;
@@ -42,7 +40,7 @@ public class GroupChooseBoardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        myGroups = SQLHandler.queryGroupsByUserID(LoginController.current_user_id);
+        myGroups = SocketHandler.queryGroupsByUserID(LoginController.current_user_id);
         if (myGroups != null) {
             for (int i = 0; i < myGroups.size(); i++) {
                 Pane temp = createNewGroupInfoPane(myGroups.get(i));
