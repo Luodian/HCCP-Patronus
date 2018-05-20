@@ -62,7 +62,7 @@ public class TaskSettingController {
     }
 
     @FXML
-    void task(MouseEvent event) {
+    void submit(MouseEvent event) {
         String name = task_name.getText();
         /**这个地方有个问题
          * 就是具体代码在数据库里怎么存**/

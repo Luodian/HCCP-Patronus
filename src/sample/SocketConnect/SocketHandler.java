@@ -1,5 +1,11 @@
 package sample.SocketConnect;
 
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Paint;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -398,9 +404,9 @@ public class SocketHandler
      * Type-10
      * 发起一次任务，暂且就先返回所有slaver_id吧。
      */
-    public static ArrayList<String> runTask(String task_id) {
+    public static ArrayList<DataNode> runTask(String task_id) {
         try {
-            ArrayList<String> results = new ArrayList<>();
+            ArrayList<DataNode> results = new ArrayList<>();
             JSONObject sendObject = new JSONObject();
             sendObject.put("purpose", 10);
             sendObject.put("task_id", task_id);
@@ -419,8 +425,14 @@ public class SocketHandler
                         int len = jsarray.length();
                         for (int i = 0; i < len; ++i) {
                             JSONObject jsobj = jsarray.getJSONObject(i);
-                            String str = jsobj.getString("slave_id");
-                            results.add(str);
+                            DataNode tmp = new DataNode();
+                            String slave_id = jsobj.getString("slave_id");
+                            String slave_name = jsobj.getString("slave_name");
+                            String data_name = jsobj.getString("data_name");
+                            tmp.setUser_name(slave_name);
+                            tmp.setUser_id(slave_id);
+                            tmp.setData_name(data_name);
+                            results.add(tmp);
                         }
                         return results;
                     }
@@ -654,11 +666,30 @@ public class SocketHandler
                                 computeTask.setData_type(data_type);
                                 computeTask.setTask_id(task_id);
                                 TaskController.workingTasks.add(computeTask);
+
                                 /**
                                  *
                                  * 执行
                                  *
                                  * **/
+                                if (TaskController.master_masonry != null) {
+                                    /**不为空，表示当前在task界面里**/
+                                    Pane pane = TaskController.newWorkingTask("master: " + computeTask.getInitiator_id(), "task: " + computeTask.getTask_name());
+                                    TaskController.masters.add(pane);
+                                    Platform.runLater(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            ObservableList<Node> masterPanes = TaskController.master_masonry.getChildren();
+                                            if (masterPanes.size() < 4) masterPanes.add(pane);
+                                        }
+                                    });
+                                    Label task = new Label(computeTask.getTask_name());
+                                    task.setTextFill(Paint.valueOf("#ffffff"));
+                                    TaskController.my_master_list_copy.getItems().add(task);
+                                } else {
+                                    Pane pane = TaskController.newWorkingTask("master: " + computeTask.getInitiator_id(), "task: " + computeTask.getTask_name());
+                                    TaskController.masters.add(pane);
+                                }
                             }
                         }
 
@@ -678,7 +709,9 @@ public class SocketHandler
                 while (true) {
                     try {
                         String rcvJSonStr = bufferedReader.readLine();
+
                         System.out.println(rcvJSonStr);
+
                         if (rcvJSonStr != null) {
                             JSONObject json = new JSONObject(rcvJSonStr);
                             int reply = json.getInt("reply");
