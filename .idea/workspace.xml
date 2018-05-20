@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" afterPath="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,18 +84,18 @@
       <file leaf-file-name="SocketHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1539">
-              <caret line="296" column="125" lean-forward="false" selection-start-line="296" selection-start-column="125" selection-end-line="296" selection-end-column="125" />
+            <state relative-caret-position="-1639">
+              <caret line="278" column="126" lean-forward="false" selection-start-line="278" selection-start-column="126" selection-end-line="278" selection-end-column="126" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#initSocket#0;class#SocketHandler#0" expanded="false" />
                 <element signature="method#sign_in#0;class#SocketHandler#0" expanded="false" />
                 <element signature="method#queryUserByID#0;class#SocketHandler#0" expanded="false" />
-                <element signature="e#7406#7416#0" expanded="true" />
+                <element signature="e#7016#7026#0" expanded="true" />
                 <element signature="method#insertComputeTask#0;class#SocketHandler#0" expanded="false" />
                 <element signature="method#send_task#0;class#SocketHandler#0" expanded="false" />
                 <element signature="method#queryComputeTaskByInitiatorIDAndState#0;class#SocketHandler#0" expanded="false" />
                 <element signature="method#queryDataSetNameByUserIdAndGroupID#0;class#SocketHandler#0" expanded="false" />
+                <element signature="method#initSocket#0;class#SocketHandler#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -216,11 +215,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="819" />
+    <option name="width" value="1439" />
+    <option name="height" value="747" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -427,7 +426,7 @@
       <workItem from="1526537792992" duration="2583000" />
       <workItem from="1526553033687" duration="4790000" />
       <workItem from="1526617870413" duration="18134000" />
-      <workItem from="1526650669054" duration="4614000" />
+      <workItem from="1526650669054" duration="4652000" />
     </task>
     <task id="LOCAL-00001" summary="May 15,2018 2nd">
       <created>1526428568518</created>
@@ -471,14 +470,21 @@
       <option name="project" value="LOCAL" />
       <updated>1526650718036</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="May 18,2018 2nd">
+      <created>1526655309665</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1526655309665</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41860000" />
+    <option name="totallyTimeSpent" value="41898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="-1" y="23" width="1439" height="747" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -493,7 +499,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17447495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15461704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -915,18 +921,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1539">
-          <caret line="296" column="125" lean-forward="false" selection-start-line="296" selection-start-column="125" selection-end-line="296" selection-end-column="125" />
+        <state relative-caret-position="-1639">
+          <caret line="278" column="126" lean-forward="false" selection-start-line="278" selection-start-column="126" selection-end-line="278" selection-end-column="126" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initSocket#0;class#SocketHandler#0" expanded="false" />
             <element signature="method#sign_in#0;class#SocketHandler#0" expanded="false" />
             <element signature="method#queryUserByID#0;class#SocketHandler#0" expanded="false" />
-            <element signature="e#7406#7416#0" expanded="true" />
+            <element signature="e#7016#7026#0" expanded="true" />
             <element signature="method#insertComputeTask#0;class#SocketHandler#0" expanded="false" />
             <element signature="method#send_task#0;class#SocketHandler#0" expanded="false" />
             <element signature="method#queryComputeTaskByInitiatorIDAndState#0;class#SocketHandler#0" expanded="false" />
             <element signature="method#queryDataSetNameByUserIdAndGroupID#0;class#SocketHandler#0" expanded="false" />
+            <element signature="method#initSocket#0;class#SocketHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
