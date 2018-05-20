@@ -36,30 +36,23 @@ public class StartProcess extends Application {
     {
 	    FXMLLoader myEditPageLoader = new FXMLLoader (getClass ().getResource ("./FXML/login.fxml"));
 	    Parent root = myEditPageLoader.load();
-	    /**加载数据库**/
+
 	
 	    /**连接socket**/
-	    try
-	    {
-		    SocketHandler sk = new SocketHandler ("172.20.102.217", 8888);
-	    } catch (Exception e)
-	    {
-		    e.printStackTrace ();
-	    }
-
-//        try{
+        SocketHandler.initSocket("172.20.11.219", 8888);
+//        /**加载数据库**/
+//        try {
 //            //加载MySql的驱动类
-//	        SocketHandler
-//            Class.forName("com.mysql.jdbc.Driver") ;
-//            SQLHandler.con = DriverManager.getConnection(url , username , password );
+//            Class.forName("com.mysql.jdbc.Driver");
+//            SQLHandler.con = DriverManager.getConnection(url, username, password);
 //            SQLHandler.query = SQLHandler.con.createStatement();
 //
-//        }catch(ClassNotFoundException e){
+//        } catch (ClassNotFoundException e) {
 //            System.out.println("can't find driver，load driver failed!");
-//            e.printStackTrace() ;
-//        }catch (SQLException e){
+//            e.printStackTrace();
+//        } catch (SQLException e) {
 //            System.out.println("can't connect to local database!");
-//            e.printStackTrace() ;
+//            e.printStackTrace();
 //        }
 
         /**启动登录页面**/

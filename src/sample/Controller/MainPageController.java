@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 
 import java.io.IOException;
@@ -43,6 +44,9 @@ public class MainPageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        SocketHandler.startBackgroundListner();
+
         JFXButton func_module = new JFXButton("+");
         func_module.setButtonType(JFXButton.ButtonType.RAISED);
         func_module.getStyleClass().addAll("animated-option-button", "animated-option-sub-button1");

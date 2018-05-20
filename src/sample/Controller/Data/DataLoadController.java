@@ -28,10 +28,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.DataItem;
 import sample.Entity.DataNode;
 import sample.Entity.DataRead;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
@@ -125,13 +125,15 @@ public class DataLoadController implements Initializable{
             e.printStackTrace();
         }
 
-        data_sets = SQLHandler.queryDataNodesByID(LoginController.current_user_id);
-
-        for (int i = 0; i < data_sets.size(); i++) {
-            Label file = new Label(data_sets.get(i).getData_name());
-            file.setTextFill(Paint.valueOf("#ffffff"));
-            listView.getItems().add(file);
+        data_sets = SocketHandler.queryDataNodesByID(LoginController.current_user_id);
+        if (data_sets != null) {
+            for (int i = 0; i < data_sets.size(); i++) {
+                Label file = new Label(data_sets.get(i).getData_name());
+                file.setTextFill(Paint.valueOf("#ffffff"));
+                listView.getItems().add(file);
+            }
         }
+
 
         listView.setExpanded(true);
         listView.setVerticalGap(Double.valueOf(15.0));
@@ -280,6 +282,11 @@ public class DataLoadController implements Initializable{
         an_context.getChildren().add(type);
         an_context.getChildren().add(row_num);
         an_context.getChildren().add(attr_num);
+
+    }
+
+    @FXML
+    void themeChange(MouseEvent event) {
 
     }
 }

@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXMasonryPane;
 import com.jfoenix.controls.JFXProgressBar;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
@@ -23,9 +24,9 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.json.JSONException;
 import sample.Controller.Login.LoginController;
 import sample.Entity.ComputeTask;
+import sample.Entity.DataNode;
 import sample.Entity.UserNode;
 import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
@@ -91,134 +92,97 @@ public class TaskController implements Initializable {
 
     public static ArrayList<ComputeTask> myTasks;
 
-    public static ArrayList<ComputeTask> workingTasks;
+    public static ArrayList<ComputeTask> workingTasks = new ArrayList<ComputeTask>();
 
     public static JFXListView my_task_list_copy;
 
-    private ArrayList<Pane> slaves = new ArrayList<Pane>();
+    public static JFXListView my_master_list_copy;
 
-    private ArrayList<Pane> masters = new ArrayList<Pane>();
+    public static ArrayList<Pane> slaves = new ArrayList<Pane>();
+
+    public static ArrayList<Pane> masters = new ArrayList<Pane>();
+    public static JFXMasonryPane slave_masonry;
+    public static JFXMasonryPane master_masonry;
+    private ArrayList<DataNode> slaves_datas = new ArrayList<DataNode>();
 
     @FXML
     private JFXMasonryPane masonry_pane_2;//此为活动在我这台主机上的任务
 
+    public static Pane newWorkingTask(String initiator_name, String data_name_1) {
+        Pane pane = new Pane();
+        pane.setStyle("-fx-background-color: #63B8FF; -fx-background-radius: 2em;");
+        pane.setPrefSize(130, 140);
+        pane.effectProperty().setValue(new DropShadow());
+
+        Label initiator = new Label(initiator_name);
+        initiator.setLayoutX(49);
+        initiator.setLayoutY(36);
+        initiator.setFont(new Font("Chalkboard SE Light", 12.0));
+        initiator.setTextFill(Paint.valueOf("#ffffff"));
+
+        Label data_name = new Label(data_name_1);
+        data_name.setLayoutX(50);
+        data_name.setLayoutY(71);
+        data_name.setFont(new Font("Chalkboard SE Light", 12.0));
+        data_name.setTextFill(Paint.valueOf("#ffffff"));
+
+
+        ImageView initiator_image = new ImageView("/sample/resources/MDicon/person.png");
+        initiator_image.setFitWidth(33);
+        initiator_image.setFitHeight(31);
+        initiator_image.setLayoutX(20);
+        initiator_image.setLayoutY(30);
+        initiator_image.setPreserveRatio(true);
+        initiator_image.setPickOnBounds(true);
+
+        ImageView data_image = new ImageView("/sample/resources/MDicon/bookmark.png");
+        data_image.setFitWidth(33);
+        data_image.setFitHeight(31);
+        data_image.setLayoutX(20);
+        data_image.setLayoutY(65);
+        data_image.setPreserveRatio(true);
+        data_image.setPickOnBounds(true);
+
+        JFXProgressBar progressBar = new JFXProgressBar();
+        progressBar.setPrefSize(118, 7);
+        progressBar.setLayoutX(12);
+        progressBar.setLayoutY(123);
+
+        pane.getChildren().add(initiator);
+        pane.getChildren().add(data_name);
+        pane.getChildren().add(initiator_image);
+        pane.getChildren().add(data_image);
+        pane.getChildren().add(progressBar);
+
+        return pane;
+    }
+
     @FXML
     void runTask(MouseEvent event) {
         int index = my_task_list.getSelectionModel().getSelectedIndex();
+        if (slaves.size() > 0) {
+            HintFrame.showFailFrame("Please wait util current task finish!");
+            return;
+        }
         if (index < 0) {
             HintFrame.showFailFrame("Please choose one of your tasks!");
         } else {
-        }
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        taskPane = task_pane;
-        my_task_list_copy = my_task_list;
-
-        /**设置my_task_list及worked_task_list属性**/
-        my_task_list.setExpanded(true);
-        my_task_list.setVerticalGap(Double.valueOf(15.0));
-        my_task_list.depthProperty().set(5);
-        my_task_list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-            @Override
-            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-                int index = my_task_list.getSelectionModel().getSelectedIndex();
-                if (index >= 0){
-                    ComputeTask temp = myTasks.get(index);
-                    /**获取发起者信息**/
-                    UserNode initiatoNode = null;
-                    try
-                    {
-                        initiatoNode = SocketHandler.queryUserByID (temp.getInitiator_id ());
-                    } catch (JSONException e)
-                    {
-                        e.printStackTrace ();
-                    } catch (IOException e)
-                    {
-                        e.printStackTrace ();
+            ComputeTask computeTask = myTasks.get(index);
+            slaves_datas = SocketHandler.runTask(computeTask.getTask_id());
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    for (int i = 0; i < slaves_datas.size(); i++) {
+                        DataNode tmp = slaves_datas.get(i);
+                        Pane pane = newWorkingTask("slave: " + tmp.getUser_name(), "data name: " + tmp.getData_name());
+                        slaves.add(pane);
                     }
-                    if (initiatoNode != null) temp.setInitiator (initiatoNode);
-                    else HintFrame.showFailFrame("Can't find the initiator!");
-                    initiator.setText(temp.getInitiator().getUser_name());
-                    data_type.setText(temp.getData_type());
-                    cost.setText(String.valueOf(temp.getCost()));
-                    score.setText(String.valueOf(temp.getSecurity_score()));
-                    /**根据状态值进行判断
-                     * 若state = 0，则表示任务未启动，则其start_time和end_time字段都为"task not start yet!"
-                     * 若state = 1，则表示任务启动但是未完成，则其start_time有值，但end_time字段值为"task is running!"
-                     * 若state = 2，则表示任务已完成，则其start_time和end_time字段均有值**/
-                    int state = temp.getState();
-                    switch (state){
-                        case 0:{
-                            start_time.setText("task not start yet!");
-                            end_time.setText("task not start yet!");
-                            break;
-                        }
-                        case 1:{
-                            start_time.setText(temp.getStart_time());
-                            end_time.setText("task is running!");
-                            break;
-                        }
-                        case 2:{
-                            start_time.setText(temp.getStart_time());
-                            end_time.setText(temp.getEnd_time());
-                            break;
-                        }
-                        default:HintFrame.showFailFrame("Unknown Error!");
-                    }
+                    int len = (MAX_SHOW_CARD > slaves_datas.size()) ? slaves_datas.size() : MAX_SHOW_CARD;
+                    for (int i = 0; i < len; i++) masonry_pane_1.getChildren().add(slaves.get(i));
+                    if (len == MAX_SHOW_CARD) showMoreLabel(1);
                 }
-            }
-        });
-
-        /**先获得当前用户的所有状态的任务**/
-	    try
-	    {
-		    myTasks = SocketHandler.queryComputeTaskByInitiatorIDAndState (LoginController.current_user_id, -1);
-	    } catch (JSONException e)
-	    {
-		    e.printStackTrace ();
-	    } catch (IOException e)
-	    {
-		    e.printStackTrace ();
-	    }
-    
-        if (myTasks != null && myTasks.size() != 0){
-            for (int i = 0; i < myTasks.size(); i++) {
-                Label task = new Label(myTasks.get(i).getTask_name());
-                task.setTextFill(Paint.valueOf("#ffffff"));
-                my_task_list.getItems().add(task);
-            }
+            });
         }
-
-        /**工作的节点进度卡片信息最多在这个页面显示3个
-         * 更多的信息可以进入"see all cards..."界面看**/
-
-        for (int i = 0; i < MAX_SHOW_CARD; i++) {
-            Pane pane = newWorkingTask("initiator", "data name");
-            slaves.add(pane);
-            masonry_pane_1.getChildren().add(pane);
-        }
-
-        Label label1 = new Label("more...");
-        label1.setPrefSize(50, 150);
-        label1.setAlignment(Pos.CENTER);
-        label1.setFont(new Font("Chalkboard SE Light", 15.0));
-        label1.setTextFill(Paint.valueOf("#ffffff"));
-        masonry_pane_1.getChildren().add(label1);
-
-
-        for (int i = 0; i < MAX_SHOW_CARD; i++) {
-            Pane pane = newWorkingTask("initiator", "data name");
-            masonry_pane_2.getChildren().add(pane);
-        }
-
-        Label label2 = new Label("more...");
-        label2.setPrefSize(50, 150);
-        label2.setAlignment(Pos.CENTER);
-        label2.setFont(new Font("Chalkboard SE Light", 15.0));
-        label2.setTextFill(Paint.valueOf("#ffffff"));
-        masonry_pane_2.getChildren().add(label2);
     }
 
     @FXML
@@ -274,53 +238,105 @@ public class TaskController implements Initializable {
         }
     }
 
-    public Pane newWorkingTask(String initiator_name, String data_name_1){
-        Pane pane = new Pane();
-        pane.setStyle("-fx-background-color: #63B8FF; -fx-background-radius: 2em;");
-        pane.setPrefSize(130, 140);
-        pane.effectProperty().setValue(new DropShadow());
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        taskPane = task_pane;
+        my_task_list_copy = my_task_list;
+        master_masonry = masonry_pane_2;
+        my_master_list_copy = my_master_list;
 
-        Label initiator = new Label(initiator_name);
-        initiator.setLayoutX(49);
-        initiator.setLayoutY(36);
-        initiator.setFont(new Font("Chalkboard SE Light", 12.0));
-        initiator.setTextFill(Paint.valueOf("#ffffff"));
+        /**设置my_task_list及worked_task_list属性**/
+        my_task_list.setExpanded(true);
+        my_task_list.setVerticalGap(Double.valueOf(15.0));
+        my_task_list.depthProperty().set(5);
+        my_task_list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                int index = my_task_list.getSelectionModel().getSelectedIndex();
+                if (index >= 0){
+                    ComputeTask temp = myTasks.get(index);
+                    /**获取发起者信息**/
+                    UserNode initiatoNode = null;
 
-        Label data_name = new Label(data_name_1);
-        data_name.setLayoutX(50);
-        data_name.setLayoutY(71);
-        data_name.setFont(new Font("Chalkboard SE Light", 12.0));
-        data_name.setTextFill(Paint.valueOf("#ffffff"));
+                    initiatoNode = SocketHandler.queryUserByID(temp.getInitiator_id());
+                    if (initiatoNode != null) temp.setInitiator (initiatoNode);
+                    else HintFrame.showFailFrame("Can't find the initiator!");
+                    initiator.setText(temp.getInitiator().getUser_name());
+                    data_type.setText(temp.getData_type());
+                    cost.setText(String.valueOf(temp.getCost()));
+                    score.setText(String.valueOf(temp.getSecurity_score()));
+                    /**根据状态值进行判断
+                     * 若state = 0，则表示任务未启动，则其start_time和end_time字段都为"task not start yet!"
+                     * 若state = 1，则表示任务启动但是未完成，则其start_time有值，但end_time字段值为"task is running!"
+                     * 若state = 2，则表示任务已完成，则其start_time和end_time字段均有值**/
+                    int state = temp.getState();
+                    switch (state){
+                        case 0:{
+                            start_time.setText("task not start yet!");
+                            end_time.setText("task not start yet!");
+                            break;
+                        }
+                        case 1:{
+                            start_time.setText(temp.getStart_time());
+                            end_time.setText("task is running!");
+                            break;
+                        }
+                        case 2:{
+                            start_time.setText(temp.getStart_time());
+                            end_time.setText(temp.getEnd_time());
+                            break;
+                        }
+                        default:HintFrame.showFailFrame("Unknown Error!");
+                    }
+                }
+            }
+        });
+
+        /**先获得当前用户的所有状态的任务**/
+        myTasks = SocketHandler.queryComputeTaskByInitiatorIDAndState(LoginController.current_user_id, -1);
+        if (myTasks != null && myTasks.size() != 0){
+            for (int i = 0; i < myTasks.size(); i++) {
+                Label task = new Label(myTasks.get(i).getTask_name());
+                task.setTextFill(Paint.valueOf("#ffffff"));
+                my_task_list.getItems().add(task);
+            }
+        }
+        /**服务的master任务信息**/
+        for (int i = 0; i < workingTasks.size(); i++) {
+            Label task = new Label(workingTasks.get(i).getTask_name());
+            task.setTextFill(Paint.valueOf("#ffffff"));
+            my_master_list.getItems().add(task);
+        }
+
+        int len1 = (MAX_SHOW_CARD > slaves.size()) ? slaves.size() : MAX_SHOW_CARD;
+        for (int i = 0; i < len1; i++) masonry_pane_1.getChildren().add(slaves.get(i));
+        if (len1 == MAX_SHOW_CARD) showMoreLabel(1);
+
+        int len2 = (MAX_SHOW_CARD > masters.size()) ? masters.size() : MAX_SHOW_CARD;
+        for (int i = 0; i < len2; i++) masonry_pane_2.getChildren().add(masters.get(i));
+        if (len2 == MAX_SHOW_CARD) showMoreLabel(2);
 
 
-        ImageView initiator_image = new ImageView("/sample/resources/MDicon/person.png");
-        initiator_image.setFitWidth(33);
-        initiator_image.setFitHeight(31);
-        initiator_image.setLayoutX(20);
-        initiator_image.setLayoutY(30);
-        initiator_image.setPreserveRatio(true);
-        initiator_image.setPickOnBounds(true);
+        /**工作的节点进度卡片信息最多在这个页面显示3个
+         * 更多的信息可以进入"see all cards..."界面看**/
+    }
 
-        ImageView data_image = new ImageView("/sample/resources/MDicon/bookmark.png");
-        data_image.setFitWidth(33);
-        data_image.setFitHeight(31);
-        data_image.setLayoutX(20);
-        data_image.setLayoutY(65);
-        data_image.setPreserveRatio(true);
-        data_image.setPickOnBounds(true);
-
-        JFXProgressBar progressBar = new JFXProgressBar();
-        progressBar.setPrefSize(118, 7);
-        progressBar.setLayoutX(12);
-        progressBar.setLayoutY(123);
-
-        pane.getChildren().add(initiator);
-        pane.getChildren().add(data_name);
-        pane.getChildren().add(initiator_image);
-        pane.getChildren().add(data_image);
-        pane.getChildren().add(progressBar);
-
-        return pane;
+    public void showMoreLabel(int i) {
+        if (i == 1) {
+            Label label1 = new Label("more...");
+            label1.setPrefSize(50, 150);
+            label1.setAlignment(Pos.CENTER);
+            label1.setFont(new Font("Chalkboard SE Light", 15.0));
+            label1.setTextFill(Paint.valueOf("#ffffff"));
+            masonry_pane_1.getChildren().add(label1);
+        } else if (i == 2) {
+            Label label1 = new Label("more...");
+            label1.setPrefSize(50, 150);
+            label1.setAlignment(Pos.CENTER);
+            label1.setFont(new Font("Chalkboard SE Light", 15.0));
+            label1.setTextFill(Paint.valueOf("#ffffff"));
+            masonry_pane_2.getChildren().add(label1);
+        }
     }
 
     public Pane createSeeAllCard(EventHandler eventHandler) {
@@ -348,48 +364,4 @@ public class TaskController implements Initializable {
 
         }
     }
-
-//    Thread rand_drop = new Thread(new Runnable() {
-//        @Override
-//        public void run() {
-//            Platform.runLater(new Runnable() {
-//                @Override
-//                public void run() {
-//                    boolean[] isfinish = new boolean[4];
-//                    for (int i = 0; i < isfinish.length; i++) isfinish[i] = false;
-//                    int running_task_num = 4;
-//                    while (running_task_num > 0){
-//                        masonry_pane_1.getChildren().clear();
-//                        for (int i = 0; i < 4; i++) {
-//                            Pane temp = slaves.get(i);
-//                            if (isfinish[i]) {//若已经完成，则直接跳过
-//                                masonry_pane_1.getChildren().add(temp);
-//                                continue;
-//                            }
-//
-//                            double rand = Math.random();
-//                            if (rand < 0.0005){
-//                                temp.getChildren().remove(4);//第四个是ProgressBar
-//                                HintFrame.showSuccessFrame("slave: " + i + " complete!");
-//
-//                                ImageView initiator_image = new ImageView("/sample/resources/MDicon/check.png");
-//                                initiator_image.setFitWidth(50);
-//                                initiator_image.setFitHeight(50);
-//                                initiator_image.setLayoutX(50);
-//                                initiator_image.setLayoutY(98);
-//                                initiator_image.setPreserveRatio(true);
-//                                initiator_image.setPickOnBounds(true);
-//                                temp.getChildren().add(initiator_image);
-//                                isfinish[i] = true;
-//                                running_task_num--;
-//                            }
-//                            masonry_pane_1.getChildren().add(temp);
-//                        }
-//                    }
-//                    HintFrame.showSuccessFrame("Task finish!");
-//                }
-//            });
-//        }
-//    });
-//            rand_drop.start();
 }

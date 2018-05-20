@@ -58,8 +58,10 @@ public class LoginController {
         String email = user_email.getText();
         String password = user_password.getText();
         Parent root = null;
-	
-	    if (!(current_user_id = SocketHandler.sign_in (email, password)).equals ("NOTFIND"))
+
+
+//        if (!(current_user_id = SQLHandler.isUserExistedByUserNode(new UserNode(email, password))).equals("NOTFIND"))
+        if (!(current_user_id = SocketHandler.isUserExistedByUserNode(email, password)).equals("NOTFIND"))
 	    {
             Stage stage = new Stage();
             root = FXMLLoader.load(getClass().getResource("../../FXML/main.fxml"));

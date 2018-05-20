@@ -10,15 +10,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
 import sample.Entity.ComputeTask;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
 import java.io.File;
-import java.util.Date;
 
 public class TaskSettingController {
 
@@ -82,7 +80,7 @@ public class TaskSettingController {
             computeTask.setInitiator_id(LoginController.current_user_id);
             computeTask.setState(0);
             computeTask.setTask_name(name);
-            if (SQLHandler.insertComputeTask(computeTask)){
+            if (SocketHandler.insertComputeTask(computeTask)) {
                 HintFrame.showSuccessFrame("ComputeTask insert successfully!");
                 /**需要更新tasks页面中list的信息**/
                 Label newTask = new Label(name);

@@ -2,7 +2,6 @@ package sample.Controller.Group;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXMasonryPane;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -15,10 +14,12 @@ import javafx.scene.paint.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import sample.Controller.Login.LoginController;
-import sample.Datebase.SQLHandler;
-import sample.Entity.DataNode;
+import sample.Controller.Task.TaskController;
+import sample.Entity.ComputeTask;
 import sample.Entity.GroupNode;
+import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
+import sample.Utils.HintFrame;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -40,9 +41,23 @@ public class GroupChooseBoardController implements Initializable {
 
     private Pane current_pane;
 
+    private GroupNode current_group;
+
+    private int data_index;
+
+    private ComputeTask aimed_task;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        myGroups = SQLHandler.queryGroupsByUserID(LoginController.current_user_id);
+        data_index = TaskController.my_task_list_copy.getSelectionModel().getSelectedIndex();
+        aimed_task = TaskController.myTasks.get(data_index);
+        myGroups = SocketHandler.queryGroupsByUserID(LoginController.current_user_id);
+        for (int i = myGroups.size() - 1; i >= 0; i--) {
+            if (myGroups.get(i).getGroup_id().equals(aimed_task.getGroup_id())) {
+                myGroups.remove(i);
+                break;
+            }
+        }
         if (myGroups != null) {
             for (int i = 0; i < myGroups.size(); i++) {
                 Pane temp = createNewGroupInfoPane(myGroups.get(i));
@@ -61,7 +76,23 @@ public class GroupChooseBoardController implements Initializable {
 
     @FXML
     void chooseGroup(MouseEvent event) {
-
+        if (current_group == null) HintFrame.showFailFrame("Please choose one group set!");
+        else {
+            /**向数据库注册**/
+            if (data_index >= 0) {
+                if (SocketHandler.alterTaskBindGroup(aimed_task.getTask_id(), current_group.getGroup_id())) {
+                    /**插入成功**/
+                    Stage groups = StartProcess.hashMap.get("tasks");
+                    Stage data_choose_board = StartProcess.hashMap.remove("group_choose_board");
+                    groups.show();
+                    aimed_task.setGroup_id(current_group.getGroup_id());
+                    data_choose_board.close();
+                } else {
+                    /**若插入失败,弹出失败提示框**/
+                    HintFrame.showFailFrame("Wrong type match or register duplicately!");
+                }
+            } else HintFrame.showFailFrame("Unknown Error!");
+        }
     }
 
     private Pane createNewGroupInfoPane(GroupNode temp) {
@@ -83,9 +114,10 @@ public class GroupChooseBoardController implements Initializable {
                 0.4568345323741007, 0.5, true, CycleMethod.NO_CYCLE, stop_list));
         temp_btn.onMouseClickedProperty().setValue((e)->{
             if (current_pane != null)
-            current_pane.setStyle("-fx-background-color: #104E8B;-fx-background-radius: 1em;");
+                current_pane.setStyle("-fx-background-color: #104E8B;-fx-background-radius: 1em;");
             current_pane = (Pane) temp_btn.getParent();
             current_pane.setStyle("-fx-background-color: #0ea5d6;-fx-background-radius: 1em");
+            current_group = temp;
         });
 
         temp_btn.setLayoutX(0);
