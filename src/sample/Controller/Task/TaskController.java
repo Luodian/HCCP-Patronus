@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.Controller.Login.LoginController;
 import sample.Entity.ComputeTask;
-import sample.Entity.DataNode;
+import sample.Entity.TaskPaneItem;
 import sample.Entity.UserNode;
 import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
@@ -101,26 +101,27 @@ public class TaskController implements Initializable {
     public static ArrayList<Pane> slaves = new ArrayList<Pane>();
 
     public static ArrayList<Pane> masters = new ArrayList<Pane>();
+
     public static JFXMasonryPane slave_masonry;
+
     public static JFXMasonryPane master_masonry;
-    private ArrayList<DataNode> slaves_datas = new ArrayList<DataNode>();
 
     @FXML
     private JFXMasonryPane masonry_pane_2;//此为活动在我这台主机上的任务
 
-    public static Pane newWorkingTask(String initiator_name, String data_name_1) {
+    public static Pane newWorkingTask(TaskPaneItem taskPaneItem) {
         Pane pane = new Pane();
         pane.setStyle("-fx-background-color: #63B8FF; -fx-background-radius: 2em;");
         pane.setPrefSize(130, 140);
         pane.effectProperty().setValue(new DropShadow());
 
-        Label initiator = new Label(initiator_name);
+        Label initiator = new Label("master: " + taskPaneItem.getUser_name());
         initiator.setLayoutX(49);
         initiator.setLayoutY(36);
         initiator.setFont(new Font("Chalkboard SE Light", 12.0));
         initiator.setTextFill(Paint.valueOf("#ffffff"));
 
-        Label data_name = new Label(data_name_1);
+        Label data_name = new Label("data: " + taskPaneItem.getData_name());
         data_name.setLayoutX(50);
         data_name.setLayoutY(71);
         data_name.setFont(new Font("Chalkboard SE Light", 12.0));
@@ -168,20 +169,28 @@ public class TaskController implements Initializable {
             HintFrame.showFailFrame("Please choose one of your tasks!");
         } else {
             ComputeTask computeTask = myTasks.get(index);
-            slaves_datas = SocketHandler.runTask(computeTask.getTask_id());
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    for (int i = 0; i < slaves_datas.size(); i++) {
-                        DataNode tmp = slaves_datas.get(i);
-                        Pane pane = newWorkingTask("slave: " + tmp.getUser_name(), "data name: " + tmp.getData_name());
-                        slaves.add(pane);
+            if (SocketHandler.runTask(computeTask.getTask_id())) {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        /**每个user同一时刻只允许启动一个任务，只有在启动时刻会加载my slaves部分UI**/
+                        if (slaves.size() > 0) {
+                            HintFrame.showFailFrame("There is a task running currently!");
+                            return;
+                        } else {
+                            ArrayList<TaskPaneItem> taskPaneItems = SocketHandler.getWorkingSlaves(LoginController.current_user_id);
+                            for (TaskPaneItem e : taskPaneItems) {
+                                Pane slave = newWorkingTask(e);
+                                slaves.add(slave);
+                            }
+                        }
+                        int len = (MAX_SHOW_CARD > slaves.size()) ? slaves.size() : MAX_SHOW_CARD;
+                        for (int i = 0; i < len; i++) masonry_pane_1.getChildren().add(slaves.get(i));
+                        if (slaves.size() > MAX_SHOW_CARD) showMoreLabel(1);
                     }
-                    int len = (MAX_SHOW_CARD > slaves_datas.size()) ? slaves_datas.size() : MAX_SHOW_CARD;
-                    for (int i = 0; i < len; i++) masonry_pane_1.getChildren().add(slaves.get(i));
-                    if (len == MAX_SHOW_CARD) showMoreLabel(1);
-                }
-            });
+                });
+            }
         }
     }
 
@@ -310,11 +319,11 @@ public class TaskController implements Initializable {
 
         int len1 = (MAX_SHOW_CARD > slaves.size()) ? slaves.size() : MAX_SHOW_CARD;
         for (int i = 0; i < len1; i++) masonry_pane_1.getChildren().add(slaves.get(i));
-        if (len1 == MAX_SHOW_CARD) showMoreLabel(1);
+        if (slaves.size() > MAX_SHOW_CARD) showMoreLabel(1);
 
         int len2 = (MAX_SHOW_CARD > masters.size()) ? masters.size() : MAX_SHOW_CARD;
         for (int i = 0; i < len2; i++) masonry_pane_2.getChildren().add(masters.get(i));
-        if (len2 == MAX_SHOW_CARD) showMoreLabel(2);
+        if (masters.size() > MAX_SHOW_CARD) showMoreLabel(2);
 
 
         /**工作的节点进度卡片信息最多在这个页面显示3个

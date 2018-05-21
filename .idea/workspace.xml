@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/sample/Entity/TaskPaneItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Task/TaskSettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Task/TaskSettingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/StartProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StartProcess.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SocketHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SocketHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4663">
-              <caret line="667" column="77" selection-start-line="667" selection-start-column="77" selection-end-line="667" selection-end-column="77" />
+            <state relative-caret-position="-186">
+              <caret line="744" column="18" lean-forward="true" selection-start-line="744" selection-start-column="18" selection-end-line="744" selection-end-column="18" />
               <folding>
                 <element signature="method#isUserExistedByUserNode#0;class#SocketHandler#0" />
                 <element signature="method#queryUserByID#0;class#SocketHandler#0" />
@@ -33,6 +34,51 @@
                 <element signature="method#master_send_stop_command#0;class#SocketHandler#0" />
                 <element signature="method#queryComputeTaskByInitiatorIDAndState#0;class#SocketHandler#0" />
                 <element signature="method#queryDataSetNameByUserIdAndGroupID#0;class#SocketHandler#0" />
+                <element signature="e#25446#25460#0" expanded="true" />
+                <element signature="e#27233#27247#0" expanded="true" />
+                <element signature="method#startReadResponse#0;class#SocketHandler#0" />
+                <element signature="method#initSocket#0;class#SocketHandler#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HintFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Utils/HintFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HighlightingCode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Utils/HighlightingCode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskPaneItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Entity/TaskPaneItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+              <folding>
+                <element signature="e#386#387#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#468#469#0" expanded="true" />
+                <element signature="e#510#511#0" expanded="true" />
+                <element signature="e#546#547#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#628#629#0" expanded="true" />
+                <element signature="e#670#671#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#740#741#0" expanded="true" />
+                <element signature="e#792#793#0" expanded="true" />
+                <element signature="e#836#837#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,52 +96,32 @@
       <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="263" selection-start-line="263" selection-end-line="263" />
+            <state relative-caret-position="306">
+              <caret line="185" column="90" selection-start-line="185" selection-start-column="90" selection-end-line="185" selection-end-column="90" />
+              <folding>
+                <element signature="method#showMoreLabel#0;class#TaskController#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task_setting.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_setting.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+      <file leaf-file-name="StartProcess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="49" column="94" lean-forward="true" selection-start-line="49" selection-start-column="88" selection-end-line="49" selection-end-column="94" />
+            <state relative-caret-position="198">
+              <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+              <folding>
+                <element signature="e#804#819#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskSettingController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TaskSettingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskSettingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="82" column="52" lean-forward="true" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_setting.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_setting.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="49" column="36" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="task_page.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_page.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="MainPageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller/MainPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="159" selection-start-line="159" selection-end-line="159" />
+            <state relative-caret-position="585">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
             </state>
           </provider>
         </entry>
@@ -129,9 +155,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>masonry_pane</find>
-      <find>jfxma</find>
-      <find>new</find>
       <find>Font</find>
       <find>JFXListV</find>
       <find>JFXButton</find>
@@ -159,6 +182,9 @@
       <find>roupNode</find>
       <find>println</find>
       <find>submit</find>
+      <find>MAX</find>
+      <find>bufferedWriter.w</find>
+      <find>socket</find>
     </findStrings>
     <replaceStrings>
       <replace>/sample/resources/MDicon/</replace>
@@ -206,12 +232,14 @@
         <option value="$PROJECT_DIR$/src/sample/Entity/Tools.java" />
         <option value="$PROJECT_DIR$/src/sample/Datebase/SQLHandler.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Group/GroupChooseBoardController.java" />
-        <option value="$PROJECT_DIR$/src/sample/StartProcess.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/MainPageController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Data/DataLoadController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controller/Task/TaskSettingController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Entity/WorksOnNode.java" />
+        <option value="$PROJECT_DIR$/src/sample/Entity/TaskPaneItem.java" />
+        <option value="$PROJECT_DIR$/src/sample/StartProcess.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" />
         <option value="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controller/Task/TaskSettingController.java" />
       </list>
     </option>
   </component>
@@ -224,7 +252,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="819" />
@@ -234,6 +262,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,60 +288,12 @@
               <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Group" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Task" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="Datebase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="FXML" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="SocketConnect" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -438,7 +421,12 @@
       <workItem from="1526713781710" duration="722000" />
       <workItem from="1526727686410" duration="16417000" />
       <workItem from="1526781471259" duration="5302000" />
-      <workItem from="1526792619762" duration="914000" />
+      <workItem from="1526792619762" duration="2008000" />
+      <workItem from="1526798280798" duration="232000" />
+      <workItem from="1526798889362" duration="187000" />
+      <workItem from="1526802324098" duration="1361000" />
+      <workItem from="1526819075872" duration="2415000" />
+      <workItem from="1526886669091" duration="11951000" />
     </task>
     <task id="LOCAL-00001" summary="May 15,2018 2nd">
       <created>1526428568518</created>
@@ -503,14 +491,21 @@
       <option name="project" value="LOCAL" />
       <updated>1526749065622</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="May 20,2018 2nd">
+      <created>1526793599741</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1526793599741</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82224000" />
+    <option name="totallyTimeSpent" value="99464000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -522,13 +517,14 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31296757" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32917705" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.28678304" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1874106" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -541,8 +537,38 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Thumbnails" order="8" weight="0.32917705" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32917705" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27057356" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.28678304" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39650872" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32793018" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -587,7 +613,8 @@
     <MESSAGE value="May 19,2018 2nd" />
     <MESSAGE value="May 19,2018 3rd" />
     <MESSAGE value="May 20,2018 1st" />
-    <option name="LAST_COMMIT_MESSAGE" value="May 20,2018 1st" />
+    <MESSAGE value="May 20,2018 2nd" />
+    <option name="LAST_COMMIT_MESSAGE" value="May 20,2018 2nd" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -597,7 +624,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java</url>
-          <line>192</line>
+          <line>193</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
@@ -606,6 +633,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4125">
+          <caret line="316" column="42" selection-start-line="316" selection-start-column="42" selection-end-line="316" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3930">
@@ -629,6 +663,10 @@
             <element signature="method#master_send_stop_command#0;class#SocketHandler#0" />
             <element signature="method#queryComputeTaskByInitiatorIDAndState#0;class#SocketHandler#0" />
             <element signature="method#queryDataSetNameByUserIdAndGroupID#0;class#SocketHandler#0" />
+            <element signature="e#25446#25460#0" expanded="true" />
+            <element signature="e#27233#27247#0" expanded="true" />
+            <element signature="method#startReadResponse#0;class#SocketHandler#0" />
+            <element signature="method#initSocket#0;class#SocketHandler#0" />
           </folding>
         </state>
       </provider>
@@ -761,13 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Utils/HintFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_list_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -800,13 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="31" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Utils/HighlightingCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -890,16 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="41" column="56" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -931,10 +945,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskSettingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Entity/WorksOnNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding>
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+          <folding>
+            <element signature="e#804#819#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="185" column="90" selection-start-line="185" selection-start-column="90" selection-end-line="185" selection-end-column="90" />
+          <folding>
+            <element signature="method#showMoreLabel#0;class#TaskController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Utils/HintFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Utils/HighlightingCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Entity/TaskPaneItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <folding>
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4663">
-          <caret line="667" column="77" selection-start-line="667" selection-start-column="77" selection-end-line="667" selection-end-column="77" />
+        <state relative-caret-position="-186">
+          <caret line="744" column="18" lean-forward="true" selection-start-line="744" selection-start-column="18" selection-end-line="744" selection-end-column="18" />
           <folding>
             <element signature="method#isUserExistedByUserNode#0;class#SocketHandler#0" />
             <element signature="method#queryUserByID#0;class#SocketHandler#0" />
@@ -947,41 +1047,11 @@
             <element signature="method#master_send_stop_command#0;class#SocketHandler#0" />
             <element signature="method#queryComputeTaskByInitiatorIDAndState#0;class#SocketHandler#0" />
             <element signature="method#queryDataSetNameByUserIdAndGroupID#0;class#SocketHandler#0" />
+            <element signature="e#25446#25460#0" expanded="true" />
+            <element signature="e#27233#27247#0" expanded="true" />
+            <element signature="method#startReadResponse#0;class#SocketHandler#0" />
+            <element signature="method#initSocket#0;class#SocketHandler#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/data_setting.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_page.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="263" selection-start-line="263" selection-end-line="263" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/task_setting.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="49" column="94" lean-forward="true" selection-start-line="49" selection-start-column="88" selection-end-line="49" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Task/TaskSettingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="82" column="52" lean-forward="true" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
         </state>
       </provider>
     </entry>

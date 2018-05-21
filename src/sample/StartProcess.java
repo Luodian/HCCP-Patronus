@@ -28,6 +28,7 @@ public class StartProcess extends Application {
      * data_choose_board
      * group_choose_board
      * **/
+
     public static HashMap<String, Stage> hashMap = new HashMap<String, Stage>();
     public static final int SCENE_WIDTH =1006;
     public static final int SCENE_HEIGHT = 770;
@@ -40,6 +41,8 @@ public class StartProcess extends Application {
 	
 	    /**连接socket**/
         SocketHandler.initSocket("172.20.11.219", 8888);
+//        SocketHandler.initSocket("172.20.11.219", 8888);
+
 //        /**加载数据库**/
 //        try {
 //            //加载MySql的驱动类

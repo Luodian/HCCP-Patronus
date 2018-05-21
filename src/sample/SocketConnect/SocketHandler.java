@@ -3,17 +3,13 @@ package sample.SocketConnect;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Paint;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import sample.Controller.Task.TaskController;
-import sample.Entity.ComputeTask;
-import sample.Entity.DataNode;
-import sample.Entity.GroupNode;
-import sample.Entity.UserNode;
+import sample.Entity.*;
+import sample.StartProcess;
 
 import java.io.*;
 import java.net.Socket;
@@ -33,6 +29,7 @@ public class SocketHandler
     private static String serverIP = null;
     private static Socket socket;
     public static Thread backgroundListner;
+    public static Thread endTaskLisner;
     public static Thread readReply;
 
     /**
@@ -404,47 +401,29 @@ public class SocketHandler
      * Type-10
      * 发起一次任务，暂且就先返回所有slaver_id吧。
      */
-    public static ArrayList<DataNode> runTask(String task_id) {
+    public static boolean runTask(String task_id) {
         try {
             ArrayList<DataNode> results = new ArrayList<>();
             JSONObject sendObject = new JSONObject();
-            sendObject.put("purpose", 10);
+            sendObject.put("purpose", 100);
             sendObject.put("task_id", task_id);
             sendObject.put("action", "run");
             bufferedWriter.write(sendObject.toString() + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
-                if (!responseBuffer.containsKey(10)) continue;
-                json = responseBuffer.remove(10);
+                if (!responseBuffer.containsKey(100)) continue;
+                json = responseBuffer.remove(100);
                 int result = json.getInt("result");
                 int reply = json.getInt("reply");
-                if (reply == 10) {
-                    if (result == 1) {
-                        JSONArray jsarray = json.getJSONArray("slaves");
-                        int len = jsarray.length();
-                        for (int i = 0; i < len; ++i) {
-                            JSONObject jsobj = jsarray.getJSONObject(i);
-                            DataNode tmp = new DataNode();
-                            String slave_id = jsobj.getString("slave_id");
-                            String slave_name = jsobj.getString("slave_name");
-                            String data_name = jsobj.getString("data_name");
-                            tmp.setUser_name(slave_name);
-                            tmp.setUser_id(slave_id);
-                            tmp.setData_name(data_name);
-                            results.add(tmp);
-                        }
-                        return results;
-                    }
-                }
+                if (reply == 100) return result == 1;
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            return null;
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
         }
+        return false;
 	}
 	
 	/**
@@ -633,7 +612,90 @@ public class SocketHandler
     }
 
     /**
-     * 新开进程后台监听任务
+     * 获取当前主机正在进行的任务，在works_on表里,type17
+     * works_on表中状态为0的表示在运行，状态为1的表示结束了的
+     **/
+    public static ArrayList<TaskPaneItem> getWorkingSlaves(String user_id) {
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("purpose", 17);
+            jsonObject.put("master_id", user_id);
+            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            bufferedWriter.flush();
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(17)) continue;
+                json = responseBuffer.remove(17);
+                ArrayList<TaskPaneItem> results = new ArrayList<TaskPaneItem>();
+                int result = json.getInt("result");
+                int reply = json.getInt("reply");
+                if (reply == 17) {
+                    if (result == 1) {
+                        JSONArray jsonArray = json.getJSONArray("slaves");
+                        int len = jsonArray.length();
+                        for (int i = 0; i < len; i++) {
+                            JSONObject tmp = jsonArray.getJSONObject(i);
+                            String task_name = tmp.getString("task_name");
+                            String slave_name = tmp.getString("slave_name");
+                            String slave_data_name = tmp.getString("slave_data_name");
+                            TaskPaneItem taskPaneItem = new TaskPaneItem(slave_name, task_name, slave_data_name);
+                            results.add(taskPaneItem);
+                        }
+                    }
+                }
+                return results;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 获取当前主机上面进行的任务，在works_on表里,type18
+     * works_on表中状态为0的表示在运行，状态为1的表示结束了的
+     **/
+    public static ArrayList<TaskPaneItem> getWorkingMasters(String user_id) {
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("purpose", 18);
+            jsonObject.put("slave_id", user_id);
+            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            JSONObject json = null;
+            while (true) {
+                if (!responseBuffer.containsKey(18)) continue;
+                json = responseBuffer.remove(18);
+                ArrayList<TaskPaneItem> results = new ArrayList<TaskPaneItem>();
+                int result = json.getInt("result");
+                int reply = json.getInt("reply");
+                if (reply == 18) {
+                    if (result == 1) {
+                        JSONArray jsonArray = json.getJSONArray("masters");
+                        int len = jsonArray.length();
+                        for (int i = 0; i < len; i++) {
+                            JSONObject tmp = jsonArray.getJSONObject(i);
+                            String task_name = tmp.getString("task_name");
+                            String master_name = tmp.getString("master_name");
+                            String data_name = tmp.getString("data_name");
+                            TaskPaneItem taskPaneItem = new TaskPaneItem(master_name, task_name, data_name);
+                            results.add(taskPaneItem);
+                        }
+                    }
+                }
+                return results;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 新开进程后台监听任务分发
      **/
     public static void startBackgroundListner() {
         backgroundListner = new Thread(new Runnable() {
@@ -641,40 +703,34 @@ public class SocketHandler
             public void run() {
                 while (true) {
                     try {
-                        if (!responseBuffer.containsKey(100)) continue;
-                        JSONObject json = responseBuffer.remove(100);
+                        if (!responseBuffer.containsKey(101)) continue;
+                        JSONObject json = responseBuffer.remove(101);
                         int result = json.getInt("result");
                         int reply = json.getInt("reply");
-                        if (reply == 100) {
+                        if (reply == 101) {
                             if (result == 1) {
                                 String task_id = json.getString("task_id");
-                                String data_type = json.getString("data_type");
-                                double cost = json.getDouble("cost");
-                                String initiator_id = json.getString("initiator_id");
-                                double security_score = json.getDouble("security_score");
-                                int state = json.getInt("state");
-                                String task_name = json.getString("task_name");
+                                String master_id = json.getString("master_id");
                                 String group_id = json.getString("group_id");
+                                String task_name = json.getString("task_name");
+                                String master_name = json.getString("master_name");
+                                String data_name = json.getString("data_name");
                                 /**先不要代码了**/
                                 ComputeTask computeTask = new ComputeTask();
                                 computeTask.setGroup_id(group_id);
-                                computeTask.setInitiator_id(initiator_id);
-                                computeTask.setTask_name(task_name);
-                                computeTask.setState(state);
-                                computeTask.setSecurity_score(security_score);
-                                computeTask.setCost(cost);
-                                computeTask.setData_type(data_type);
+                                computeTask.setInitiator_id(master_id);
                                 computeTask.setTask_id(task_id);
-                                TaskController.workingTasks.add(computeTask);
 
-                                /**
-                                 *
-                                 * 执行
-                                 *
-                                 * **/
-                                if (TaskController.master_masonry != null) {
+                                TaskPaneItem taskPaneItem = new TaskPaneItem();
+                                taskPaneItem.setData_name(data_name);
+                                taskPaneItem.setUser_name(master_name);
+                                taskPaneItem.setTask_name(task_name);
+
+                                System.out.println("Task: " + task_name + " start!");
+                                /**若task界面存在，则更新task界面*，否则*/
+                                if (StartProcess.hashMap.containsKey("tasks")) {
                                     /**不为空，表示当前在task界面里**/
-                                    Pane pane = TaskController.newWorkingTask("master: " + computeTask.getInitiator_id(), "task: " + computeTask.getTask_name());
+                                    Pane pane = TaskController.newWorkingTask(taskPaneItem);
                                     TaskController.masters.add(pane);
                                     Platform.runLater(new Runnable() {
                                         @Override
@@ -683,13 +739,18 @@ public class SocketHandler
                                             if (masterPanes.size() < 4) masterPanes.add(pane);
                                         }
                                     });
-                                    Label task = new Label(computeTask.getTask_name());
-                                    task.setTextFill(Paint.valueOf("#ffffff"));
-                                    TaskController.my_master_list_copy.getItems().add(task);
                                 } else {
-                                    Pane pane = TaskController.newWorkingTask("master: " + computeTask.getInitiator_id(), "task: " + computeTask.getTask_name());
+                                    Pane pane = TaskController.newWorkingTask(taskPaneItem);
                                     TaskController.masters.add(pane);
                                 }
+
+
+                                /**
+                                 *
+                                 * 执行分配的计算任务
+                                 *
+                                 * **/
+
                             }
                         }
 
@@ -700,6 +761,63 @@ public class SocketHandler
             }
         });
         backgroundListner.start();
+    }
+
+    /**
+     * 新开线程监听slave完成任务的消息
+     **/
+    public static void startSlaveTaskEndListner() {
+        endTaskLisner = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    if (!responseBuffer.containsKey(201)) continue;
+                    JSONObject json = responseBuffer.remove(201);
+                    try {
+                        int result = json.getInt("result");
+                        int reply = json.getInt("reply");
+                        if (reply == 201) {
+                            if (result == 1) {
+
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        });
+        endTaskLisner.start();
+    }
+
+    /**
+     * 终止成功就返回true，否则返回false
+     **/
+    public static boolean sendToMasterTaskEndMsg(String task_id, String master_id, String slave_id, String slave_data_name) {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("purpose", 200);
+            jsonObject.put("task_id", task_id);
+            jsonObject.put("master_id", master_id);
+            jsonObject.put("slave_id", slave_id);
+            jsonObject.put("slave_data_name", slave_data_name);
+            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            bufferedWriter.flush();
+            while (true) {
+                if (!responseBuffer.containsKey(200)) continue;
+                JSONObject json = responseBuffer.remove(200);
+                int result = json.getInt("result");
+                int reply = json.getInt("reply");
+                if (reply == 200) return result == 1;
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     private static void startReadResponse() {
