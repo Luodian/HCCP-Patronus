@@ -98,9 +98,9 @@ public class TaskController implements Initializable {
 
     public static JFXListView my_master_list_copy;
 
-    public static ArrayList<Pane> slaves = new ArrayList<Pane>();
+    public static ArrayList<TaskPaneItem> slave_item_panes = new ArrayList<TaskPaneItem>();
 
-    public static ArrayList<Pane> masters = new ArrayList<Pane>();
+    public static ArrayList<TaskPaneItem> master_item_panes = new ArrayList<TaskPaneItem>();
 
     public static JFXMasonryPane slave_masonry;
 
@@ -161,33 +161,34 @@ public class TaskController implements Initializable {
     @FXML
     void runTask(MouseEvent event) {
         int index = my_task_list.getSelectionModel().getSelectedIndex();
-        if (slaves.size() > 0) {
+        if (slave_item_panes.size() > 0) {
             HintFrame.showFailFrame("Please wait util current task finish!");
             return;
         }
         if (index < 0) {
             HintFrame.showFailFrame("Please choose one of your tasks!");
+            return;
         } else {
             ComputeTask computeTask = myTasks.get(index);
             if (SocketHandler.runTask(computeTask.getTask_id())) {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-
                         /**每个user同一时刻只允许启动一个任务，只有在启动时刻会加载my slaves部分UI**/
-                        if (slaves.size() > 0) {
+                        if (slave_item_panes.size() > 0) {
                             HintFrame.showFailFrame("There is a task running currently!");
                             return;
                         } else {
-                            ArrayList<TaskPaneItem> taskPaneItems = SocketHandler.getWorkingSlaves(LoginController.current_user_id);
-                            for (TaskPaneItem e : taskPaneItems) {
+                            slave_item_panes = SocketHandler.getWorkingSlaves(LoginController.current_user_id);
+                            for (TaskPaneItem e : slave_item_panes) {
                                 Pane slave = newWorkingTask(e);
-                                slaves.add(slave);
+                                e.setShowPane(slave);
                             }
                         }
-                        int len = (MAX_SHOW_CARD > slaves.size()) ? slaves.size() : MAX_SHOW_CARD;
-                        for (int i = 0; i < len; i++) masonry_pane_1.getChildren().add(slaves.get(i));
-                        if (slaves.size() > MAX_SHOW_CARD) showMoreLabel(1);
+                        int len = (MAX_SHOW_CARD > slave_item_panes.size()) ? slave_item_panes.size() : MAX_SHOW_CARD;
+                        for (int i = 0; i < len; i++)
+                            masonry_pane_1.getChildren().add(slave_item_panes.get(i).getShowPane());
+                        if (slave_item_panes.size() > MAX_SHOW_CARD) showMoreLabel(1);
                     }
                 });
             }
@@ -253,6 +254,7 @@ public class TaskController implements Initializable {
         my_task_list_copy = my_task_list;
         master_masonry = masonry_pane_2;
         my_master_list_copy = my_master_list;
+        slave_masonry = masonry_pane_1;
 
         /**设置my_task_list及worked_task_list属性**/
         my_task_list.setExpanded(true);
@@ -317,13 +319,13 @@ public class TaskController implements Initializable {
             my_master_list.getItems().add(task);
         }
 
-        int len1 = (MAX_SHOW_CARD > slaves.size()) ? slaves.size() : MAX_SHOW_CARD;
-        for (int i = 0; i < len1; i++) masonry_pane_1.getChildren().add(slaves.get(i));
-        if (slaves.size() > MAX_SHOW_CARD) showMoreLabel(1);
+        int len1 = (MAX_SHOW_CARD > slave_item_panes.size()) ? slave_item_panes.size() : MAX_SHOW_CARD;
+        for (int i = 0; i < len1; i++) masonry_pane_1.getChildren().add(slave_item_panes.get(i).getShowPane());
+        if (slave_item_panes.size() > MAX_SHOW_CARD) showMoreLabel(1);
 
-        int len2 = (MAX_SHOW_CARD > masters.size()) ? masters.size() : MAX_SHOW_CARD;
-        for (int i = 0; i < len2; i++) masonry_pane_2.getChildren().add(masters.get(i));
-        if (masters.size() > MAX_SHOW_CARD) showMoreLabel(2);
+        int len2 = (MAX_SHOW_CARD > slave_item_panes.size()) ? slave_item_panes.size() : MAX_SHOW_CARD;
+        for (int i = 0; i < len2; i++) masonry_pane_2.getChildren().add(slave_item_panes.get(i).getShowPane());
+        if (slave_item_panes.size() > MAX_SHOW_CARD) showMoreLabel(2);
 
 
         /**工作的节点进度卡片信息最多在这个页面显示3个
@@ -370,7 +372,21 @@ public class TaskController implements Initializable {
         if (index < 0) {
             HintFrame.showFailFrame("Please choose one of your tasks!");
         } else {
+            for (TaskPaneItem e : master_item_panes
+                    ) {
+                if (SocketHandler.sendToMasterTaskEndMsg(e.getTask_id(), e.getUser_id(), LoginController.current_user_id,
+                        e.getData_name())) {
+                    /**若正确结束，则去除pane**/
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            masonry_pane_2.getChildren().remove(e.getShowPane());
+                        }
+                    });
 
+                }
+            }
+            master_item_panes.clear();
         }
     }
 }

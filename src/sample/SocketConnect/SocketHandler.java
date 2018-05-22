@@ -7,6 +7,7 @@ import javafx.scene.layout.Pane;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import sample.Controller.Login.LoginController;
 import sample.Controller.Task.TaskController;
 import sample.Entity.*;
 import sample.StartProcess;
@@ -638,7 +639,9 @@ public class SocketHandler
                             String task_name = tmp.getString("task_name");
                             String slave_name = tmp.getString("slave_name");
                             String slave_data_name = tmp.getString("slave_data_name");
-                            TaskPaneItem taskPaneItem = new TaskPaneItem(slave_name, task_name, slave_data_name);
+                            String task_id = tmp.getString("task_id");
+                            String slave_id = tmp.getString("slave_id");
+                            TaskPaneItem taskPaneItem = new TaskPaneItem(slave_name, task_name, slave_data_name, slave_id, task_id);
                             results.add(taskPaneItem);
                         }
                     }
@@ -725,13 +728,17 @@ public class SocketHandler
                                 taskPaneItem.setData_name(data_name);
                                 taskPaneItem.setUser_name(master_name);
                                 taskPaneItem.setTask_name(task_name);
+                                taskPaneItem.setTask_id(task_id);
+                                taskPaneItem.setUser_id(master_id);
 
                                 System.out.println("Task: " + task_name + " start!");
+                                Pane pane = TaskController.newWorkingTask(taskPaneItem);
+                                taskPaneItem.setShowPane(pane);
+                                TaskController.master_item_panes.add(taskPaneItem);
                                 /**若task界面存在，则更新task界面*，否则*/
                                 if (StartProcess.hashMap.containsKey("tasks")) {
                                     /**不为空，表示当前在task界面里**/
-                                    Pane pane = TaskController.newWorkingTask(taskPaneItem);
-                                    TaskController.masters.add(pane);
+
                                     Platform.runLater(new Runnable() {
                                         @Override
                                         public void run() {
@@ -739,11 +746,7 @@ public class SocketHandler
                                             if (masterPanes.size() < 4) masterPanes.add(pane);
                                         }
                                     });
-                                } else {
-                                    Pane pane = TaskController.newWorkingTask(taskPaneItem);
-                                    TaskController.masters.add(pane);
                                 }
-
 
                                 /**
                                  *
@@ -778,7 +781,25 @@ public class SocketHandler
                         int reply = json.getInt("reply");
                         if (reply == 201) {
                             if (result == 1) {
-
+                                String task_id = json.getString("task_id");
+                                String master_id = json.getString("master_id");
+                                String slave_id = json.getString("slave_id");
+                                String data_name = json.getString("data_name");
+                                ArrayList<TaskPaneItem> taskPaneItems = TaskController.slave_item_panes;
+                                for (TaskPaneItem e : taskPaneItems) {
+                                    if (task_id.equals(e.getTask_id()) && master_id.equals(e.getUser_id()) &&
+                                            slave_id.equals(LoginController.current_user_id) && data_name.equals(e.getData_name())) {
+                                        Platform.runLater(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                /**该pane结束**/
+                                                TaskController.slave_masonry.getChildren().remove(e.getShowPane());
+                                                TaskController.slave_item_panes.remove(e);
+                                            }
+                                        });
+                                        break;
+                                    }
+                                }
                             }
                         }
                     } catch (JSONException e) {
@@ -811,7 +832,6 @@ public class SocketHandler
                 int reply = json.getInt("reply");
                 if (reply == 200) return result == 1;
             }
-
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -833,6 +853,7 @@ public class SocketHandler
                         if (rcvJSonStr != null) {
                             JSONObject json = new JSONObject(rcvJSonStr);
                             int reply = json.getInt("reply");
+                            while (responseBuffer.containsKey(reply)) ;
                             responseBuffer.put(reply, json);
                         }
                     } catch (IOException e) {

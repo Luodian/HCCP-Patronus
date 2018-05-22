@@ -46,6 +46,7 @@ public class MainPageController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         SocketHandler.startBackgroundListner();
+        SocketHandler.startSlaveTaskEndListner();
 
         JFXButton func_module = new JFXButton("+");
         func_module.setButtonType(JFXButton.ButtonType.RAISED);

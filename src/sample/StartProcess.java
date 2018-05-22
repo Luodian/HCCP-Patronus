@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.SocketConnect.SocketHandler;
 
+import java.net.InetAddress;
 import java.util.HashMap;
 
 public class StartProcess extends Application {
@@ -27,20 +28,26 @@ public class StartProcess extends Application {
      * confirm
      * data_choose_board
      * group_choose_board
+     * nn_choose_board
      * **/
 
     public static HashMap<String, Stage> hashMap = new HashMap<String, Stage>();
     public static final int SCENE_WIDTH =1006;
     public static final int SCENE_HEIGHT = 770;
+
+    public static void main(String[] args) throws InterruptedException {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception
     {
 	    FXMLLoader myEditPageLoader = new FXMLLoader (getClass ().getResource ("./FXML/login.fxml"));
 	    Parent root = myEditPageLoader.load();
 
-	
+
 	    /**连接socket**/
-        SocketHandler.initSocket("172.20.11.219", 8888);
+        SocketHandler.initSocket(InetAddress.getLocalHost().getHostAddress(), 8888);
 //        SocketHandler.initSocket("172.20.11.219", 8888);
 
 //        /**加载数据库**/
@@ -66,8 +73,5 @@ public class StartProcess extends Application {
 	    primaryStage.setScene (scene);
         hashMap.put("login", primaryStage);
 	    primaryStage.show();
-    }
-    public static void main(String[] args) {
-        launch(args);
     }
 }

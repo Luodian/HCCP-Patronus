@@ -4,7 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -12,12 +15,11 @@ import javafx.scene.paint.Paint;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 import sample.StartProcess;
 import sample.Utils.HighlightingCode;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,22 +64,6 @@ public class CodeController implements Initializable {
                     for (int i = class_name_index + 13; i < code.length() && code.charAt(i) != ' '; ++i) {
                         file_name.append(String.valueOf(code.charAt(i)));
                     }
-                    File file = new File("src/sample/resources/resources/" + file_name + ".java");
-                    if (!file.exists()) {
-                        try {
-                            file.createNewFile();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    try {
-                        FileWriter flwt = new FileWriter(file);
-                        flwt.write(code);
-                        flwt.flush();
-                        flwt.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                 });
         webEngine.loadContent("Java command line is waiting.");
     }
@@ -97,8 +83,16 @@ public class CodeController implements Initializable {
     }
 
     @FXML
-    void newCode(MouseEvent event) {
-
+    void newCode(MouseEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("../../FXML/nn_choose_board.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        StartProcess.hashMap.put("nn_choose_board", stage);
+        StartProcess.hashMap.get("coding").hide();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML

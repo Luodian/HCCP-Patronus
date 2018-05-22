@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Code.NeuralNetworkController"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4">
+    <children>
+        <Separator layoutY="120.0" prefHeight="0.0" prefWidth="600.0"/>
+        <AnchorPane prefHeight="120.0" prefWidth="600.0" style="-fx-background-color: #5CACEE;">
+            <children>
+                <Label layoutX="53.0" layoutY="23.0" text="Patronus v1.0" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="20.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="12.0" layoutY="18.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/MDicon/cloud.png"/>
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="cancel" layoutX="549.0" layoutY="6.0" onMouseClicked="#frameCancel" text=" ">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/sample/resources/MDicon/crosss.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <Label layoutX="171.0" layoutY="78.0" text="Please choose one type of neural networks" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="14.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="120.0" prefHeight="430.0" prefWidth="600.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <Separator layoutX="50.0" layoutY="215.0" prefWidth="200.0"/>
+                <Separator layoutX="350.0" layoutY="215.0" prefWidth="200.0"/>
+                <Separator layoutX="300.0" layoutY="30.0" orientation="VERTICAL" prefHeight="160.0" prefWidth="0.0"/>
+                <Separator layoutX="300.0" layoutY="245.0" orientation="VERTICAL" prefHeight="160.0" prefWidth="0.0"/>
+                <ImageView fitHeight="191.0" fitWidth="290.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/network/cnn.png"/>
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="CNN" layoutX="104.0" layoutY="169.0" onMouseClicked="#buildCnnPat" prefHeight="31.0"
+                           prefWidth="100.0" style="-fx-background-color: #6495ED;" text="CNN" textFill="#eeeeee">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                    <ripplerFill>
+                        <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="BLACK"/>
+                                <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </RadialGradient>
+                    </ripplerFill>
+                </JFXButton>
+                <JFXButton fx:id="RNN" layoutX="401.0" layoutY="169.0" onMouseClicked="#buildRNNPat" prefHeight="31.0"
+                           prefWidth="100.0" style="-fx-background-color: #6495ED;" text="RNN" textFill="#eeeeee">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                    <ripplerFill>
+                        <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="BLACK"/>
+                                <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </RadialGradient>
+                    </ripplerFill>
+                </JFXButton>
+                <JFXButton fx:id="GAN" layoutX="104.0" layoutY="375.0" onMouseClicked="#buildGANPat" prefHeight="31.0"
+                           prefWidth="100.0" style="-fx-background-color: #6495ED;" text="GAN" textFill="#eeeeee">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                    <ripplerFill>
+                        <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="BLACK"/>
+                                <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </RadialGradient>
+                    </ripplerFill>
+                </JFXButton>
+                <JFXButton fx:id="user_define" layoutX="401.0" layoutY="375.0" onMouseClicked="#buildUserDefinePat"
+                           prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #6495ED;" text="user define"
+                           textFill="#eeeeee">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                    <ripplerFill>
+                        <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="BLACK"/>
+                                <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                                <Stop color="WHITE" offset="1.0"/>
+                            </stops>
+                        </RadialGradient>
+                    </ripplerFill>
+                </JFXButton>
+                <ImageView fitHeight="137.0" fitWidth="268.0" layoutX="320.0" layoutY="45.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/network/RNN.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="120.0" fitWidth="289.0" layoutX="10.0" layoutY="264.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/network/GAn.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="142.0" fitWidth="268.0" layoutX="313.0" layoutY="229.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/network/user_define.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
