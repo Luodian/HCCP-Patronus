@@ -1,6 +1,5 @@
 package sample.Controller.Code;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -28,8 +27,7 @@ public class CodeController implements Initializable {
 
     final WebView browser = new WebView();
     final WebEngine webEngine = browser.getEngine();
-    @FXML
-    private JFXButton back_to_main;
+
     @FXML
     private JFXListView my_programs;
     @FXML

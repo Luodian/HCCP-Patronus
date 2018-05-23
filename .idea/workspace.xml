@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/FXML/nn_choose_board.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/resources/network/GAN_spare.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/resources/network/GAn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/resources/network/RNN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/resources/network/cnn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/resources/network/user_define.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller/Code/CodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Code/CodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Entity/TaskPaneItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Entity/TaskPaneItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/StartProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StartProcess.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="6045">
-              <caret line="757" column="38" selection-start-line="757" selection-start-column="38" selection-end-line="757" selection-end-column="38" />
+              <caret line="754" column="38" selection-start-line="754" selection-start-column="38" selection-end-line="754" selection-end-column="38" />
               <folding>
                 <element signature="method#isUserExistedByUserNode#0;class#SocketHandler#0" />
                 <element signature="method#queryUserByID#0;class#SocketHandler#0" />
@@ -57,8 +44,8 @@
       <file leaf-file-name="CodeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/CodeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+            <state relative-caret-position="120">
+              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -67,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="690">
-              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+              <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,8 +65,8 @@
       <file leaf-file-name="nn_choose_board.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/FXML/nn_choose_board.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+            <state>
+              <caret column="38" selection-start-column="38" selection-end-column="38" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -134,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -249,7 +236,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="819" />
@@ -463,7 +450,7 @@
       <workItem from="1526819075872" duration="2415000" />
       <workItem from="1526886669091" duration="12139000" />
       <workItem from="1526985016472" duration="8479000" />
-      <workItem from="1526999286774" duration="867000" />
+      <workItem from="1526999286774" duration="1115000" />
     </task>
     <task id="LOCAL-00001" summary="May 15,2018 2nd">
       <created>1526428568518</created>
@@ -542,11 +529,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526916001244</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="May 22,2018 1st">
+      <created>1527000454014</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1527000454015</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108998000" />
+    <option name="totallyTimeSpent" value="109246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -561,7 +555,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23316708" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19201995" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.07356609" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32917705" />
       <window_info id="Capture Tool" order="2" />
@@ -660,7 +654,8 @@
     <MESSAGE value="May 20,2018 1st" />
     <MESSAGE value="May 20,2018 2nd" />
     <MESSAGE value="May 21,2018 1st" />
-    <option name="LAST_COMMIT_MESSAGE" value="May 21,2018 1st" />
+    <MESSAGE value="May 22,2018 1st" />
+    <option name="LAST_COMMIT_MESSAGE" value="May 22,2018 1st" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -670,7 +665,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java</url>
-          <line>193</line>
+          <line>190</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
@@ -987,7 +982,7 @@
     <entry file="file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6045">
-          <caret line="757" column="38" selection-start-line="757" selection-start-column="38" selection-end-line="757" selection-end-column="38" />
+          <caret line="754" column="38" selection-start-line="754" selection-start-column="38" selection-end-line="754" selection-end-column="38" />
           <folding>
             <element signature="method#isUserExistedByUserNode#0;class#SocketHandler#0" />
             <element signature="method#queryUserByID#0;class#SocketHandler#0" />
@@ -1007,8 +1002,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/nn_choose_board.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -1016,14 +1011,14 @@
     <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
-          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1046,8 +1041,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/CodeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        <state relative-caret-position="120">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
         </state>
       </provider>
     </entry>

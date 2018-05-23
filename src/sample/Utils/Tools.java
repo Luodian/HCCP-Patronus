@@ -1,6 +1,4 @@
-package sample.Entity;
-
-
+package sample.Utils;
 import sample.Datebase.SQLHandler;
 
 import java.util.Arrays;
