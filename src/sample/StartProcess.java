@@ -7,8 +7,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.SocketConnect.SocketHandler;
+import sample.Utils.RSA;
 
 import java.net.InetAddress;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.util.HashMap;
 
 public class StartProcess extends Application {
@@ -32,11 +38,16 @@ public class StartProcess extends Application {
      * **/
 
     public static HashMap<String, Stage> hashMap = new HashMap<String, Stage>();
-    public static final int SCENE_WIDTH =1006;
-    public static final int SCENE_HEIGHT = 770;
 
-    public static void main(String[] args) throws InterruptedException {
-        launch(args);
+    public static void main(String[] args) throws InterruptedException, NoSuchAlgorithmException {
+//        launch(args);
+        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+        keyPairGenerator.initialize(512);
+        KeyPair keyPair = keyPairGenerator.generateKeyPair();
+        RSAPublicKey rsaPublicKey = (RSAPublicKey) keyPair.getPublic();
+        RSAPrivateKey rsaPrivateKey = (RSAPrivateKey) keyPair.getPrivate();
+        String tmp = RSA.RSAPublicCrypto("wong", rsaPublicKey.getEncoded());
+        System.out.println(RSA.RSAPrivateDecrypt(tmp, rsaPrivateKey.getEncoded()));
     }
 
     @Override
