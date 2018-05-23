@@ -1,4 +1,4 @@
-package sample.Utils;
+package sample.Crypto;
 
 import org.apache.commons.codec.binary.Hex;
 

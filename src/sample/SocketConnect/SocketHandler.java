@@ -9,8 +9,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import sample.Controller.Login.LoginController;
 import sample.Controller.Task.TaskController;
+import sample.Crypto.RSA;
 import sample.Entity.*;
 import sample.StartProcess;
+import sample.Utils.JSONCryptoUtils;
 
 import java.io.*;
 import java.net.Socket;
@@ -42,13 +44,7 @@ public class SocketHandler
 	 * Type-0:注册-检验完成
 	 */
     public static void insertUser(UserNode userNode) throws JSONException, IOException {
-		JSONObject sendobj = new JSONObject ();
-		sendobj.put ("purpose", 0);
-		sendobj.put ("email", userNode.getEmail ());
-		sendobj.put ("password", userNode.getPassword ());
-		sendobj.put ("user_name", userNode.getUser_name ());
-		dataOutputStream.write (sendobj.toString ().getBytes ());
-		dataOutputStream.flush ();
+
 	}
 	
 	/**
@@ -60,7 +56,9 @@ public class SocketHandler
             sendObject.put("purpose", 1);
             sendObject.put("email", email);
             sendObject.put("password", password);
-            bufferedWriter.write(sendObject.toString() + "\r\n");
+            /**加密发送**/
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -91,7 +89,8 @@ public class SocketHandler
             JSONObject sendObject = new JSONObject();
             sendObject.put("purpose", 2);
             sendObject.put("user_id", user_id);
-            bufferedWriter.write(sendObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             String rcvJsonStr = null;
             JSONObject json = null;
@@ -132,7 +131,8 @@ public class SocketHandler
             sendobj.put("creator_id", groupNode.getOwner_id());
             sendobj.put("description", groupNode.getDescription());
             sendobj.put("member_num", groupNode.getMember_num());
-            bufferedWriter.write(sendobj.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -163,7 +163,8 @@ public class SocketHandler
             sendobj.put("purpose", 4);
             sendobj.put("user_id", user_id);
             sendobj.put("group_id", group_id);
-            bufferedWriter.write(sendobj.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -193,7 +194,8 @@ public class SocketHandler
             JSONObject sendobj = new JSONObject();
             sendobj.put("purpose", 5);
             sendobj.put("user_id", user_id);
-            bufferedWriter.write(sendobj.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -242,7 +244,8 @@ public class SocketHandler
             JSONObject sendobj = new JSONObject();
             sendobj.put("purpose", 6);
             sendobj.put("user_id", user_id);
-            bufferedWriter.write(sendobj.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -293,7 +296,8 @@ public class SocketHandler
             sendobj.put("data_type", dataNode.getData_type());
             sendobj.put("user_id", dataNode.getUser_id());
             sendobj.put("data_name", dataNode.getData_name());
-            bufferedWriter.write(sendobj.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -326,7 +330,8 @@ public class SocketHandler
             JSONObject sendObject = new JSONObject();
             sendObject.put("purpose", 8);
             sendObject.put("group_id", group_id);
-            bufferedWriter.write(sendObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -379,7 +384,8 @@ public class SocketHandler
             sendObject.put("security_score", computeTask.getSecurity_score());
             sendObject.put("data_type", computeTask.getData_type());
             sendObject.put("cost", computeTask.getCost());
-            bufferedWriter.write(sendObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -409,7 +415,8 @@ public class SocketHandler
             sendObject.put("purpose", 100);
             sendObject.put("task_id", task_id);
             sendObject.put("action", "run");
-            bufferedWriter.write(sendObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -472,7 +479,8 @@ public class SocketHandler
             sendObject.put("purpose", 13);
             sendObject.put("user_id", initiator_id);
             sendObject.put("state", state);
-            bufferedWriter.write(sendObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -524,7 +532,8 @@ public class SocketHandler
             sendObject.put("purpose", 14);
             sendObject.put("user_id", user_id);
             sendObject.put("group_id", group_id);
-            bufferedWriter.write(sendObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -566,7 +575,8 @@ public class SocketHandler
             jsonObject.put("row_num", dataNode.getRow_nums());
             jsonObject.put("attr_num", dataNode.getAttr_nums());
             jsonObject.put("file_path", dataNode.getFile_path());
-            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -594,7 +604,8 @@ public class SocketHandler
             jsonObject.put("purpose", 16);
             jsonObject.put("task_id", task_id);
             jsonObject.put("group_id", group_id);
-            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -621,7 +632,8 @@ public class SocketHandler
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("purpose", 17);
             jsonObject.put("master_id", user_id);
-            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
@@ -665,7 +677,9 @@ public class SocketHandler
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("purpose", 18);
             jsonObject.put("slave_id", user_id);
-            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
+            bufferedWriter.flush();
             JSONObject json = null;
             while (true) {
                 if (!responseBuffer.containsKey(18)) continue;
@@ -708,10 +722,18 @@ public class SocketHandler
                     try {
                         if (!responseBuffer.containsKey(101)) continue;
                         JSONObject json = responseBuffer.remove(101);
+
                         int result = json.getInt("result");
                         int reply = json.getInt("reply");
                         if (reply == 101) {
                             if (result == 1) {
+
+                                String jurisdiction = json.getString("jurisdiction");
+                                if (jurisdiction.equals("unauthorized")) {
+                                    /**弹出窗口询问是否接收**/
+
+                                }
+
                                 String task_id = json.getString("task_id");
                                 String master_id = json.getString("master_id");
                                 String group_id = json.getString("group_id");
@@ -823,7 +845,8 @@ public class SocketHandler
             jsonObject.put("master_id", master_id);
             jsonObject.put("slave_id", slave_id);
             jsonObject.put("slave_data_name", slave_data_name);
-            bufferedWriter.write(jsonObject.toString() + "\r\n");
+            String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
+            bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
             while (true) {
                 if (!responseBuffer.containsKey(200)) continue;
@@ -847,11 +870,13 @@ public class SocketHandler
                 while (true) {
                     try {
                         String rcvJSonStr = bufferedReader.readLine();
+                        String decryptJson = RSA.RSAPrivateDecrypt(rcvJSonStr, JSONCryptoUtils.LOCAL_PRIVATE_KEY);
 
-                        System.out.println(rcvJSonStr);
+                        System.out.println("接收到的消息: " + rcvJSonStr);
+                        System.out.println("解码后获得json: " + decryptJson + "\r\n");
 
                         if (rcvJSonStr != null) {
-                            JSONObject json = new JSONObject(rcvJSonStr);
+                            JSONObject json = new JSONObject(decryptJson);
                             int reply = json.getInt("reply");
                             while (responseBuffer.containsKey(reply)) ;
                             responseBuffer.put(reply, json);
