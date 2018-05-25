@@ -39,7 +39,7 @@
         <Separator layoutX="140.0" layoutY="120.0" orientation="VERTICAL" prefHeight="375.0"/>
         <Separator layoutX="287.0" layoutY="120.0" orientation="VERTICAL" prefHeight="375.0"/>
         <Separator layoutY="640.0" prefWidth="700.0"/>
-        <JFXListView layoutX="140.0" layoutY="120.0" prefHeight="520.0" prefWidth="150.0"/>
+        <JFXListView fx:id="layer_list" layoutX="140.0" layoutY="120.0" prefHeight="520.0" prefWidth="150.0"/>
         <JFXButton fx:id="GRU" layoutX="22.0" layoutY="202.0" onMouseClicked="#AddGRULayer" prefHeight="31.0"
                    prefWidth="100.0" style="-fx-background-color: #6495ED;" text="Add GRU" textFill="#eeeeee">
             <font>

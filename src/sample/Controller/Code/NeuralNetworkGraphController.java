@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -84,7 +85,13 @@ public class NeuralNetworkGraphController implements Initializable {
 
     @FXML
     void compelte(MouseEvent event) {
-
+        Label label1 = new Label("task" + CodeController.programs.getItems().size());
+        label1.setTextFill(Paint.valueOf("#ffffff"));
+        CodeController.programs.getItems().add(label1);
+        Stage nnStage = StartProcess.hashMap.remove("nn_graph");
+        Stage codeStage = StartProcess.hashMap.get("coding");
+        nnStage.close();
+        codeStage.show();
     }
 
     @Override

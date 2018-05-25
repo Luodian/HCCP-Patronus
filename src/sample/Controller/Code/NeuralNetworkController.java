@@ -42,6 +42,7 @@ public class NeuralNetworkController {
     @FXML
     void buildRNNPat(MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../../FXML/rnn_build.fxml"));
+        root.getStylesheets().add(getClass().getResource("../../FXML/layer_list.css").toExternalForm());
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         StartProcess.hashMap.put("rnn_param_settings", stage);

@@ -26,6 +26,7 @@ import java.util.ResourceBundle;
 public class CodeController implements Initializable {
 
     final WebView browser = new WebView();
+
     final WebEngine webEngine = browser.getEngine();
 
     @FXML
@@ -37,12 +38,16 @@ public class CodeController implements Initializable {
     private String code;
     private StringBuilder file_name;
 
+    public static JFXListView programs;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Label label1 = new Label("luodian's script");
+        programs = my_programs;
+
+        Label label1 = new Label("LSTM");
         label1.setTextFill(Paint.valueOf("#ffffff"));
-        Label label2 = new Label("jackson's script");
+        Label label2 = new Label("cnn");
         label2.setTextFill(Paint.valueOf("#ffffff"));
         my_programs.getItems().add(label1);
         my_programs.getItems().add(label2);
