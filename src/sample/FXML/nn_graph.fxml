@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Code.NeuralNetworkGraphController"
-            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0"
-            prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4">
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0"
+            prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.4">
     <children>
-        <Separator layoutY="120.0" prefHeight="0.0" prefWidth="600.0"/>
-        <AnchorPane prefHeight="120.0" prefWidth="800.0" style="-fx-background-color: #5CACEE;">
+        <Separator layoutY="120.0" prefHeight="0.0" prefWidth="1000.0"/>
+        <AnchorPane prefHeight="120.0" prefWidth="1000.0" style="-fx-background-color: #5CACEE;">
             <children>
                 <Label layoutX="53.0" layoutY="23.0" text="Patronus v1.0" textFill="WHITE">
                     <font>
@@ -39,72 +40,13 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="fxcodeArea" layoutY="120.0" prefHeight="380.0" prefWidth="800.0">
+        <AnchorPane fx:id="fxcodeArea" layoutY="120.0" prefHeight="480.0" prefWidth="1000.0">
             <children>
-                <GridPane fx:id="whole_pane" alignment="center" hgap="10" vgap="10">
-                    <HBox fx:id="param_bar" alignment="TOP_CENTER" spacing="20" GridPane.rowIndex="0">
-                        <opaqueInsets>
-                            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0"/>
-                        </opaqueInsets>
-                    </HBox>
-                    <HBox GridPane.rowIndex="1">
-                        <VBox>
-                            <JFXButton fx:id="select_data_btn" onAction="#select_btn" text="选择数据">
-                                <VBox.margin>
-                                    <Insets left="20.0" top="35.0"/>
-                                </VBox.margin>
-                            </JFXButton>
-                        </VBox>
-                        <HBox fx:id="label_bar" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="621.0"
-                              spacing="20.0">
-                            <children>
-                                <Label text="FEATURE">
-                                    <HBox.margin>
-                                        <Insets top="40.0"/>
-                                    </HBox.margin>
-                                </Label>
-                                <HBox fx:id="layer_bar" alignment="CENTER" prefHeight="100.0" prefWidth="353.0"
-                                      spacing="20.0">
-                                    <children>
-                                        <JFXButton mnemonicParsing="false" onAction="#addLayer" text="+"/>
-                                        <JFXButton mnemonicParsing="false" onAction="#subLayer" text="-"/>
-                                        <Label text="3 HIDDEN LAYSERS"/>
-                                    </children>
-                                    <opaqueInsets>
-                                        <Insets left="30.0" right="30.0"/>
-                                    </opaqueInsets>
-                                </HBox>
-                                <VBox fx:id="output_bar" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="164.0">
-                                    <children>
-                                        <Label text="OUTPUT"/>
-                                        <Label prefHeight="20.0" prefWidth="122.0" text="Test loss is 0.500"/>
-                                        <Label prefHeight="20.0" prefWidth="164.0" text="Training loss is 0.514"/>
-                                    </children>
-                                </VBox>
-                            </children>
-                            <padding>
-                                <Insets right="-80.0"/>
-                            </padding>
-                        </HBox>
-                    </HBox>
-                    <Pane fx:id="canvas" prefHeight="307.0" prefWidth="731.0" GridPane.columnSpan="2"
-                          GridPane.rowIndex="2" GridPane.rowSpan="2">
-                    </Pane>
-                    <columnConstraints>
-                        <ColumnConstraints/>
-                        <ColumnConstraints/>
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints/>
-                        <RowConstraints/>
-                        <RowConstraints/>
-                        <RowConstraints/>
-                    </rowConstraints>
-                </GridPane>
-
+                <Pane fx:id="canvas" prefHeight="480.0" prefWidth="1000.0">
+                </Pane>
             </children>
         </AnchorPane>
-        <JFXButton fx:id="back" layoutX="37.0" layoutY="500.0" onMouseClicked="#backToPre" prefHeight="31.0"
+        <JFXButton fx:id="back" layoutX="37.0" layoutY="600.0" onMouseClicked="#backToPre" prefHeight="31.0"
                    prefWidth="86.0" style="-fx-background-color: #6495ED; -fx-background-radius: 1.5em;" text="back"
                    textFill="#eeeeee">
             <font>
@@ -127,7 +69,7 @@
                 </ImageView>
             </graphic>
         </JFXButton>
-        <JFXButton fx:id="ok" layoutX="642.0" layoutY="500.0" onMouseClicked="#compelte" prefHeight="35.0"
+        <JFXButton fx:id="ok" layoutX="642.0" layoutY="600.0" onMouseClicked="#compelte" prefHeight="35.0"
                    prefWidth="131.0" style="-fx-background-color: #6495ED; -fx-background-radius: 1.5em;" text="OK"
                    textFill="#eeeeee">
             <font>
