@@ -2,9 +2,15 @@ package sample.Controller.Code;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sample.StartProcess;
+
+import java.io.IOException;
 
 public class NeuralNetworkController {
 
@@ -34,8 +40,15 @@ public class NeuralNetworkController {
     }
 
     @FXML
-    void buildRNNPat(MouseEvent event) {
-
+    void buildRNNPat(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../../FXML/rnn_build.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        StartProcess.hashMap.put("rnn_param_settings", stage);
+        StartProcess.hashMap.get("nn_choose_board").hide();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML

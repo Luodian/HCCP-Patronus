@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import sample.Controller.Login.LoginController;
 import sample.Controller.Task.TaskController;
 import sample.Crypto.RSA;
+import sample.Crypto.SHA;
 import sample.Entity.*;
 import sample.StartProcess;
 import sample.Utils.JSONCryptoUtils;
@@ -56,7 +57,9 @@ public class SocketHandler
             sendObject.put("purpose", 1);
             sendObject.put("email", email);
             sendObject.put("password", password);
-            /**加密发送**/
+            /**签名认证**/
+            sendObject = SHA.DigitalSign(sendObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -89,6 +92,9 @@ public class SocketHandler
             JSONObject sendObject = new JSONObject();
             sendObject.put("purpose", 2);
             sendObject.put("user_id", user_id);
+            /**签名认证**/
+            sendObject = SHA.DigitalSign(sendObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -131,6 +137,9 @@ public class SocketHandler
             sendobj.put("creator_id", groupNode.getOwner_id());
             sendobj.put("description", groupNode.getDescription());
             sendobj.put("member_num", groupNode.getMember_num());
+            /**签名认证**/
+            sendobj = SHA.DigitalSign(sendobj);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -163,6 +172,9 @@ public class SocketHandler
             sendobj.put("purpose", 4);
             sendobj.put("user_id", user_id);
             sendobj.put("group_id", group_id);
+            /**签名认证**/
+            sendobj = SHA.DigitalSign(sendobj);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -194,6 +206,9 @@ public class SocketHandler
             JSONObject sendobj = new JSONObject();
             sendobj.put("purpose", 5);
             sendobj.put("user_id", user_id);
+            /**签名认证**/
+            sendobj = SHA.DigitalSign(sendobj);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -244,6 +259,9 @@ public class SocketHandler
             JSONObject sendobj = new JSONObject();
             sendobj.put("purpose", 6);
             sendobj.put("user_id", user_id);
+            /**签名认证**/
+            sendobj = SHA.DigitalSign(sendobj);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -296,6 +314,9 @@ public class SocketHandler
             sendobj.put("data_type", dataNode.getData_type());
             sendobj.put("user_id", dataNode.getUser_id());
             sendobj.put("data_name", dataNode.getData_name());
+            /**签名认证**/
+            sendobj = SHA.DigitalSign(sendobj);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendobj.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -330,6 +351,9 @@ public class SocketHandler
             JSONObject sendObject = new JSONObject();
             sendObject.put("purpose", 8);
             sendObject.put("group_id", group_id);
+            /**签名认证**/
+            sendObject = SHA.DigitalSign(sendObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -384,6 +408,9 @@ public class SocketHandler
             sendObject.put("security_score", computeTask.getSecurity_score());
             sendObject.put("data_type", computeTask.getData_type());
             sendObject.put("cost", computeTask.getCost());
+            /**签名认证**/
+            sendObject = SHA.DigitalSign(sendObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -415,6 +442,9 @@ public class SocketHandler
             sendObject.put("purpose", 100);
             sendObject.put("task_id", task_id);
             sendObject.put("action", "run");
+            /**签名认证**/
+            sendObject = SHA.DigitalSign(sendObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -479,6 +509,9 @@ public class SocketHandler
             sendObject.put("purpose", 13);
             sendObject.put("user_id", initiator_id);
             sendObject.put("state", state);
+            /**签名认证**/
+            sendObject = SHA.DigitalSign(sendObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -532,6 +565,9 @@ public class SocketHandler
             sendObject.put("purpose", 14);
             sendObject.put("user_id", user_id);
             sendObject.put("group_id", group_id);
+            /**签名认证**/
+            sendObject = SHA.DigitalSign(sendObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(sendObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -575,6 +611,9 @@ public class SocketHandler
             jsonObject.put("row_num", dataNode.getRow_nums());
             jsonObject.put("attr_num", dataNode.getAttr_nums());
             jsonObject.put("file_path", dataNode.getFile_path());
+            /**签名认证**/
+            jsonObject = SHA.DigitalSign(jsonObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -604,6 +643,9 @@ public class SocketHandler
             jsonObject.put("purpose", 16);
             jsonObject.put("task_id", task_id);
             jsonObject.put("group_id", group_id);
+            /**签名认证**/
+            jsonObject = SHA.DigitalSign(jsonObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -632,6 +674,9 @@ public class SocketHandler
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("purpose", 17);
             jsonObject.put("master_id", user_id);
+            /**签名认证**/
+            jsonObject = SHA.DigitalSign(jsonObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -677,6 +722,9 @@ public class SocketHandler
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("purpose", 18);
             jsonObject.put("slave_id", user_id);
+            /**签名认证**/
+            jsonObject = SHA.DigitalSign(jsonObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();
@@ -845,6 +893,9 @@ public class SocketHandler
             jsonObject.put("master_id", master_id);
             jsonObject.put("slave_id", slave_id);
             jsonObject.put("slave_data_name", slave_data_name);
+            /**签名认证**/
+            jsonObject = SHA.DigitalSign(jsonObject);
+            /**数据加密发送**/
             String cryptoSendObj = RSA.RSAPublicCrypto(jsonObject.toString(), JSONCryptoUtils.SERVER_PUBLIC_KEY);
             bufferedWriter.write(cryptoSendObj + "\r\n");
             bufferedWriter.flush();

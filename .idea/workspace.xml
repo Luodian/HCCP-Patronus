@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feb29600-aa77-4d7b-bf24-bc1ab41d28f4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Crypto/rsa_key.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Utils/JSONCryptoUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Controller/Code/RNNParamSettingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Crypto/SHA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/FXML/rnn_build.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/StartProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StartProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Utils/DES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Crypto/DES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Utils/RSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Crypto/RSA.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,23 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RSA.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RSA.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Crypto/RSA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="128" selection-start-line="128" selection-end-line="128" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DES.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Crypto/DES.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="295">
+              <caret line="126" column="49" lean-forward="true" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,7 +39,7 @@
       <file leaf-file-name="ServerAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Server/ServerAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
+            <state relative-caret-position="2010">
               <caret line="152" column="58" selection-start-line="152" selection-start-column="58" selection-end-line="152" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -61,44 +48,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tools.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Utils/Tools.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComputeTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Entity/ComputeTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1245">
-              <caret line="131" selection-start-line="131" selection-end-line="131" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StartProcess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+            <state relative-caret-position="522">
+              <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JSONCryptoUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Utils/JSONCryptoUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -112,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocketHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SocketHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="77" column="32" lean-forward="true" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+            <state relative-caret-position="6555">
+              <caret line="801" column="67" selection-start-line="801" selection-start-column="67" selection-end-line="801" selection-end-column="67" />
               <folding>
                 <element signature="method#queryUserByID#0;class#SocketHandler#0" />
                 <element signature="method#insertGroup#0;class#SocketHandler#0" />
@@ -134,6 +91,58 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SHA.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Crypto/SHA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RNNParamSettingController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/RNNParamSettingController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rnn_build.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/FXML/rnn_build.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1274">
+              <caret line="103" column="33" selection-start-line="102" selection-start-column="22" selection-end-line="103" selection-end-column="33" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="NeuralNetworkController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="605">
+              <caret line="63" column="25" lean-forward="true" selection-start-line="60" selection-start-column="7" selection-end-line="63" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainPageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller/MainPageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="628">
+              <caret line="115" column="21" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="115" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -145,7 +154,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>JFXButton</find>
       <find>my</find>
       <find>bind</find>
       <find>ffffff1</find>
@@ -175,6 +183,7 @@
       <find>socket</find>
       <find>@../IdeaProjects/patronus_hccp/src</find>
       <find>bufferedWriter</find>
+      <find>RSA.RSAPublicCrypto</find>
     </findStrings>
     <replaceStrings>
       <replace>/sample/resources/MDicon/</replace>
@@ -227,7 +236,6 @@
         <option value="$PROJECT_DIR$/src/sample/Controller/MainPageController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Task/TaskController.java" />
         <option value="$PROJECT_DIR$/src/sample/FXML/nn_choose_board.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller/Code/CodeController.java" />
         <option value="$PROJECT_DIR$/src/sample/Datebase/SQLHandler.java" />
         <option value="$PROJECT_DIR$/src/sample/Entity/ComputeTask.java" />
@@ -239,10 +247,15 @@
         <option value="$PROJECT_DIR$/src/sample/Crypto/private_key.txt" />
         <option value="$PROJECT_DIR$/src/sample/Crypto/RSA.java" />
         <option value="$PROJECT_DIR$/src/sample/Crypto/Server_public_key.java" />
-        <option value="$PROJECT_DIR$/src/sample/StartProcess.java" />
         <option value="$PROJECT_DIR$/src/sample/Utils/JSONCryptoUtils.java" />
         <option value="$PROJECT_DIR$/src/sample/Crypto/rsa_key.txt" />
+        <option value="$PROJECT_DIR$/src/sample/Crypto/SHA256.java" />
+        <option value="$PROJECT_DIR$/src/sample/StartProcess.java" />
         <option value="$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java" />
+        <option value="$PROJECT_DIR$/src/sample/Crypto/SHA.java" />
+        <option value="$PROJECT_DIR$/src/sample/FXML/rnn_build.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controller/Code/RNNParamSettingController.java" />
       </list>
     </option>
   </component>
@@ -264,6 +277,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,6 +301,21 @@
               <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="Code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="patronus_hccp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patronus_hccp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sample" type="462c0819:PsiDirectoryNode" />
               <item name="Crypto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -302,7 +331,6 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,20 +344,20 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/sample/FXML" />
+      <recent name="$PROJECT_DIR$/src/sample" />
+      <recent name="$PROJECT_DIR$/src/sample/resources/network" />
       <recent name="$PROJECT_DIR$/src/sample/resources/MDicon" />
+      <recent name="$PROJECT_DIR$/dependencies" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="sample.Utils" />
       <recent name="sample.Datebase" />
       <recent name="sample.Entity" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/sample" />
-      <recent name="$PROJECT_DIR$/src/sample/FXML" />
-      <recent name="$PROJECT_DIR$/src/sample/resources/network" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/sample/resources/MDicon" />
-      <recent name="$PROJECT_DIR$/dependencies" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -445,6 +473,8 @@
       <workItem from="1527052477868" duration="505000" />
       <workItem from="1527058625476" duration="7200000" />
       <workItem from="1527071598435" duration="8933000" />
+      <workItem from="1527084642803" duration="3559000" />
+      <workItem from="1527234164441" duration="482000" />
     </task>
     <task id="LOCAL-00001" summary="May 15,2018 2nd">
       <created>1526428568518</created>
@@ -558,17 +588,34 @@
       <option name="project" value="LOCAL" />
       <updated>1527073008996</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="May 23,2018 5th,现在消息的传输都是加密传输">
+      <created>1527084903611</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1527084903611</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125884000" />
+    <option name="totallyTimeSpent" value="129925000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32917705" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32793018" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
@@ -576,14 +623,13 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.24438903" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.8416459" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.22693267" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4064838" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32917705" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18383405" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1881259" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32917705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -597,13 +643,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32917705" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.28678304" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27057356" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32917705" />
@@ -611,11 +658,11 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27057356" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.28678304" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
@@ -680,7 +727,8 @@
     <MESSAGE value="May 23,2018 2nd" />
     <MESSAGE value="May 23,2018 3nd,crypto and decrypt" />
     <MESSAGE value="May 23,2018 4th,rsa公钥加密私钥解密以及私钥解密公钥加密均修改完成,测试通过,支持长文本加解密" />
-    <option name="LAST_COMMIT_MESSAGE" value="May 23,2018 4th,rsa公钥加密私钥解密以及私钥解密公钥加密均修改完成,测试通过,支持长文本加解密" />
+    <MESSAGE value="May 23,2018 5th,现在消息的传输都是加密传输" />
+    <option name="LAST_COMMIT_MESSAGE" value="May 23,2018 5th,现在消息的传输都是加密传输" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -691,14 +739,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Utils/JavaKeywordsAsyncDemo.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller/MainPageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1995">
@@ -889,10 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="184" column="53" selection-start-line="184" selection-start-column="53" selection-end-line="184" selection-end-column="53" />
-          <folding>
-            <element signature="method#newWorkingTask#0;class#TaskController#0" />
-            <element signature="method#showMoreLabel#0;class#TaskController#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -900,28 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-          <folding>
-            <element signature="e#1570#1571#0" expanded="true" />
-            <element signature="e#1616#1617#0" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller/MainPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="115" column="21" selection-start-line="111" selection-start-column="7" selection-end-line="115" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -972,7 +986,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Crypto/DES.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="60">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -980,30 +994,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Crypto/Server_public_key.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Crypto/public_key.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Crypto/Server_public_key.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Utils/JSONCryptoUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+        <state relative-caret-position="270">
+          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1014,19 +1009,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Crypto/RSA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Server/ServerAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
+        <state relative-caret-position="2010">
           <caret line="152" column="58" selection-start-line="152" selection-start-column="58" selection-end-line="152" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1036,8 +1021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SocketConnect/SocketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="77" column="32" lean-forward="true" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+        <state relative-caret-position="6555">
+          <caret line="801" column="67" selection-start-line="801" selection-start-column="67" selection-end-line="801" selection-end-column="67" />
           <folding>
             <element signature="method#queryUserByID#0;class#SocketHandler#0" />
             <element signature="method#insertGroup#0;class#SocketHandler#0" />
@@ -1050,6 +1035,68 @@
             <element signature="method#queryComputeTaskByInitiatorIDAndState#0;class#SocketHandler#0" />
             <element signature="method#queryDataSetNameByUserIdAndGroupID#0;class#SocketHandler#0" />
             <element signature="method#initSocket#0;class#SocketHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Crypto/SHA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/rnn_build.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1274">
+          <caret line="103" column="33" selection-start-line="102" selection-start-column="22" selection-end-line="103" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/MainPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="115" column="21" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="115" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/StartProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/NeuralNetworkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="63" column="25" lean-forward="true" selection-start-line="60" selection-start-column="7" selection-end-line="63" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller/Code/RNNParamSettingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Crypto/RSA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="126" column="49" lean-forward="true" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
