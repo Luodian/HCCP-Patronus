@@ -4,11 +4,17 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sample.StartProcess;
+
+import java.io.IOException;
 
 public class RNNParamSettingController {
 
@@ -82,8 +88,15 @@ public class RNNParamSettingController {
     }
 
     @FXML
-    void complete(MouseEvent event) {
-
+    void complete(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../../FXML/nn_graph.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        StartProcess.hashMap.put("nn_graph", stage);
+        StartProcess.hashMap.get("rnn_param_settings").hide();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML

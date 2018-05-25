@@ -35,6 +35,8 @@ public class StartProcess extends Application {
      * data_choose_board
      * group_choose_board
      * nn_choose_board
+     * rnn_param_settings
+     * nn_graph
      * **/
 
     public static HashMap<String, Stage> hashMap = new HashMap<String, Stage>();
