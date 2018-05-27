@@ -32,6 +32,9 @@ import sample.SocketConnect.SocketHandler;
 import sample.StartProcess;
 import sample.Utils.HintFrame;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -191,6 +194,19 @@ public class TaskController implements Initializable {
                         if (slave_item_panes.size() > MAX_SHOW_CARD) showMoreLabel(1);
                     }
                 });
+                Stage stage = new Stage();
+                Parent root = null;
+                try {
+                    root = FXMLLoader.load(getClass().getResource("../../FXML/task_complete.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                stage.setScene(new Scene(root));
+                StartProcess.hashMap.put("task_complete", stage);
+                stage.initStyle(StageStyle.UNDECORATED);
+                stage.setResizable(false);
+                Timer timer = new Timer(20000, new TimerAction(stage));
+                timer.start();
             }
         }
     }
@@ -367,12 +383,26 @@ public class TaskController implements Initializable {
     }
 
     @FXML
-    void showCode(MouseEvent event) {
-        int index = my_task_list.getSelectionModel().getSelectedIndex();
+    void showCode(MouseEvent event) throws InterruptedException {
+
+    }
+}
+
+
+class TimerAction implements ActionListener {
+    Stage stage;
+
+    public TimerAction(Stage stage) {
+        this.stage = stage;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        int index = TaskController.my_task_list_copy.getSelectionModel().getSelectedIndex();
         if (index < 0) {
             HintFrame.showFailFrame("Please choose one of your tasks!");
         } else {
-            for (TaskPaneItem e : master_item_panes
+            for (TaskPaneItem e : TaskController.master_item_panes
                     ) {
                 if (SocketHandler.sendToMasterTaskEndMsg(e.getTask_id(), e.getUser_id(), LoginController.current_user_id,
                         e.getData_name())) {
@@ -380,13 +410,19 @@ public class TaskController implements Initializable {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            masonry_pane_2.getChildren().remove(e.getShowPane());
+                            TaskController.master_masonry.getChildren().remove(e.getShowPane());
                         }
                     });
 
                 }
             }
-            master_item_panes.clear();
+            TaskController.master_item_panes.clear();
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    stage.show();
+                }
+            });
         }
     }
 }
