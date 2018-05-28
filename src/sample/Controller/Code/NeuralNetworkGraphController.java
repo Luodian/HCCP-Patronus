@@ -85,7 +85,7 @@ public class NeuralNetworkGraphController implements Initializable {
 
     @FXML
     void compelte(MouseEvent event) {
-        Label label1 = new Label("task" + CodeController.programs.getItems().size());
+        Label label1 = new Label("seq2seq");
         label1.setTextFill(Paint.valueOf("#ffffff"));
         CodeController.programs.getItems().add(label1);
         Stage nnStage = StartProcess.hashMap.remove("nn_graph");

@@ -7,10 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Paint;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -45,12 +43,12 @@ public class CodeController implements Initializable {
 
         programs = my_programs;
 
-        Label label1 = new Label("LSTM");
-        label1.setTextFill(Paint.valueOf("#ffffff"));
-        Label label2 = new Label("cnn");
-        label2.setTextFill(Paint.valueOf("#ffffff"));
-        my_programs.getItems().add(label1);
-        my_programs.getItems().add(label2);
+//        Label label1 = new Label("LSTM");
+//        label1.setTextFill(Paint.valueOf("#ffffff"));
+//        Label label2 = new Label("cnn");
+//        label2.setTextFill(Paint.valueOf("#ffffff"));
+//        my_programs.getItems().add(label1);
+//        my_programs.getItems().add(label2);
 
         my_programs.setExpanded(true);
         my_programs.setVerticalGap(Double.valueOf(15.0));
