@@ -1,6 +1,5 @@
 package sample.Utils;
 
-import com.jfoenix.controls.JFXScrollPane;
 import javafx.concurrent.Task;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 import org.fxmisc.richtext.CodeArea;
@@ -51,26 +50,19 @@ public class HighlightingCode {
 	);
 	
 	private static final String sampleCode = String.join("\n", new String[] {
-			"package com.example;",
-			"",
-			"import java.util.*;",
-			"",
-			"public class Foo extends Bar implements Baz {",
-			"",
-			"    /*",
-			"     * multi-line comment",
-			"     */",
-			"    public static void main(String[] args) {",
-			"        // single-line comment",
-			"        for(String arg: args) {",
-			"            if(arg.length() != 0)",
-			"                System.out.println(arg);",
-			"            else",
-			"                System.err.println(\"Warning: empty string as argument\");",
-			"        }",
-			"    }",
-			"",
-			"}"
+            "def build_model():",
+            "\tmodel = Sequential()",
+            "\tmodel.add(GRU(layers[1], input_shape=(None, layers[0]), return_sequences=True))",
+            "\tmodel.add(Dropout(0.2))",
+
+            "\tmodel.add(GRU(layers[2], return_sequences=False))",
+            "\tmodel.add(Dropout(0.2))",
+
+            "\tmodel.add(Dense(layers[3]))",
+            "\tmodel.add(Activation(\"linear\"))",
+            "\tstart = time.time()",
+            "\tmodel.compile(loss=\"mse\", optimizer=\"rmsprop\", metrics=['mae', 'mape'])",
+            "\treturn model",
 	});
 	
 	public static String getSampleCode () {

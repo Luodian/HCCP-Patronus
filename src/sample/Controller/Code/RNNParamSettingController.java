@@ -1,22 +1,31 @@
 package sample.Controller.Code;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.Entity.LayerItem;
 import sample.StartProcess;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class RNNParamSettingController {
+public class RNNParamSettingController implements Initializable {
 
     @FXML
     private JFXButton GRU;
@@ -69,14 +78,43 @@ public class RNNParamSettingController {
     @FXML
     private JFXButton back;
 
+    public static ArrayList<LayerItem> layerItems;
+    @FXML
+    private JFXListView layer_list;
+
     @FXML
     void AddGRULayer(MouseEvent event) {
+        Label layer = new Label("GRU");
+        LayerItem layerItem = new LayerItem();
+        layerItems.add(layerItem);
+        layer.setTextFill(Paint.valueOf("#ffffff"));
+        layer_list.getItems().add(layer);
+    }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        layerItems = new ArrayList<LayerItem>();
+        layer_parameter_board.setVisible(false);
+        layer_list.setExpanded(true);
+        layer_list.setVerticalGap(Double.valueOf(15.0));
+        layer_list.depthProperty().set(5);
+        layer_list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                if (!layer_parameter_board.isVisible()) layer_parameter_board.setVisible(true);
+
+            }
+        });
     }
 
     @FXML
     void AddLSTMLayer(MouseEvent event) {
-
+        Label layer = new Label("LSTM");
+        LayerItem layerItem = new LayerItem();
+        layerItems.add(layerItem);
+        layer.setTextFill(Paint.valueOf("#ffffff"));
+        layer_list.getItems().add(layer);
     }
 
     @FXML
