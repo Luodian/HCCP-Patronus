@@ -123,5 +123,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="commons-lang3-3.7-tests" level="project" />
+    <orderEntry type="library" name="commons-codec-1.10" level="project" />
   </component>
 </module>

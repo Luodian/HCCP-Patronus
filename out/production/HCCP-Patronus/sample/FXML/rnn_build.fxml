@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Code.RNNParamSettingController"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+            prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.4">
+    <children>
+        <Separator layoutY="120.0" prefHeight="0.0" prefWidth="600.0"/>
+        <AnchorPane prefHeight="120.0" prefWidth="700.0" style="-fx-background-color: #5CACEE;">
+            <children>
+                <Label layoutX="61.0" layoutY="27.0" text="Patronus v1.0" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="20.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="16.0" layoutY="23.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/MDicon/cloud.png"/>
+                    </image>
+                </ImageView>
+                <Label layoutX="189.0" layoutY="85.0" text="Please complete the parameters settings of your RNN"
+                       textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Separator layoutX="140.0" layoutY="120.0" orientation="VERTICAL" prefHeight="375.0"/>
+        <Separator layoutX="287.0" layoutY="120.0" orientation="VERTICAL" prefHeight="375.0"/>
+        <Separator layoutY="640.0" prefWidth="700.0"/>
+        <JFXListView layoutX="140.0" layoutY="120.0" prefHeight="520.0" prefWidth="150.0"/>
+        <JFXButton fx:id="GRU" layoutX="22.0" layoutY="202.0" onMouseClicked="#AddGRULayer" prefHeight="31.0"
+                   prefWidth="100.0" style="-fx-background-color: #6495ED;" text="Add GRU" textFill="#eeeeee">
+            <font>
+                <Font name="Chalkboard SE Light" size="13.0"/>
+            </font>
+            <ripplerFill>
+                <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+        </JFXButton>
+        <JFXButton fx:id="addLSTM" layoutX="22.0" layoutY="260.0" onMouseClicked="#AddLSTMLayer" prefHeight="31.0"
+                   prefWidth="100.0" style="-fx-background-color: #6495ED;" text="Add LSTM" textFill="#eeeeee">
+            <font>
+                <Font name="Chalkboard SE Light" size="13.0"/>
+            </font>
+            <ripplerFill>
+                <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+        </JFXButton>
+        <JFXButton fx:id="Delete" layoutX="22.0" layoutY="317.0" onMouseClicked="#deleteLayer" prefHeight="31.0"
+                   prefWidth="100.0" style="-fx-background-color: #6495ED;" text="Delete" textFill="#eeeeee">
+            <font>
+                <Font name="Chalkboard SE Light" size="13.0"/>
+            </font>
+            <ripplerFill>
+                <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+        </JFXButton>
+        <JFXButton fx:id="complete" layoutX="578.0" layoutY="654.0" onMouseClicked="#complete" prefHeight="31.0"
+                   prefWidth="100.0" style="-fx-background-color: #6495ED; -fx-background-radius: 1.5em;"
+                   text="complete" textFill="#eeeeee">
+            <font>
+                <Font name="Chalkboard SE Light" size="13.0"/>
+            </font>
+            <ripplerFill>
+                <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+            <graphic>
+                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/MDicon/correct.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="reset" layoutX="22.0" layoutY="372.0" onMouseClicked="#resetParameters" prefHeight="31.0"
+                   prefWidth="100.0" style="-fx-background-color: #6495ED;" text="reset" textFill="#eeeeee">
+            <font>
+                <Font name="Chalkboard SE Light" size="13.0"/>
+            </font>
+            <ripplerFill>
+                <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+        </JFXButton>
+        <Pane fx:id="layer_parameter_board" layoutX="346.0" layoutY="150.0" prefHeight="451.0" prefWidth="313.0"
+              style="-fx-background-color: #6495ED; -fx-background-radius: 1.5em;">
+            <effect>
+                <DropShadow/>
+            </effect>
+            <children>
+                <Circle fill="WHITE" layoutX="24.0" layoutY="24.0" radius="10.0" stroke="CORNFLOWERBLUE"
+                        strokeType="INSIDE">
+                    <effect>
+                        <InnerShadow blurType="TWO_PASS_BOX" choke="0.11" color="#9da1a8" height="15.72" radius="6.6525"
+                                     width="12.89"/>
+                    </effect>
+                </Circle>
+                <JFXTextField fx:id="nu_num" focusColor="WHITE" layoutX="165.0" layoutY="79.0" prefHeight="27.0"
+                              prefWidth="105.0" unFocusColor="WHITE"/>
+                <Label layoutX="47.0" layoutY="92.0" text="neural unit num: " textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="119.0" layoutY="22.0" text="GRU layer" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="16.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="48.0" layoutY="126.0" text="activation:" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="46.0" layoutY="226.0" text="recurrent_activation:" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <JFXRadioButton fx:id="tanh" layoutX="66.0" layoutY="152.0" text="tanh" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="relu" layoutX="157.0" layoutY="152.0" text="Relu" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="sigmod" layoutX="66.0" layoutY="183.0" text="sigmod" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="softmax" layoutX="157.0" layoutY="183.0" text="softmax" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </JFXRadioButton>
+                <JFXTextField fx:id="recurrent_activation" focusColor="WHITE" layoutX="186.0" layoutY="217.0"
+                              prefHeight="25.0" prefWidth="80.0" unFocusColor="WHITE"/>
+                <Label layoutX="83.0" layoutY="259.0" text="use bias:" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <JFXRadioButton fx:id="use_bias" layoutX="157.0" layoutY="259.0" text="true" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </JFXRadioButton>
+                <Label layoutX="45.0" layoutY="291.0" text="kernel_initializer:" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <JFXTextField fx:id="kernel_initializer" focusColor="WHITE" layoutX="160.0" layoutY="284.0"
+                              prefHeight="25.0" prefWidth="105.0" unFocusColor="WHITE"/>
+                <Label layoutX="45.0" layoutY="332.0" text="recurrent_initializer:" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <JFXTextField fx:id="recurrent_initializer" focusColor="WHITE" layoutX="176.0" layoutY="320.0"
+                              prefHeight="27.0" prefWidth="89.0" unFocusColor="WHITE"/>
+                <Label fx:id="bias_initializer" layoutX="45.0" layoutY="369.0" text="bias_initializer:"
+                       textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="13.0"/>
+                    </font>
+                </Label>
+                <JFXTextField focusColor="WHITE" layoutX="147.0" layoutY="358.0" prefHeight="27.0" prefWidth="117.0"
+                              unFocusColor="WHITE"/>
+            </children>
+        </Pane>
+        <JFXButton fx:id="back" layoutX="29.0" layoutY="654.0" onMouseClicked="#backToPre" prefHeight="31.0"
+                   prefWidth="86.0" style="-fx-background-color: #6495ED; -fx-background-radius: 1.5em;" text="back"
+                   textFill="#eeeeee">
+            <font>
+                <Font name="Chalkboard SE Light" size="13.0"/>
+            </font>
+            <ripplerFill>
+                <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+            <graphic>
+                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/MDicon/qweas.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>

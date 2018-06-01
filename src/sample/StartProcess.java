@@ -58,10 +58,9 @@ public class StartProcess extends Application {
     {
 	    FXMLLoader myEditPageLoader = new FXMLLoader (getClass ().getResource ("./FXML/login.fxml"));
 	    Parent root = myEditPageLoader.load();
-
-
+	    
 	    /**连接socket**/
-        SocketHandler.initSocket(InetAddress.getLocalHost().getHostAddress(), 8888);
+        SocketHandler.initSocket("172.20.10.5", 8888);
 
         /**获取本地私钥**/
         File file = new File(getClass().getResource("./Crypto/rsa_key.txt").getPath());

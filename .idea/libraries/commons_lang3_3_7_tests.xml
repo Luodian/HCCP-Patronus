@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="commons-lang3-3.7-tests">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dependencies/commons-lang3-3.7-tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dependencies/commons-lang3-3.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/dependencies/commons-lang3-3.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/dependencies/commons-lang3-3.7-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dependencies/commons-lang3-3.7-test-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

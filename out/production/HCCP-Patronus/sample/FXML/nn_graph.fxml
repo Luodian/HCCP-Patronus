@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Code.NeuralNetworkGraphController"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0"
+            prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.4">
+    <children>
+        <Separator layoutY="120.0" prefHeight="0.0" prefWidth="1000.0"/>
+        <AnchorPane prefHeight="120.0" prefWidth="1000.0" style="-fx-background-color: #5CACEE;">
+            <children>
+                <Label layoutX="53.0" layoutY="23.0" text="Patronus v1.0" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="20.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="12.0" layoutY="18.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/MDicon/cloud.png"/>
+                    </image>
+                </ImageView>
+                <Label layoutX="274.0" layoutY="67.0" text="Here is the graph of your neural network" textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="165.0" layoutY="92.0"
+                       text="Although the frame of the network is fixed, you can still fine-tune the network"
+                       textFill="WHITE">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="14.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="fxcodeArea" layoutY="120.0" prefHeight="480.0" prefWidth="1000.0">
+            <children>
+                <Pane fx:id="canvas" prefHeight="480.0" prefWidth="1000.0">
+                </Pane>
+            </children>
+        </AnchorPane>
+        <JFXButton fx:id="back" layoutX="37.0" layoutY="600.0" onMouseClicked="#backToPre" prefHeight="31.0"
+                   prefWidth="86.0" style="-fx-background-color: #6495ED; -fx-background-radius: 1.5em;" text="back"
+                   textFill="#eeeeee">
+            <font>
+                <Font name="Chalkboard SE Light" size="13.0"/>
+            </font>
+            <ripplerFill>
+                <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+            <graphic>
+                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/MDicon/qweas.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="ok" layoutX="642.0" layoutY="600.0" onMouseClicked="#compelte" prefHeight="35.0"
+                   prefWidth="131.0" style="-fx-background-color: #6495ED; -fx-background-radius: 1.5em;" text="OK"
+                   textFill="#eeeeee">
+            <font>
+                <Font name="Chalkboard SE Light" size="13.0"/>
+            </font>
+            <ripplerFill>
+                <RadialGradient centerX="0.48879551820728284" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="BLACK"/>
+                        <Stop color="#18d624f6" offset="0.0074487895716946"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </RadialGradient>
+            </ripplerFill>
+            <graphic>
+                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="/sample/resources/MDicon/correct.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+    </children>
+</AnchorPane>
